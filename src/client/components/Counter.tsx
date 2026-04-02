@@ -3,9 +3,9 @@ import PartySocket from "partysocket";
 import usePartySocket from "partysocket/react";
 
 // We're not using server-side rendering and initial props in this
-// example (our app is client-side only), so loadInitialCount is not
+// example (our client is client-side only), so loadInitialCount is not
 // used. But if we were using SSR, we would use this function to load
-// the initial count, as returned by onRequest in `party/server.ts`.
+// the initial count, as returned by onRequest in `server/server.ts`.
 export async function loadInitialCount(host: string) {
   const initialCount = await PartySocket.fetch(
     {

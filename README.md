@@ -14,7 +14,7 @@ You can start developing by running `npm run dev` and opening [http://localhost:
 
 ## Finding your way around
 
-[`party/server.ts`](./party/server.ts) is the server-side code, which is responsible for handling WebSocket events and HTTP requests.
+[`party/server.ts`](src/server/server.ts) is the server-side code, which is responsible for handling WebSocket events and HTTP requests.
 
 It implements a simple counter that can be incremented by any connected client. The latest state is broadcast to all connected clients.
 
