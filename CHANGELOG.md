@@ -1,3 +1,10 @@
+# [1.0.0-dev.3](https://github.com/Atomarverseucht/memory-web/compare/1.0.0-dev.2...1.0.0-dev.3) (2026-04-04)
+
+
+### Bug Fixes
+
+* partykit.json ([1e06e61](https://github.com/Atomarverseucht/memory-web/commit/1e06e6185b5f391a7a77f04d1080227b6a814e62))
+
 # [1.0.0-dev.2](https://github.com/Atomarverseucht/memory-web/compare/1.0.0-dev.1...1.0.0-dev.2) (2026-04-04)
 
 
