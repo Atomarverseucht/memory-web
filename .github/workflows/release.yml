@@ -35,4 +35,4 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         PARTYKIT_TOKEN: ${{ secrets.PARTYKIT_TOKEN }}
-        PARTYKIT_LOGIN: ${{ secrets.PARTYKIT_LOGIN  }}
+        PARTYKIT_LOGIN: atomarverseucht
