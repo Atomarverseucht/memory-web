@@ -1,10 +1,11 @@
 {
   "name": "memory-web",
-  "version": "0.0.0",
+  "version": "1.0.0-dev.3",
   "private": true,
   "scripts": {
     "dev": "partykit dev --live",
-    "deploy": "partykit deploy"
+    "deploy": "partykit deploy",
+    "dev-deploy": "partykit deploy --preview dev"
   },
   "dependencies": {
     "partysocket": "^1.0.2",
