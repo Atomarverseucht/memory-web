@@ -3,8 +3,5 @@
   "name": "memory-web",
   "main": "src/server/server.ts",
   "compatibilityDate": "2026-04-02",
-  "serve": {
-    "path": "public",
-    "build": "src/client/client.tsx"
-  }
+  "serve": "src/client/"
 }
