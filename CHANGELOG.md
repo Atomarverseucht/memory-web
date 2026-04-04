@@ -1,3 +1,10 @@
+## [1.0.1-dev.1](https://github.com/Atomarverseucht/memory-web/compare/1.0.0...1.0.1-dev.1) (2026-04-04)
+
+
+### Bug Fixes
+
+* test ([c547499](https://github.com/Atomarverseucht/memory-web/commit/c5474997547f21739c58d50ed507ef104d44490d))
+
 # 1.0.0 (2026-04-04)
 
 
