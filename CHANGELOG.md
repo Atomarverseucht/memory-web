@@ -1,3 +1,10 @@
+# [1.1.0-dev.4](https://github.com/Atomarverseucht/memory-web/compare/1.1.0-dev.3...1.1.0-dev.4) (2026-04-09)
+
+
+### Features
+
+* css styling for memory selection ([7684277](https://github.com/Atomarverseucht/memory-web/commit/7684277f27976d85b5ff07203f31da4463b18d45))
+
 # [1.1.0-dev.3](https://github.com/Atomarverseucht/memory-web/compare/1.1.0-dev.2...1.1.0-dev.3) (2026-04-09)
 
 
