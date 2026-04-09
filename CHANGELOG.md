@@ -1,3 +1,10 @@
+# [1.1.0-dev.3](https://github.com/Atomarverseucht/memory-web/compare/1.1.0-dev.2...1.1.0-dev.3) (2026-04-09)
+
+
+### Bug Fixes
+
+* typo in example data ([76c9132](https://github.com/Atomarverseucht/memory-web/commit/76c9132ca4f7ef8074acddb554b40fc9052bf9ff))
+
 # [1.1.0-dev.2](https://github.com/Atomarverseucht/memory-web/compare/1.1.0-dev.1...1.1.0-dev.2) (2026-04-09)
 
 
