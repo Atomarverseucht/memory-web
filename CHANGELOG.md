@@ -1,3 +1,10 @@
+# [1.1.0-dev.1](https://github.com/Atomarverseucht/memory-web/compare/1.0.1...1.1.0-dev.1) (2026-04-09)
+
+
+### Features
+
+* Bilder test ([f7c1d9b](https://github.com/Atomarverseucht/memory-web/commit/f7c1d9b4097ea937a5958a825864ddcd982c9b37))
+
 ## [1.0.1](https://github.com/Atomarverseucht/memory-web/compare/1.0.0...1.0.1) (2026-04-09)
 
 
