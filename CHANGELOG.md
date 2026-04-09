@@ -1,3 +1,10 @@
+# [1.2.0-dev.1](https://github.com/Atomarverseucht/memory-web/compare/1.1.0...1.2.0-dev.1) (2026-04-09)
+
+
+### Features
+
+* hover effect ([05eeab7](https://github.com/Atomarverseucht/memory-web/commit/05eeab77100510fd391a8251189f96ec5357031a))
+
 # [1.1.0](https://github.com/Atomarverseucht/memory-web/compare/1.0.1...1.1.0) (2026-04-09)
 
 
