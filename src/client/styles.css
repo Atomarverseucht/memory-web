@@ -29,6 +29,9 @@ h6 {
 .select-memory {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  :hover {
+    background-color: lightblue;
+  }
 }
 
 @media (min-width: 769px) {
@@ -43,6 +46,7 @@ h6 {
   display: grid;
   align-items: center;
   justify-content: center;
+  border: black solid 1px;
 
   img {
     height: 200px;
