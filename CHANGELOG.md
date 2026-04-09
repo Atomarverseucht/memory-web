@@ -1,3 +1,10 @@
+# [1.2.0-dev.2](https://github.com/Atomarverseucht/memory-web/compare/1.2.0-dev.1...1.2.0-dev.2) (2026-04-09)
+
+
+### Features
+
+* better resize ([59e55c6](https://github.com/Atomarverseucht/memory-web/commit/59e55c6186ddedb5895774da83a24826ed172907))
+
 # [1.2.0-dev.1](https://github.com/Atomarverseucht/memory-web/compare/1.1.0...1.2.0-dev.1) (2026-04-09)
 
 
