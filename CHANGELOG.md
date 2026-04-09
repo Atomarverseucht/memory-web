@@ -1,3 +1,18 @@
+# [1.1.0](https://github.com/Atomarverseucht/memory-web/compare/1.0.1...1.1.0) (2026-04-09)
+
+
+### Bug Fixes
+
+* added example data 2 ([6c24ff0](https://github.com/Atomarverseucht/memory-web/commit/6c24ff02963b202362d03577bc8d1fae0ac4f083))
+* content is now in body ([29e6398](https://github.com/Atomarverseucht/memory-web/commit/29e6398fa03d77a9312971da5c0fc86d07525639))
+* typo in example data ([76c9132](https://github.com/Atomarverseucht/memory-web/commit/76c9132ca4f7ef8074acddb554b40fc9052bf9ff))
+
+
+### Features
+
+* Bilder test ([f7c1d9b](https://github.com/Atomarverseucht/memory-web/commit/f7c1d9b4097ea937a5958a825864ddcd982c9b37))
+* css styling for memory selection ([7684277](https://github.com/Atomarverseucht/memory-web/commit/7684277f27976d85b5ff07203f31da4463b18d45))
+
 # [1.1.0-dev.5](https://github.com/Atomarverseucht/memory-web/compare/1.1.0-dev.4...1.1.0-dev.5) (2026-04-09)
 
 
