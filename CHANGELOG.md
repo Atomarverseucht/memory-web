@@ -1,3 +1,10 @@
+# [1.1.0-dev.5](https://github.com/Atomarverseucht/memory-web/compare/1.1.0-dev.4...1.1.0-dev.5) (2026-04-09)
+
+
+### Bug Fixes
+
+* content is now in body ([29e6398](https://github.com/Atomarverseucht/memory-web/commit/29e6398fa03d77a9312971da5c0fc86d07525639))
+
 # [1.1.0-dev.4](https://github.com/Atomarverseucht/memory-web/compare/1.1.0-dev.3...1.1.0-dev.4) (2026-04-09)
 
 
