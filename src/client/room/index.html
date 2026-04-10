@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>memory - room</title>
-
+    <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
     <h1>Memory - Room</h1>
@@ -12,8 +12,13 @@
         <label for="name_input">Username:</label>
         <input id="name_input" />
     </section>
-    <section>
-
+    <section id="board" class="board">
+        <script>
+            const segment = '<section class="closed"' +
+                ' <p></p>' +
+                '</section>';
+            document.getElementById('board').innerHTML = segment.repeat(56);
+        </script>
     </section>
 </body>
 </html>

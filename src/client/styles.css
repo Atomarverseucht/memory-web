@@ -32,7 +32,6 @@ h6 {
   :hover {
     background-color: lightblue;
   }
-  article {}
 }
 
 @media (min-width: 769px) {
