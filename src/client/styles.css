@@ -28,18 +28,18 @@ h6 {
 
 .select-memory {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 33%);
   :hover {
     background-color: lightblue;
   }
 }
 
 @media (min-width: 800px) {
-  .select-memory{grid-template-columns: repeat(4, 1fr);}
+  .select-memory{grid-template-columns: repeat(4, 25%);}
 }
 
-@media (min-width: 1000px) {
-  .select-memory{grid-template-columns: repeat(5, 1fr);}
+@media (min-width: 900px) {
+  .select-memory{grid-template-columns: repeat(5, 20%);}
 }
 
 .memory-set {
