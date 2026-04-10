@@ -2,13 +2,20 @@
 
 .board {
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
+    grid-template-columns: repeat(8, 12vw);
+    grid-template-rows: repeat(8, 12vw);
     :hover {
         background-color: blue;
     }
     section {
-        height: 100pt;
         border: black solid 1px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+            max-width: 100%;
+            max-height: 100%;
+        }
     }
 }
 .closed {
@@ -16,5 +23,16 @@
 }
 
 input {
-    width: 1fr;
+    flex: 1;
+}
+
+.nameSection {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: midnightblue;
+    color: white;
 }

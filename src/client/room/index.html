@@ -7,18 +7,17 @@
 </head>
 <body>
     <h1>Memory - Room</h1>
-    <section>
-        <h2>Please Enter your Name</h2>
+    <section class="nameSection">
         <label for="name_input">Username:</label>
         <input id="name_input" />
+        <button id="name_submit">Submit</button>
     </section>
     <section id="board" class="board">
         <script>
-            const segment = '<section class="closed"' +
+            const segment = '<section class="closed">' +
                 ' <p></p>' +
                 '</section>';
             document.getElementById('board').innerHTML = segment.repeat(56);
         </script>
-    </section>
 </body>
 </html>

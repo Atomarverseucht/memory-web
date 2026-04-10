@@ -8,8 +8,8 @@
 
 body {
   font-family: sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
+  font-size: 16pt;
+  line-height: 2;
   color: #333;
 }
 
@@ -28,18 +28,18 @@ h6 {
 
 .select-memory {
   display: grid;
-  grid-template-columns: repeat(2, 50%);
+  grid-template-columns: repeat(3, 1fr);
   :hover {
     background-color: lightblue;
   }
 }
 
-@media (min-width: 769px) {
-  .select-memory{grid-template-columns: repeat(3, 33%);}
+@media (min-width: 800px) {
+  .select-memory{grid-template-columns: repeat(4, 1fr);}
 }
 
-@media (min-width: 1200px) {
-  .select-memory{grid-template-columns: repeat(4, 25%);}
+@media (min-width: 1000px) {
+  .select-memory{grid-template-columns: repeat(5, 1fr);}
 }
 
 .memory-set {
@@ -47,6 +47,7 @@ h6 {
   align-items: center;
   justify-content: center;
   border: black solid 1px;
+  text-align: center;
   img {
     width: 100%;
   }
