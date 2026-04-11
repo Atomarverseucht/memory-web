@@ -1,3 +1,10 @@
+# [1.2.0-dev.7](https://github.com/Atomarverseucht/memory-web/compare/1.2.0-dev.6...1.2.0-dev.7) (2026-04-11)
+
+
+### Bug Fixes
+
+* css stuff ([c57b1fd](https://github.com/Atomarverseucht/memory-web/commit/c57b1fd5cd79fc9775b3e78cdb633dfae7f0fae6))
+
 # [1.2.0-dev.6](https://github.com/Atomarverseucht/memory-web/compare/1.2.0-dev.5...1.2.0-dev.6) (2026-04-11)
 
 

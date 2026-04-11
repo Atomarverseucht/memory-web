@@ -1,6 +1,6 @@
 {
   "name": "memory-web",
-  "version": "1.2.0-dev.6",
+  "version": "1.2.0-dev.7",
   "private": true,
   "scripts": {
     "dev": "partykit dev --live",
