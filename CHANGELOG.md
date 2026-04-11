@@ -1,3 +1,10 @@
+# [1.2.0-dev.6](https://github.com/Atomarverseucht/memory-web/compare/1.2.0-dev.5...1.2.0-dev.6) (2026-04-11)
+
+
+### Bug Fixes
+
+* implemented more css stuff and created a new json file ([fd9285e](https://github.com/Atomarverseucht/memory-web/commit/fd9285e5f83f17d41730ec27678e4ea585b16857))
+
 # [1.2.0-dev.5](https://github.com/Atomarverseucht/memory-web/compare/1.2.0-dev.4...1.2.0-dev.5) (2026-04-10)
 
 # [1.2.0-dev.4](https://github.com/Atomarverseucht/memory-web/compare/1.2.0-dev.3...1.2.0-dev.4) (2026-04-10)
