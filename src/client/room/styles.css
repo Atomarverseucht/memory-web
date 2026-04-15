@@ -1,13 +1,12 @@
 @import url('../styles.css');
 
-:root {
-  --custom-blue: #007faa;
-}
-
 input {
     flex: 1;
     border-radius: 10%;
     max-width: 70%;
+    :hover{
+        background-color: var(--hover-color);
+    }
 }
 table {
     width: 100%;
@@ -25,17 +24,14 @@ td:nth-child(2) {
     display: flex;
     gap: 1rem;
     margin-bottom: 10px;
-}
-
-.name-submit {
-    border-radius: 10%
+    :hover{
+        background-color: var(--hover-color);
+    }
 }
 
 button {
-    background-color: var(--custom-blue);
-    :hover{
-        background-color: lightgoldenrodyellow;
-    }
+    border-radius: 10%;
+    background-color: darkslateblue;
 }
 
 main {
@@ -44,10 +40,10 @@ main {
 
 .board {
     display: grid;
-    grid-template-columns: repeat(8, 10vw);
-    grid-template-rows: repeat(8, 10vw);
+    grid-template-columns: repeat(8, 10.25vw);
+    grid-template-rows: repeat(8, 10.25vw);
     :hover {
-        background-color: darkslateblue;
+        background-color: var(--hover-color);
     }
     button {
         border-radius: 20%;
