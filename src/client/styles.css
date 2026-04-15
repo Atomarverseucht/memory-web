@@ -45,7 +45,6 @@ article > h2 {
   :hover {
     background-color: var(--hover-color);
   }
-
 }
 
 @media (min-width: 768px) {
