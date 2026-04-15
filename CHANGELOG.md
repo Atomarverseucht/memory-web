@@ -1,3 +1,10 @@
+## [1.2.1-dev.1](https://github.com/Atomarverseucht/memory-web/compare/1.2.0...1.2.1-dev.1) (2026-04-15)
+
+
+### Bug Fixes
+
+* hover effect for name section & example Names ([9e1dbc9](https://github.com/Atomarverseucht/memory-web/commit/9e1dbc9081ab60959dcf8656f0941dc39caedd1e))
+
 # [1.2.0](https://github.com/Atomarverseucht/memory-web/compare/1.1.0...1.2.0) (2026-04-15)
 
 
