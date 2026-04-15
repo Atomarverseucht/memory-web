@@ -3,7 +3,9 @@
 :root {
   --custom-blue: #007faa;
 }
-
+body {
+    background-color: rosybrown;
+}
 input {
     flex: 1;
     border-radius: 20px;
@@ -24,7 +26,12 @@ input {
 }
 
 button {
+
     background-color: var(--custom-blue);
+    :hover{
+        background-color: lightgoldenrodyellow;
+    }
+
 }
 
 main {
@@ -38,9 +45,8 @@ main {
     :hover {
         background-color: darkslateblue;
     }
-    section {
+    button {
         border-radius: 20%;
-        border: black solid 1px;
         justify-content: center;
         align-items: center;
         img {

@@ -26,14 +26,14 @@
   <main>
     <section id="board" class="board">
       <script>
-        const segment = '<section class="closed">' +
+        const segment = '<button class="closed">' +
           ' <p></p>' +
-          '</section>';
-        document.getElementById('board').innerHTML = segment.repeat(55);
+          '</button>';
+        document.getElementById('board').innerHTML = segment.repeat((8*8)-1);
       </script>
-      <section>
+      <button>
         <img src="https://cdn.pixabay.com/photo/2026/03/17/12/10/hoggyart-black-and-white-10178638_1280.jpg" alt="young dog" />
-      </section>
+      </button>
     </section>
 
     <section class="lbSection">
