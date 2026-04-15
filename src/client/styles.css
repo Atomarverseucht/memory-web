@@ -1,6 +1,9 @@
 * {
   font-family: sans-serif;
 }
+:root {
+  --hover-color: lightblue
+}
 
 body {
   font-size: 16pt;
@@ -40,7 +43,7 @@ article > h2 {
   display: grid;
   grid-template-columns: repeat(3, 33%);
   :hover {
-    background-color: lightblue;
+    background-color: var(--hover-color);
   }
 
 }

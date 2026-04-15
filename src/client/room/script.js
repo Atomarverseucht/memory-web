@@ -5,7 +5,9 @@ let oldInnerHTML = "";
 function initLeaderboard() {
   let tblStart = "<table id='leaderboardID'>";
   let tblEnd = "</table>";
-  let lb = tblStart + "<tr><td>Player</td><td>Score</td></tr>" + tblEnd;
+  let lb = tblStart + "<tr><td>Player</td><td>Score</td></tr>"
+      + "<tr><td>Player1</td><td>0</td></tr>"
+      + "<tr><td>LongExamplePlayerName</td><td>10000000000</td></tr>" + tblEnd;
   let leader_id = document.getElementById("leaderboard_p");
   leader_id.innerHTML = lb;
   oldInnerHTML = leader_id.getHTML()
