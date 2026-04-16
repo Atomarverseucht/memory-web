@@ -27,7 +27,7 @@ h6 {
 header {
   background-color: #00008f;
   color: #00afff;
-  border-radius: 10px;
+  border-radius: 10vh;
   border-style: groove;
 
   display: flex;
