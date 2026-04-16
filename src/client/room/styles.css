@@ -2,7 +2,6 @@
 
 input {
     flex: 1;
-    border-radius: 10%;
     max-width: 70%;
     :hover{
         background-color: var(--hover-color);
@@ -50,6 +49,7 @@ main {
         justify-content: center;
         align-items: center;
         img {
+            border-radius: 10%;
             max-width: 100%;
             max-height: 100%;
         }
