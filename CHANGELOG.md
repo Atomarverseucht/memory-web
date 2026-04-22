@@ -1,3 +1,10 @@
+# [1.3.0-dev.1](https://github.com/Atomarverseucht/memory-web/compare/1.2.2-dev.1...1.3.0-dev.1) (2026-04-22)
+
+
+### Features
+
+* Alone site ([3fb94c6](https://github.com/Atomarverseucht/memory-web/commit/3fb94c6a360ef26cf7e6fb1da3a2db6b31ad8d2f))
+
 ## [1.2.2-dev.1](https://github.com/Atomarverseucht/memory-web/compare/1.2.1...1.2.2-dev.1) (2026-04-16)
 
 
