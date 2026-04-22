@@ -3,7 +3,7 @@
 input {
     flex: 1;
     max-width: 70%;
-    :hover{
+    :hover, :focus{
         background-color: var(--hover-color);
     }
 }
@@ -23,7 +23,7 @@ td:nth-child(2) {
     display: flex;
     gap: 1rem;
     margin-bottom: 10px;
-    :hover{
+    :hover, :focus{
         background-color: var(--hover-color);
     }
 }
@@ -34,14 +34,19 @@ button {
 }
 
 main {
-  display: flex;
+  display: grid;
+    grid-template-columns: 1fr 1fr;
 }
-
+@media (orientation: portrait) {
+    main {
+        display: flow;
+    }
+}
 .board {
     display: grid;
-    grid-template-columns: repeat(8, 10.25vw);
-    grid-template-rows: repeat(8, 10.25vw);
-    :hover {
+    grid-template-columns: repeat(8, 12vmin);
+    grid-template-rows: repeat(8, 12vmin);
+    :hover, :focus {
         background-color: var(--hover-color);
     }
     button {

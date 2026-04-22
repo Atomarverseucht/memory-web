@@ -10,16 +10,22 @@ main {
     grid-template-columns: 50vw 50vw;
     font-size: 2rem;
     a {
+        display: flex;
         font-size: inherit;
         background-color: lightcoral;
         border: black solid 1px;
         text-align: center;
+        height: 50vh;
+        justify-content: center;
+        align-items: center;
     }
 }
 
-#playCPU:hover {
-    background-color: #7777ff;
+#playCPU:hover,
+#playCPU:focus {
+    background-color: greenyellow;
 }
-#playAlone:hover {
-    background-color: skyblue;
+#playAlone:hover,
+#playAlone:focus {
+    background-color: orangered;
 }

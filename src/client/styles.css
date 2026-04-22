@@ -24,6 +24,9 @@ h6 {
   margin-bottom: 0.5rem;
 }
 
+a {
+  text-decoration: none;
+}
 header {
   background-color: #00008f;
   color: #00afff;
@@ -42,7 +45,7 @@ article > h2 {
 .select-memory {
   display: grid;
   grid-template-columns: repeat(3, 33%);
-  :hover {
+  :hover, :focus {
     background-color: var(--hover-color);
   }
 }
