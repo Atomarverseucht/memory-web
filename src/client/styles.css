@@ -24,10 +24,13 @@ h6 {
   margin-bottom: 0.5rem;
 }
 
+a {
+  text-decoration: none;
+}
 header {
   background-color: #00008f;
   color: #00afff;
-  border-radius: 10px;
+  border-radius: 10vmin;
   border-style: groove;
 
   display: flex;
@@ -42,7 +45,7 @@ article > h2 {
 .select-memory {
   display: grid;
   grid-template-columns: repeat(3, 33%);
-  :hover {
+  :hover, :focus {
     background-color: var(--hover-color);
   }
 }
@@ -67,10 +70,30 @@ article > h2 {
   }
 }
 
-footer{
+footer {
   background-color: lightgoldenrodyellow;
 }
 
 #app {
   padding: 1rem;
+}
+
+.setup {
+  display: grid;
+  grid-template-columns: repeat(2, 50vw);
+  .codeSection {
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    :hover, :focus{
+      background-color: var(--hover-color);
+    }
+    *{
+      font-size: inherit;
+
+    }
+  }
 }
