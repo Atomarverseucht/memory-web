@@ -16,3 +16,10 @@ main {
         text-align: center;
     }
 }
+
+#playCPU:hover {
+    background-color: #7777ff;
+}
+#playAlone:hover {
+    background-color: skyblue;
+}
