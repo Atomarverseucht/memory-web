@@ -34,8 +34,9 @@ button {
 }
 
 main {
-  display: grid;
-    grid-template-columns: 1fr 1fr;
+    container-type: size;
+    display: grid;
+    grid-template-columns: 100cqh 1fr;
 }
 @media (orientation: portrait) {
     main {

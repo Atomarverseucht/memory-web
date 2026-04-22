@@ -30,7 +30,7 @@ a {
 header {
   background-color: #00008f;
   color: #00afff;
-  border-radius: 10vh;
+  border-radius: 10vmin;
   border-style: groove;
 
   display: flex;
