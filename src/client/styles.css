@@ -88,8 +88,12 @@ footer {
     justify-content: center;
     gap: 10px;
     width: 100%;
+    :hover, :focus{
+      background-color: var(--hover-color);
+    }
     *{
       font-size: inherit;
+
     }
   }
 }
