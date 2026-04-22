@@ -1,3 +1,36 @@
+# [1.3.0-dev.3](https://github.com/Atomarverseucht/memory-web/compare/1.3.0-dev.2...1.3.0-dev.3) (2026-04-22)
+
+
+### Bug Fixes
+
+* Vover effect for code input ([0557572](https://github.com/Atomarverseucht/memory-web/commit/05575726415c2cb190c315fbcada13b62eb91000))
+
+# [1.3.0-dev.2](https://github.com/Atomarverseucht/memory-web/compare/1.3.0-dev.1...1.3.0-dev.2) (2026-04-22)
+
+
+### Bug Fixes
+
+* styling ([482e0d3](https://github.com/Atomarverseucht/memory-web/commit/482e0d31a4180b073176fc6de37d81d2c9988237))
+
+
+### Features
+
+* Hover effect if you use tab to select ([4ee0157](https://github.com/Atomarverseucht/memory-web/commit/4ee01571c90a834ff99fffc8b6eccf237fc319da))
+
+# [1.3.0-dev.1](https://github.com/Atomarverseucht/memory-web/compare/1.2.2-dev.1...1.3.0-dev.1) (2026-04-22)
+
+
+### Features
+
+* Alone site ([3fb94c6](https://github.com/Atomarverseucht/memory-web/commit/3fb94c6a360ef26cf7e6fb1da3a2db6b31ad8d2f))
+
+## [1.2.2-dev.1](https://github.com/Atomarverseucht/memory-web/compare/1.2.1...1.2.2-dev.1) (2026-04-16)
+
+
+### Bug Fixes
+
+* style ([1ac90a0](https://github.com/Atomarverseucht/memory-web/commit/1ac90a0523ed03437315de4ea74fe23f88040fed))
+
 ## [1.2.1](https://github.com/Atomarverseucht/memory-web/compare/1.2.0...1.2.1) (2026-04-15)
 
 
