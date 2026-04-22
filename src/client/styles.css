@@ -45,7 +45,6 @@ article > h2 {
   :hover {
     background-color: var(--hover-color);
   }
-
 }
 
 @media (min-width: 768px) {
@@ -68,10 +67,26 @@ article > h2 {
   }
 }
 
-footer{
+footer {
   background-color: lightgoldenrodyellow;
 }
 
 #app {
   padding: 1rem;
+}
+
+.setup {
+  display: grid;
+  grid-template-columns: repeat(2, 50vw);
+  .codeSection {
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    *{
+      font-size: inherit;
+    }
+  }
 }
