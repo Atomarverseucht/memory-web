@@ -1,3 +1,10 @@
+# [1.3.0-dev.3](https://github.com/Atomarverseucht/memory-web/compare/1.3.0-dev.2...1.3.0-dev.3) (2026-04-22)
+
+
+### Bug Fixes
+
+* Vover effect for code input ([0557572](https://github.com/Atomarverseucht/memory-web/commit/05575726415c2cb190c315fbcada13b62eb91000))
+
 # [1.3.0-dev.2](https://github.com/Atomarverseucht/memory-web/compare/1.3.0-dev.1...1.3.0-dev.2) (2026-04-22)
 
 
