@@ -1,3 +1,15 @@
+# [1.3.0-dev.2](https://github.com/Atomarverseucht/memory-web/compare/1.3.0-dev.1...1.3.0-dev.2) (2026-04-22)
+
+
+### Bug Fixes
+
+* styling ([482e0d3](https://github.com/Atomarverseucht/memory-web/commit/482e0d31a4180b073176fc6de37d81d2c9988237))
+
+
+### Features
+
+* Hover effect if you use tab to select ([4ee0157](https://github.com/Atomarverseucht/memory-web/commit/4ee01571c90a834ff99fffc8b6eccf237fc319da))
+
 # [1.3.0-dev.1](https://github.com/Atomarverseucht/memory-web/compare/1.2.2-dev.1...1.3.0-dev.1) (2026-04-22)
 
 
