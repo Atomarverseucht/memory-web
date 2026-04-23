@@ -38,7 +38,7 @@ main {
     display: grid;
     grid-template-columns: 100cqh 1fr;
 }
-@media (orientation: portrait) {
+@media (max-aspect-ratio: 1.2) {
     main {
         display: flow;
     }
