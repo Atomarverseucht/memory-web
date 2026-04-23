@@ -80,20 +80,24 @@ footer {
 
 .setup {
   display: grid;
-  grid-template-columns: repeat(2, 50vw);
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
   .codeSection {
+    max-width: 100%;
+    box-sizing: border-box;
     font-size: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
-    width: 100%;
     :hover, :focus{
       background-color: var(--hover-color);
     }
     *{
       font-size: inherit;
-
+    }
+    input{
+      max-width: 150px;
     }
   }
 }
