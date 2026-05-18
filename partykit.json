@@ -3,5 +3,9 @@
   "name": "memory-web",
   "main": "src/server/server.ts",
   "compatibilityDate": "2026-04-02",
-  "serve": "src/client/"
+  "serve": {
+  "entry": [
+    "src/client/",
+    "src/client/test/test.tsx"
+  ]},
 }
