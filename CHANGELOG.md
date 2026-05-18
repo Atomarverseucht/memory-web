@@ -1,3 +1,10 @@
+## [1.3.2-dev.1](https://github.com/Atomarverseucht/memory-web/compare/1.3.1...1.3.2-dev.1) (2026-04-23)
+
+
+### Bug Fixes
+
+* styling of room ([e8c5be8](https://github.com/Atomarverseucht/memory-web/commit/e8c5be8cf1e06293f69aad4c14888ae0fae6ab0e))
+
 ## [1.3.1](https://github.com/Atomarverseucht/memory-web/compare/1.3.0...1.3.1) (2026-04-23)
 
 
