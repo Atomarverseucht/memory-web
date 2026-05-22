@@ -1,3 +1,16 @@
+# [1.4.0-dev.2](https://github.com/Atomarverseucht/memory-web/compare/1.4.0-dev.1...1.4.0-dev.2) (2026-05-22)
+
+
+### Bug Fixes
+
+* added plattform support for the action ([7c8b8e5](https://github.com/Atomarverseucht/memory-web/commit/7c8b8e578e61f2a0ae112fd50a21dd953c16f17d))
+* package-lock is now gitignored ([762c598](https://github.com/Atomarverseucht/memory-web/commit/762c5981628ccdc28437a7084f6ab63394425794))
+
+
+### Features
+
+* added vite and changed the config a lot! ([4441164](https://github.com/Atomarverseucht/memory-web/commit/4441164a60cf3c860f9e476592dc74e5b9fe0630))
+
 # [1.4.0-dev.1](https://github.com/Atomarverseucht/memory-web/compare/1.3.2-dev.2...1.4.0-dev.1) (2026-05-22)
 
 
