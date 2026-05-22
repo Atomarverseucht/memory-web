@@ -1,3 +1,10 @@
+# [1.4.0-dev.1](https://github.com/Atomarverseucht/memory-web/compare/1.3.2-dev.2...1.4.0-dev.1) (2026-05-22)
+
+
+### Features
+
+* reactify start-page ([84b17bf](https://github.com/Atomarverseucht/memory-web/commit/84b17bf43f5e934967a9ed021e5731c96b802145))
+
 ## [1.3.2-dev.2](https://github.com/Atomarverseucht/memory-web/compare/1.3.2-dev.1...1.3.2-dev.2) (2026-05-18)
 
 
