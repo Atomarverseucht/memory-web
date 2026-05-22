@@ -3,8 +3,10 @@
   "name": "memory-web",
   "main": "src/server/server.ts",
   "compatibilityDate": "2026-04-02",
-  "serve": {
-    "path": "public",
-    "build": "src/client/client.tsx"
+  "compatibilityFlags": ["global_fetch_private_origin"],
+  "serve": "dist-client",
+  "build": {
+    "command": "npm run build",
+    "watch": ["src/server"]
   }
 }
