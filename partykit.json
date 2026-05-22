@@ -4,8 +4,7 @@
   "main": "src/server/server.ts",
   "compatibilityDate": "2026-04-02",
   "serve": {
-  "entry": [
-    "src/client/",
-    "src/client/test/test.tsx"
-  ]},
+    "path": "public",
+    "build": "src/client/client.tsx"
+  }
 }
