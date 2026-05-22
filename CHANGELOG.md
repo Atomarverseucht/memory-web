@@ -1,3 +1,10 @@
+## [1.3.2-dev.2](https://github.com/Atomarverseucht/memory-web/compare/1.3.2-dev.1...1.3.2-dev.2) (2026-05-18)
+
+
+### Bug Fixes
+
+* added some payload type ([585189f](https://github.com/Atomarverseucht/memory-web/commit/585189f9c48db48492dcfb89ade122dba6fb00df))
+
 ## [1.3.2-dev.1](https://github.com/Atomarverseucht/memory-web/compare/1.3.1...1.3.2-dev.1) (2026-04-23)
 
 
