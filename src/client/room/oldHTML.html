@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>memory - room</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="script.js"></script>
+</head>
+
+<body>
+<header>
+    <h1>Memory - Room</h1>
+</header>
+
+<br>
+
+<article>
+    <section class="nameSection">
+        <label for="name-input">Username:</label>
+        <input id="name-input" type="text" placeholder="Max Mustermann" />
+        <button id="name-submit" onclick="addPlayer()">Submit</button>
+    </section>
+</article>
+
+<main>
+    <section id="board" class="board">
+        <script>
+            const segment = '<button class="closed">' +
+                ' <p></p>' +
+                '</button>';
+            document.getElementById('board').innerHTML = segment.repeat((8*8)-1);
+        </script>
+        <button>
+            <img src="https://cdn.pixabay.com/photo/2026/03/17/12/10/hoggyart-black-and-white-10178638_1280.jpg" alt="young dog" />
+        </button>
+    </section>
+
+    <section class="lbSection">
+        <p id="leaderboard_p"></p>
+        <script>
+            initLeaderboard();
+        </script>
+    </section>
+</main>
+</body>
+</html>
