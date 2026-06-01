@@ -1,3 +1,10 @@
+# [1.4.0-dev.3](https://github.com/Atomarverseucht/memory-web/compare/1.4.0-dev.2...1.4.0-dev.3) (2026-06-01)
+
+
+### Bug Fixes
+
+* added a new test for room ([3c3b8f6](https://github.com/Atomarverseucht/memory-web/commit/3c3b8f6ea142c9a56c96fdbbd8ba866f9b048d0d))
+
 # [1.4.0-dev.2](https://github.com/Atomarverseucht/memory-web/compare/1.4.0-dev.1...1.4.0-dev.2) (2026-05-22)
 
 
