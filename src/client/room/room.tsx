@@ -1,12 +1,15 @@
 import {createRoot} from "react-dom/client";
 
+function nothing() {}
 export function App(){
-    return (<main>
+    return (
         <article>
-            <h2>Please select your THEME</h2>
-            <p>The themes are the indicator with which set you will be playing.</p>
-        </article>
-    </main>);
+            <section className="nameSection">
+                <label htmlFor="name-input">Username:</label>
+                <input id="name-input" type="text" placeholder="Max Mustermann"/>
+                <button id="name-submit" onClick={nothing}>Submit</button>
+            </section>
+        </article> );
 }
 
 createRoot(document.getElementById("app")!).render(<App/>);
