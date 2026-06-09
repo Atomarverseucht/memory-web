@@ -1,3 +1,10 @@
+# [1.4.0-dev.4](https://github.com/Atomarverseucht/memory-web/compare/1.4.0-dev.3...1.4.0-dev.4) (2026-06-09)
+
+
+### Bug Fixes
+
+* new example data ([b5c1ac7](https://github.com/Atomarverseucht/memory-web/commit/b5c1ac7fe94885569c33b04e468f30f0d830e0c3))
+
 # [1.4.0-dev.3](https://github.com/Atomarverseucht/memory-web/compare/1.4.0-dev.2...1.4.0-dev.3) (2026-06-01)
 
 
