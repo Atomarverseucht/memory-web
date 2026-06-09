@@ -1,8 +1,9 @@
 import "./styles.css";
 import { createRoot } from "react-dom/client";
 import Counter from "./components/Counter";
-import {type MemorySet, memSets} from "../shared/MemorySet";
+import {type MemorySet} from "../shared/MemorySet";
 import UIMemSet from "./components/UIMemSet"
+import {memSets} from "../shared/exampleSets";
 
 function App() {
     return (
