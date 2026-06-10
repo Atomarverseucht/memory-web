@@ -1,8 +1,8 @@
 import "./styles.css";
 import { createRoot } from "react-dom/client";
-import Counter from "./components/Counter";
 import {type MemorySet} from "../shared/MemorySet";
 import UIMemSet from "./components/UIMemSet"
+import {CodeSection} from "./components/codeSection";
 import {memSets} from "../shared/exampleSets";
 
 function App() {
@@ -13,16 +13,10 @@ function App() {
                   <h2>Please select your THEME</h2>
                   <p>The themes are the indicator with which set you will be playing.</p>
               </article>
-              <article className="codeSection">
-                  <label htmlFor="code">Code:</label>
-                  <input id="code" type="text" placeholder="roomkey" maxLength={6}/>
-                  <button id="submitCode" onClick={nothing}>Submit</button>
-              </article>
+              <CodeSection />
           </section>
           <UIMemSet memSet={memSets} />
       </main>
       );
     }
 createRoot(document.getElementById("app")!).render(<App/>);
-
-function nothing() {}
