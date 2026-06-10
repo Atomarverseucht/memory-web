@@ -1,7 +1,7 @@
 export interface MemorySet {
     name: string;
     titlePicture: Card;
-    cards?: Card[];
+    cards: Card[];
 }
 
 export interface Card {

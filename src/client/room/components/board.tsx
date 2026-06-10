@@ -1,5 +1,20 @@
-export function board(){
+import type {BoardUI} from "../../../shared/BoardUI";
+
+
+export function Board({board}: BoardUI){
     return (
-        <article id="board"></article>
+        <section className="board">
+            { board.map((card, i) =>
+                 (typeof card === "object") ?
+                    ( <button>
+                        <img
+                            src={card.picture}
+                            alt={card.altText}/>
+                    </button> ) :
+                    ( <button className="closed">
+                        <p> </p>
+                    </button> )
+            )}
+        </section>
     )
 }
