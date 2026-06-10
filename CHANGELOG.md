@@ -1,3 +1,10 @@
+# [1.4.0-dev.7](https://github.com/Atomarverseucht/memory-web/compare/1.4.0-dev.6...1.4.0-dev.7) (2026-06-10)
+
+
+### Bug Fixes
+
+* new component codeSection.tsx ! ([ff9ed8c](https://github.com/Atomarverseucht/memory-web/commit/ff9ed8c3ac5a96e930bf787b50a0e18ee450d43a))
+
 # [1.4.0-dev.6](https://github.com/Atomarverseucht/memory-web/compare/1.4.0-dev.5...1.4.0-dev.6) (2026-06-10)
 
 
