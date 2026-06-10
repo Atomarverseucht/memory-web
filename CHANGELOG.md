@@ -1,3 +1,15 @@
+# [2.0.0-dev.1](https://github.com/Atomarverseucht/memory-web/compare/1.4.0-dev.7...2.0.0-dev.1) (2026-06-10)
+
+
+### Features
+
+* Backend start ([4197d19](https://github.com/Atomarverseucht/memory-web/commit/4197d19b867450e852f21056a2cd03f8abe29c46))
+
+
+### BREAKING CHANGES
+
+* React Frontend & a little bit of backend
+
 # [1.4.0-dev.7](https://github.com/Atomarverseucht/memory-web/compare/1.4.0-dev.6...1.4.0-dev.7) (2026-06-10)
 
 
