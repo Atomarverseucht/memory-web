@@ -1,7 +1,7 @@
 import type {BoardUI} from "../../../shared/BoardUI";
 
-
-export function Board({board}: BoardUI){
+type BoardProps = {board: BoardUI}
+export function Board({board}: BoardProps){
     return (
         <section className="board">
             { board.map((card, i) =>

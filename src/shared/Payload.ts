@@ -5,6 +5,7 @@ import type {BoardUI as Board} from "./BoardUI";
 export interface Payload {
     readonly board?: Board;
     readonly users?: Player[];
+    readonly ownId?: Board;
 }
 
 export interface startPayload {
