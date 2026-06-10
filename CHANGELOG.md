@@ -1,3 +1,10 @@
+# [1.4.0-dev.6](https://github.com/Atomarverseucht/memory-web/compare/1.4.0-dev.5...1.4.0-dev.6) (2026-06-10)
+
+
+### Features
+
+* room now reactifyed ([2454645](https://github.com/Atomarverseucht/memory-web/commit/245464554d58d48a6beabbce15cacf50009483d4))
+
 # [1.4.0-dev.5](https://github.com/Atomarverseucht/memory-web/compare/1.4.0-dev.4...1.4.0-dev.5) (2026-06-09)
 
 
