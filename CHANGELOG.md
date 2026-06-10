@@ -1,3 +1,10 @@
+# [2.0.0-dev.2](https://github.com/Atomarverseucht/memory-web/compare/2.0.0-dev.1...2.0.0-dev.2) (2026-06-10)
+
+
+### Features
+
+* Backend v1.0 ([e52c9f4](https://github.com/Atomarverseucht/memory-web/commit/e52c9f4e8adddf57f41c8e369a7f0efbb5386796))
+
 # [2.0.0-dev.1](https://github.com/Atomarverseucht/memory-web/compare/1.4.0-dev.7...2.0.0-dev.1) (2026-06-10)
 
 
