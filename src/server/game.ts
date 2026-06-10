@@ -2,10 +2,11 @@ import type {BoardUI} from "../shared/BoardUI";
 import type {Card, MemorySet} from "../shared/MemorySet";
 
 export class Game {
-    private board: BoardUI;
+    private readonly board: BoardUI;
     public boardUI: BoardUI = new Array(64).fill("closed")
-    public state: 0 | 1 | 2 = 0
+    public state: 0 | 1 = 0
     private lastClient?: string = undefined
+    private lastOpened: number = 0
 
     constructor(memSet: MemorySet) {
         let numbers = new Array<number>();
@@ -24,8 +25,21 @@ export class Game {
         this.board = b;
     }
 
-    openField(clientID: string, x: number, y: number) {
-
+    public openField(clientID: string, x: number) {
+        let afterTurnBoard: BoardUI | undefined = undefined;
+        switch(this.state){
+            case 0:
+                this.lastOpened = x;
+                this.lastClient = clientID;
+                this.state = 1; break;
+            case 1:
+                if (clientID !== this.lastClient || (this.boardUI[x] !== "closed")) {return;}
+                afterTurnBoard = this.boardUI;
+                afterTurnBoard[this.lastOpened] = "closed";
+                this.state = 0; break;
+        }
+        this.boardUI[x] = this.board[x];
+        return afterTurnBoard;
     }
 }
 

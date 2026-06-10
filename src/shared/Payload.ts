@@ -2,12 +2,18 @@ import type {MemorySet} from "./MemorySet";
 import type {Player} from "./Player";
 import type {BoardUI as Board} from "./BoardUI";
 
-export interface Payload {
+export type Payload = {
     readonly board?: Board;
+    readonly boardAfterTurn?: Board;
     readonly users?: Player[];
-    readonly ownId?: Board;
+    readonly ownId?: string;
 }
 
-export interface startPayload {
+export type startPayload = {
     readonly sets: MemorySet[];
+}
+
+export type clientPayload = {
+    readonly cmd: string;
+    readonly x: number;
 }
