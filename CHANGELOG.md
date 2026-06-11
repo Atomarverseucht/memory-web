@@ -1,3 +1,10 @@
+# [2.0.0-dev.4](https://github.com/Atomarverseucht/memory-web/compare/2.0.0-dev.3...2.0.0-dev.4) (2026-06-11)
+
+
+### Bug Fixes
+
+* Herumgebastelt in der Übungsstunde ([adfdc0a](https://github.com/Atomarverseucht/memory-web/commit/adfdc0ac4896794b1fda78b2edb6ed07c7afb00a))
+
 # [2.0.0-dev.3](https://github.com/Atomarverseucht/memory-web/compare/2.0.0-dev.2...2.0.0-dev.3) (2026-06-11)
 
 
