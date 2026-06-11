@@ -12,7 +12,7 @@ export class Game {
 
     constructor(memSet: MemorySet) {
         let numbers = new Array<number>();
-        let b = new Array<Card>();
+        let b;
         b = shuffle(memSet.cards);
         b = b.slice(0,32);
         b = [...b, ...b]
