@@ -97,7 +97,7 @@ web_modules/
 .env
 .env.development.local
 .env.test.local
-.env.production.local
+.env.production.locale
 .env.local
 
 # parcel-bundler cache (https://parceljs.org/)
@@ -132,7 +132,6 @@ dist
 # vuepress v2.x temp and cache directory
 
 .temp
-.cache
 
 # Docusaurus cache and generated files
 
@@ -173,3 +172,4 @@ dist
 
 .partykit
 .DS_Store
+dist-client/assets/

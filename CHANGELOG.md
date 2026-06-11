@@ -1,3 +1,120 @@
+# [2.0.0-dev.6](https://github.com/Atomarverseucht/memory-web/compare/2.0.0-dev.5...2.0.0-dev.6) (2026-06-11)
+
+
+### Bug Fixes
+
+* backend bugfix ([9f0f05a](https://github.com/Atomarverseucht/memory-web/commit/9f0f05a221cc867d80e3792857fee2637dd8f1b3))
+
+# [2.0.0-dev.5](https://github.com/Atomarverseucht/memory-web/compare/2.0.0-dev.4...2.0.0-dev.5) (2026-06-11)
+
+
+### Bug Fixes
+
+* State is now working, backend has bugs ([74751c6](https://github.com/Atomarverseucht/memory-web/commit/74751c68351b52258b4c105da0d7b30d5cd9394e))
+
+# [2.0.0-dev.4](https://github.com/Atomarverseucht/memory-web/compare/2.0.0-dev.3...2.0.0-dev.4) (2026-06-11)
+
+
+### Bug Fixes
+
+* Herumgebastelt in der Übungsstunde ([adfdc0a](https://github.com/Atomarverseucht/memory-web/commit/adfdc0ac4896794b1fda78b2edb6ed07c7afb00a))
+
+# [2.0.0-dev.3](https://github.com/Atomarverseucht/memory-web/compare/2.0.0-dev.2...2.0.0-dev.3) (2026-06-11)
+
+
+### Bug Fixes
+
+* I hate React Contexts ([65538bc](https://github.com/Atomarverseucht/memory-web/commit/65538bc440728502977f90affb1dd5c8e33d6202))
+* I hate React Contexts ([6c19e25](https://github.com/Atomarverseucht/memory-web/commit/6c19e252d89ae585c1c142fe6971f73a5ca67bb3))
+
+# [2.0.0-dev.2](https://github.com/Atomarverseucht/memory-web/compare/2.0.0-dev.1...2.0.0-dev.2) (2026-06-10)
+
+
+### Features
+
+* Backend v1.0 ([e52c9f4](https://github.com/Atomarverseucht/memory-web/commit/e52c9f4e8adddf57f41c8e369a7f0efbb5386796))
+
+# [2.0.0-dev.1](https://github.com/Atomarverseucht/memory-web/compare/1.4.0-dev.7...2.0.0-dev.1) (2026-06-10)
+
+
+### Features
+
+* Backend start ([4197d19](https://github.com/Atomarverseucht/memory-web/commit/4197d19b867450e852f21056a2cd03f8abe29c46))
+
+
+### BREAKING CHANGES
+
+* React Frontend & a little bit of backend
+
+# [1.4.0-dev.7](https://github.com/Atomarverseucht/memory-web/compare/1.4.0-dev.6...1.4.0-dev.7) (2026-06-10)
+
+
+### Bug Fixes
+
+* new component codeSection.tsx ! ([ff9ed8c](https://github.com/Atomarverseucht/memory-web/commit/ff9ed8c3ac5a96e930bf787b50a0e18ee450d43a))
+
+# [1.4.0-dev.6](https://github.com/Atomarverseucht/memory-web/compare/1.4.0-dev.5...1.4.0-dev.6) (2026-06-10)
+
+
+### Features
+
+* room now reactifyed ([2454645](https://github.com/Atomarverseucht/memory-web/commit/245464554d58d48a6beabbce15cacf50009483d4))
+
+# [1.4.0-dev.5](https://github.com/Atomarverseucht/memory-web/compare/1.4.0-dev.4...1.4.0-dev.5) (2026-06-09)
+
+
+### Bug Fixes
+
+* new content ([92a9fa5](https://github.com/Atomarverseucht/memory-web/commit/92a9fa5c30929c03806ee036bbf5cc4d20df35fe))
+
+# [1.4.0-dev.4](https://github.com/Atomarverseucht/memory-web/compare/1.4.0-dev.3...1.4.0-dev.4) (2026-06-09)
+
+
+### Bug Fixes
+
+* new example data ([b5c1ac7](https://github.com/Atomarverseucht/memory-web/commit/b5c1ac7fe94885569c33b04e468f30f0d830e0c3))
+
+# [1.4.0-dev.3](https://github.com/Atomarverseucht/memory-web/compare/1.4.0-dev.2...1.4.0-dev.3) (2026-06-01)
+
+
+### Bug Fixes
+
+* added a new test for room ([3c3b8f6](https://github.com/Atomarverseucht/memory-web/commit/3c3b8f6ea142c9a56c96fdbbd8ba866f9b048d0d))
+
+# [1.4.0-dev.2](https://github.com/Atomarverseucht/memory-web/compare/1.4.0-dev.1...1.4.0-dev.2) (2026-05-22)
+
+
+### Bug Fixes
+
+* added plattform support for the action ([7c8b8e5](https://github.com/Atomarverseucht/memory-web/commit/7c8b8e578e61f2a0ae112fd50a21dd953c16f17d))
+* package-lock is now gitignored ([762c598](https://github.com/Atomarverseucht/memory-web/commit/762c5981628ccdc28437a7084f6ab63394425794))
+
+
+### Features
+
+* added vite and changed the config a lot! ([4441164](https://github.com/Atomarverseucht/memory-web/commit/4441164a60cf3c860f9e476592dc74e5b9fe0630))
+
+# [1.4.0-dev.1](https://github.com/Atomarverseucht/memory-web/compare/1.3.2-dev.2...1.4.0-dev.1) (2026-05-22)
+
+
+### Features
+
+* reactify start-page ([84b17bf](https://github.com/Atomarverseucht/memory-web/commit/84b17bf43f5e934967a9ed021e5731c96b802145))
+
+## [1.3.2-dev.2](https://github.com/Atomarverseucht/memory-web/compare/1.3.2-dev.1...1.3.2-dev.2) (2026-05-18)
+
+
+### Bug Fixes
+
+* added some payload type ([585189f](https://github.com/Atomarverseucht/memory-web/commit/585189f9c48db48492dcfb89ade122dba6fb00df))
+
+## [1.3.2-dev.1](https://github.com/Atomarverseucht/memory-web/compare/1.3.1...1.3.2-dev.1) (2026-04-23)
+
+
+### Bug Fixes
+
+* styling of room ([e8c5be8](https://github.com/Atomarverseucht/memory-web/commit/e8c5be8cf1e06293f69aad4c14888ae0fae6ab0e))
+
 ## [1.3.1](https://github.com/Atomarverseucht/memory-web/compare/1.3.0...1.3.1) (2026-04-23)
 
 

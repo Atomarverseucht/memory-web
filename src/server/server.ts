@@ -1,49 +1,59 @@
 import type * as Party from "partykit/server";
+import type {Payload} from "../shared/Payload";
+import {Game} from "./game";
+import {memSets} from "../shared/exampleSets";
+import {Player} from "../shared/Player";
+import type {BoardUI} from "../shared/BoardUI";
 
 export default class Server implements Party.Server {
-  count = 0;
-
+  private game: Game = new Game(memSets[1]);
+  public users = new Map<string, Player>([["addjhgkj", new Player("example", 132)], ["asjhkhk", new Player("ex", 1332)]]);
+  private userCount = 0;
   constructor(readonly room: Party.Room) {}
 
+  // Init
   onConnect(conn: Party.Connection, ctx: Party.ConnectionContext) {
-    // A websocket just connected!
-    console.log(
-      `Connected:
-  id: ${conn.id}
-  room: ${this.room.id}
-  url: ${new URL(ctx.request.url).pathname}`
-    );
-
-    // send the current count to the new client
-    conn.send(this.count.toString());
+    console.log("server.init")
+    const user = new Player(`Player ${this.userCount++}`);
+    const pl = this.makePayload("init", user.id)
+    conn.send(JSON.stringify(pl));
   }
 
-  onMessage(message: string, sender: Party.Connection) {
-    // let's log the message
-    console.log(`connection ${sender.id} sent message: ${message}`);
-    // we could use a more sophisticated protocol here, such as JSON
-    // in the message data, but for simplicity we just use a string
-    if (message === "increment") {
-      this.increment();
+  onMessage(message: string, conn: Party.Connection) {
+    console.log("server.onMessage")
+    const data = JSON.parse(message)
+    if (data.cmd === "open") {
+      this.game.openField(conn.id, data.x, this)
     }
+  }
+
+  breadcast(payload: Payload) {
+    this.room.broadcast(JSON.stringify(payload));
   }
 
   onRequest(req: Party.Request) {
-    // response to any HTTP request (any method, any path) with the current
-    // count. This allows us to use SSR to give components an initial value
-
-    // if the request is a POST, increment the count
-    if (req.method === "POST") {
-      this.increment();
-    }
-
-    return new Response(this.count.toString());
+    console.log("server.onRequest")
+    return new Response("nothing");
   }
 
-  increment() {
-    this.count = (this.count + 1) % 100;
-    // broadcast the new count to all clients
-    this.room.broadcast(this.count.toString(), []);
+  makePayload(type: "init" | "turn" | "names", ownId?: string, boardAfterTurn?: BoardUI): Payload {
+    switch (type) {
+      case "init":
+        return {
+          board: this.game.boardUI,
+          users: Array.from(this.users.values()),
+          ownId: ownId
+        };
+      case "turn":
+        return {
+          board: this.game.boardUI,
+          boardAfterTurn: boardAfterTurn,
+        };
+      case "names":
+        return {
+          users: Array.from(this.users.values()),
+        }
+    }
   }
 }
 
