@@ -1,3 +1,11 @@
+# [2.0.0-dev.3](https://github.com/Atomarverseucht/memory-web/compare/2.0.0-dev.2...2.0.0-dev.3) (2026-06-11)
+
+
+### Bug Fixes
+
+* I hate React Contexts ([65538bc](https://github.com/Atomarverseucht/memory-web/commit/65538bc440728502977f90affb1dd5c8e33d6202))
+* I hate React Contexts ([6c19e25](https://github.com/Atomarverseucht/memory-web/commit/6c19e252d89ae585c1c142fe6971f73a5ca67bb3))
+
 # [2.0.0-dev.2](https://github.com/Atomarverseucht/memory-web/compare/2.0.0-dev.1...2.0.0-dev.2) (2026-06-10)
 
 
