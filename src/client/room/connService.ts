@@ -22,9 +22,9 @@ export class connectService {
     }
 
     private onMessage(message: MessageEvent){
-        console.log("message")
-        const state = message.data as Partial<UIState>;
-        this.changeState(state);
+        console.log(this.socket.id)
+        const pl = JSON.parse(message.data);
+        this.changeState(pl);
     }
 
     public sendMessage(data: clientPayload){

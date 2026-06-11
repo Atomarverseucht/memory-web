@@ -23,10 +23,12 @@ export default class Server implements Party.Server {
     console.log("server.onMessage")
     const data = JSON.parse(message)
     if (data.cmd === "open") {
-      const pl = this.makePayload("turn", conn.id, this.game.openField(conn.id, data.x))
-      this.room.broadcast(JSON.stringify(pl));
-      console.log(pl);
+      this.game.openField(conn.id, data.x, this)
     }
+  }
+
+  breadcast(payload: Payload) {
+    this.room.broadcast(JSON.stringify(payload));
   }
 
   onRequest(req: Party.Request) {

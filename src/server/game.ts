@@ -1,5 +1,6 @@
 import type {BoardUI} from "../shared/BoardUI";
 import type {Card, MemorySet} from "../shared/MemorySet";
+import Server from "./server";
 
 export class Game {
     private readonly board: BoardUI;
@@ -25,7 +26,7 @@ export class Game {
         this.board = b;
     }
 
-    public openField(clientID: string, x: number) {
+    public openField(clientID: string, x: number, server: Server) {
         let afterTurnBoard: BoardUI | undefined = undefined;
         switch(this.state){
             case 0:
@@ -38,7 +39,13 @@ export class Game {
                 this.state = 0; break;
         }
         this.boardUI[x] = this.board[x];
-        return afterTurnBoard;
+        server.breadcast(server.makePayload("turn", clientID))
+        if (afterTurnBoard) {
+            setTimeout(() => {
+                this.boardUI = afterTurnBoard;
+                server.breadcast(server.makePayload("turn", clientID))
+            }, 30)
+        }
     }
 }
 
