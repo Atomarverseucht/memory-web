@@ -7,6 +7,7 @@ import {NameSection} from "./components/nameSection";
 import {UIProvider, useUIState} from "./state";
 import {connectService, connService} from "./connService";
 import {connect} from "node:net";
+import {useEffect} from "react";
 
 export function App(){
     return(
@@ -18,7 +19,10 @@ export function App(){
 
 function AppContent() {
     const ctx = useUIState()
-    if(connService.roomID === "start") {new connectService()}
+    useEffect(() => {
+        new connectService(+(new URLSearchParams(document.location.search).get("memID") ?? "0"))
+        return () => {}
+    }, [])
     connService.setChangeState(ctx.changeState)
     return (
         <main>

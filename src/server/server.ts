@@ -6,7 +6,7 @@ import {Player} from "../shared/Player";
 import type {BoardUI} from "../shared/BoardUI";
 
 export default class Server implements Party.Server {
-  private game: Game = new Game(memSets[0]);
+  private game?: Game;
   public users = new Map<string, Player>([["addjhgkj", new Player("example", 132)], ["asjhkhk", new Player("ex", 1332)]]);
   private userCount = 0;
   constructor(readonly room: Party.Room) {}
@@ -14,6 +14,9 @@ export default class Server implements Party.Server {
   // Init
   onConnect(conn: Party.Connection, ctx: Party.ConnectionContext) {
     console.log("server.init")
+    if(!this.game){
+      this.game = new Game(memSets[+(new URL(ctx.request.url).searchParams.get("memID") ?? "0")])
+    }
     const user = new Player(`Player ${this.userCount++}`);
     const pl = this.makePayload("init", user.id)
     conn.send(JSON.stringify(pl));
@@ -23,7 +26,7 @@ export default class Server implements Party.Server {
     console.log("server.onMessage")
     const data = JSON.parse(message)
     if (data.cmd === "open") {
-      this.game.openField(conn.id, data.x, this)
+      this.game!.openField(conn.id, data.x, this)
     }
   }
 
@@ -40,13 +43,13 @@ export default class Server implements Party.Server {
     switch (type) {
       case "init":
         return {
-          board: this.game.boardUI,
+          board: this.game!.boardUI,
           users: Array.from(this.users.values()),
           ownId: ownId
         };
       case "turn":
         return {
-          board: this.game.boardUI,
+          board: this.game!.boardUI,
           boardAfterTurn: boardAfterTurn,
         };
       case "names":
