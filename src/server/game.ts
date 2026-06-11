@@ -13,17 +13,10 @@ export class Game {
     constructor(memSet: MemorySet) {
         let numbers = new Array<number>();
         let b = new Array<Card>();
-        for (let i = 0; i <= 32; i++){
-            const idx = random(memSet.cards.length - 1);
-            if(numbers.includes(idx)){
-                i--;
-            } else {
-                numbers.push(idx);
-                b.push(memSet.cards[idx]);
-                b.push(memSet.cards[idx]);
-            }
-        }
-        b = shuffle(b);
+        b = shuffle(memSet.cards);
+        b = b.slice(0,32);
+        b = [...b, ...b]
+        b = shuffle(b)
         this.board = b;
     }
 
@@ -57,7 +50,7 @@ function random(max: number) {
 }
 
 function shuffle<T>(array: T[]): T[] {
-    const arr = [...array]; // Kopie, um Original nicht zu verändern
+    const arr = [...array];
     for (let i = arr.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [arr[i], arr[j]] = [arr[j], arr[i]]; // swap

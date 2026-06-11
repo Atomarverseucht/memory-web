@@ -7,6 +7,46 @@ import type {MemorySet} from "./MemorySet";
  */
 export const memSets: MemorySet[] = [
     {
+        name: "Programming Languages 2",
+        titlePicture: {
+            picture: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Scala-full-color.svg/3840px-Scala-full-color.svg.png",
+            altText: "Scala"
+        },
+        cards: [
+            {picture: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Scala-full-color.svg/3840px-Scala-full-color.svg.png", altText: "Scala"},
+            {picture: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1280px-Python-logo-notext.svg.png", altText: "Python"},
+            {picture: "https://upload.wikimedia.org/wikipedia/commons/1/19/C_Logo.png?utm_source=de.wikibooks.org&utm_campaign=index&utm_content=thumbnail_unscaled", altText: "C"},
+            {picture: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/1280px-ISO_C%2B%2B_Logo.svg.png", altText: "C++"},
+            {picture: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1280px-HTML5_logo_and_wordmark.svg.png", altText: "HTML"},
+            {picture: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Official_CSS_Logo.svg/1280px-Official_CSS_Logo.svg.png", altText: "CSS"},
+            {picture: "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png", altText: "JavaScript"},
+            {picture: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1280px-Typescript_logo_2020.svg.png", altText: "TypeScript"},
+            {picture: "https://upload.wikimedia.org/wikipedia/commons/4/4f/Csharp_Logo.png", altText: "C#"},
+            {picture: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/WebAssembly_Logo.svg/1280px-WebAssembly_Logo.svg.png", altText: "WebAssembly"},
+            {picture: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Rust_programming_language_black_logo.svg/960px-Rust_programming_language_black_logo.svg.png", altText: "Rust"},
+            {picture: "https://developer.apple.com/assets/elements/icons/swift/swift-256x256_2x.png", altText: "Swift"},
+            {picture: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Kotlin_icon_%282021-present%29.svg/960px-Kotlin_icon_%282021-present%29.svg.png", altText: "Kotlin"},
+            {picture: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Fortran_logo.svg/960px-Fortran_logo.svg.png", altText: "Fortran"},
+            {picture: "https://upload.wikimedia.org/wikipedia/de/thumb/e/e1/Java-Logo.svg/500px-Java-Logo.svg.png", altText: "Java"},
+            {picture: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Go_Logo_Blue.svg/960px-Go_Logo_Blue.svg.png", altText: "Go"},
+            {picture: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/960px-PHP-logo.svg.png", altText: "PHP"},
+            {picture: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Sql_data_base_with_logo.svg/960px-Sql_data_base_with_logo.svg.png", altText: "SQL"},
+            {picture: "https://upload.wikimedia.org/wikipedia/commons/c/c5/Scratch.logo.png?_=20190707072512", altText: "Scratch"},
+            {picture: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/R_logo.svg/960px-R_logo.svg.png", altText: "R"},
+            {picture: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Matlab_Logo.png/960px-Matlab_Logo.png", altText: "Matlab"},
+            {picture: "https://res.cloudinary.com/cagatayc/image/upload/c_scale,w_500/v1493914344/bf.png", altText: "Brainfuck"},
+            {picture: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Lua-Logo-small.svg/960px-Lua-Logo-small.svg.png", altText: "Lua"},
+            {picture: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Dart_logo.png/960px-Dart_logo.png", altText: "Dart"},
+            {picture: "https://commons.wikimedia.org/wiki/File:Ruby_logo_64x64.png", altText: "Ruby"},
+            {picture: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Haskell-Logo.svg/960px-Haskell-Logo.svg.png", altText: "Haskell"},
+            {picture: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/YAML_logo_in_SVG_format.svg/960px-YAML_logo_in_SVG_format.svg.png", altText: "YAML"},
+            {picture: "https://www.shutterstock.com/shutterstock/photos/1459515302/display_1500/stock-vector-british-english-language-learning-class-vector-illustration-brittish-flag-logo-england-1459515302.jpg", altText: "English"},
+            {picture: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/TOML_Logo.svg/960px-TOML_Logo.svg.png", altText: "TOML"},
+            {picture: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/LaTeX_logo.svg/960px-LaTeX_logo.svg.png", altText: "LaTeX"},
+            {picture: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Markdown-blue-solid.svg/960px-Markdown-blue-solid.svg.png", altText: "Markdown"},
+            {picture: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Microsoft_Office_Excel_%282025%E2%80%93present%29.svg/960px-Microsoft_Office_Excel_%282025%E2%80%93present%29.svg.png", altText: "Excel"},
+        ]
+    }, {
         name: 'Fruits',
         titlePicture: { picture: 'https://cdn.pixabay.com/photo/2022/03/17/10/03/lemon-7074240_1280.png', altText: 'lemon' },
         cards: [

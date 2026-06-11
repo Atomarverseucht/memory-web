@@ -6,7 +6,7 @@ import {Player} from "../shared/Player";
 import type {BoardUI} from "../shared/BoardUI";
 
 export default class Server implements Party.Server {
-  private game: Game = new Game(memSets[1]);
+  private game: Game = new Game(memSets[0]);
   public users = new Map<string, Player>([["addjhgkj", new Player("example", 132)], ["asjhkhk", new Player("ex", 1332)]]);
   private userCount = 0;
   constructor(readonly room: Party.Room) {}
