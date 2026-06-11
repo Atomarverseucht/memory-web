@@ -1,3 +1,10 @@
+# [2.1.0-dev.1](https://github.com/Atomarverseucht/memory-web/compare/2.0.1...2.1.0-dev.1) (2026-06-11)
+
+
+### Features
+
+* Election of memSets ([594ebda](https://github.com/Atomarverseucht/memory-web/commit/594ebda9d588cb14dbf1d0dba932d599ff97d219))
+
 ## [2.0.1](https://github.com/Atomarverseucht/memory-web/compare/2.0.0...2.0.1) (2026-06-11)
 
 
