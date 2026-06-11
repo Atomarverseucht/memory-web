@@ -8,6 +8,7 @@ export class Game {
     public state: 0 | 1 = 0
     private lastClient?: string = undefined
     private lastOpened: number = 0
+    private inUse: boolean = false
 
     constructor(memSet: MemorySet) {
         let numbers = new Array<number>();
@@ -27,24 +28,26 @@ export class Game {
     }
 
     public openField(clientID: string, x: number, server: Server) {
-        let afterTurnBoard: BoardUI | undefined = undefined;
+        if(this.inUse) return;
+
+        this.boardUI[x] = this.board[x];
+        server.breadcast(server.makePayload("turn", clientID))
         switch(this.state){
             case 0:
                 this.lastOpened = x;
                 this.lastClient = clientID;
                 this.state = 1; break;
             case 1:
-                afterTurnBoard = this.boardUI;
-                afterTurnBoard[this.lastOpened] = "closed";
+                if(this.boardUI[x] !== this.boardUI[this.lastOpened]){
+                    this.inUse = true;
+                    setTimeout(() => {
+                        this.boardUI[this.lastOpened] = "closed";
+                        this.boardUI[x] = "closed";
+                        server.breadcast(server.makePayload("turn", clientID))
+                        this.inUse = false;
+                    }, 3000)
+                }
                 this.state = 0; break;
-        }
-        this.boardUI[x] = this.board[x];
-        server.breadcast(server.makePayload("turn", clientID))
-        if (afterTurnBoard) {
-            setTimeout(() => {
-                this.boardUI = afterTurnBoard;
-                server.breadcast(server.makePayload("turn", clientID))
-            }, 30)
         }
     }
 }

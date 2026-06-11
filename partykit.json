@@ -7,6 +7,6 @@
   "serve": "dist-client",
   "build": {
     "command": "npm run build",
-    "watch": ["src/server"]
+    "watch": ["src"]
   }
 }
