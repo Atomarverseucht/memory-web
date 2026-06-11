@@ -7,26 +7,30 @@ import type {BoardUI} from "../shared/BoardUI";
 
 export default class Server implements Party.Server {
   private game: Game = new Game(memSets[1]);
-  public users = new Map<string, Player>
+  public users = new Map<string, Player>([["addjhgkj", new Player("example", 132)], ["asjhkhk", new Player("ex", 1332)]]);
   private userCount = 0;
   constructor(readonly room: Party.Room) {}
 
   // Init
   onConnect(conn: Party.Connection, ctx: Party.ConnectionContext) {
+    console.log("server.init")
     const user = new Player(`Player ${this.userCount++}`);
     const pl = this.makePayload("init", user.id)
     conn.send(JSON.stringify(pl));
   }
 
   onMessage(message: string, conn: Party.Connection) {
+    console.log("server.onMessage")
     const data = JSON.parse(message)
     if (data.cmd === "open") {
       const pl = this.makePayload("turn", conn.id, this.game.openField(conn.id, data.x))
       this.room.broadcast(JSON.stringify(pl));
+      console.log(pl);
     }
   }
 
   onRequest(req: Party.Request) {
+    console.log("server.onRequest")
     return new Response("nothing");
   }
 

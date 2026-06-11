@@ -33,7 +33,6 @@ export class Game {
                 this.lastClient = clientID;
                 this.state = 1; break;
             case 1:
-                if (clientID !== this.lastClient || (this.boardUI[x] !== "closed")) {return;}
                 afterTurnBoard = this.boardUI;
                 afterTurnBoard[this.lastOpened] = "closed";
                 this.state = 0; break;

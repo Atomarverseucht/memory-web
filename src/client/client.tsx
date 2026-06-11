@@ -1,4 +1,3 @@
-import "./styles.css";
 import { createRoot } from "react-dom/client";
 import {type MemorySet} from "../shared/MemorySet";
 import UIMemSet from "./components/UIMemSet"

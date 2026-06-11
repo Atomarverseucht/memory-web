@@ -3,21 +3,29 @@ import {memSets} from "../../shared/exampleSets";
 import {Board} from "./components/board";
 import {PlayerBar} from "./components/playerBar";
 import {Player} from "../../shared/Player";
+import {NameSection} from "./components/nameSection";
+import {UIProvider, useUIState} from "./state";
+import {connectService, connService} from "./connService";
+import {connect} from "node:net";
 
-function nothing() {}
 export function App(){
+    return(
+        <UIProvider>
+            <AppContent />
+        </UIProvider>
+    );
+}
+
+function AppContent() {
+    const ctx = useUIState()
+    if(connService.roomID === "start") {new connectService()}
+    connService.setChangeState(ctx.changeState)
     return (
         <main>
-            <article>
-                <section className="nameSection">
-                    <label htmlFor="name-input">Username:</label>
-                    <input id="name-input" type="text" placeholder="Max Mustermann"/>
-                    <button id="name-submit" onClick={nothing}>Submit</button>
-                </section>
-            </article>
+            <NameSection />
             <section className="content">
-                <Board board={memSets[1].cards.slice(0, 64)}/>
-                <PlayerBar p={players}/>
+                <Board />
+                <PlayerBar />
             </section>
         </main>
     );
