@@ -1,3 +1,10 @@
+## [2.0.1-dev.2](https://github.com/Atomarverseucht/memory-web/compare/2.0.1-dev.1...2.0.1-dev.2) (2026-06-11)
+
+
+### Bug Fixes
+
+* new data works ([da5a53f](https://github.com/Atomarverseucht/memory-web/commit/da5a53f36b0222eac02f61479676ce9741f17a6c))
+
 ## [2.0.1-dev.1](https://github.com/Atomarverseucht/memory-web/compare/2.0.0...2.0.1-dev.1) (2026-06-11)
 
 
