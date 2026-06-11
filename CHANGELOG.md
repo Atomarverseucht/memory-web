@@ -1,3 +1,10 @@
+# [2.0.0-dev.6](https://github.com/Atomarverseucht/memory-web/compare/2.0.0-dev.5...2.0.0-dev.6) (2026-06-11)
+
+
+### Bug Fixes
+
+* backend bugfix ([9f0f05a](https://github.com/Atomarverseucht/memory-web/commit/9f0f05a221cc867d80e3792857fee2637dd8f1b3))
+
 # [2.0.0-dev.5](https://github.com/Atomarverseucht/memory-web/compare/2.0.0-dev.4...2.0.0-dev.5) (2026-06-11)
 
 
