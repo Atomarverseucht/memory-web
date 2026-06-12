@@ -1,3 +1,10 @@
+# [2.2.0-dev.1](https://github.com/Atomarverseucht/memory-web/compare/2.1.0...2.2.0-dev.1) (2026-06-12)
+
+
+### Features
+
+* Backend Name system ([1992327](https://github.com/Atomarverseucht/memory-web/commit/199232775a59a045c3890ef6b9c681ccd5de076b))
+
 # [2.1.0](https://github.com/Atomarverseucht/memory-web/compare/2.0.1...2.1.0) (2026-06-11)
 
 
