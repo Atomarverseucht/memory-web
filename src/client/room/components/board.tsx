@@ -4,7 +4,7 @@ import {connService} from "../connService";
 
 function sendTurn(indx: number) {
     console.log("sendTurn")
-    connService.sendMessage({cmd: "open", x: indx})
+    connService.sendMessage({cmd: "open", param: indx})
 }
 export function Board(){
     const ctx = useUIState()
@@ -20,7 +20,6 @@ export function Board(){
                             alt={card.altText}/>
                     </button> ) :
                     ( <button className="closed" onClick={() => sendTurn(i)}>
-                        <p> </p>
                     </button> )
             )}
         </section>

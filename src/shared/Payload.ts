@@ -14,6 +14,6 @@ export type startPayload = {
 }
 
 export type clientPayload = {
-    readonly cmd: string;
-    readonly x: number;
+    readonly cmd: "open" | "changeName";
+    readonly param: number | string;
 }
