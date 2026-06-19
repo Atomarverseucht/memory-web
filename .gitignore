@@ -150,20 +150,16 @@ dist
 .dynamodb/
 
 # TernJS port file
-
 .tern-port
 
 # Stores VSCode versions used for testing VSCode extensions
-
 .vscode-test
 .vscode/
 
 # IntelliJ
-
 .idea/
 
 # yarn v2
-
 .yarn/cache
 .yarn/unplugged
 .yarn/build-state.yml

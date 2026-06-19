@@ -4,7 +4,6 @@ import type {BoardUI as Board} from "./BoardUI";
 
 export type Payload = {
     readonly board?: Board;
-    readonly boardAfterTurn?: Board;
     readonly users?: Player[];
     readonly ownId?: string;
 }

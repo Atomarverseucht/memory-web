@@ -1,3 +1,4 @@
+
 import type * as Party from "partykit/server";
 import type {clientPayload, Payload} from "../shared/Payload";
 import {Game} from "./game";
@@ -30,6 +31,8 @@ export default class Server implements Party.Server {
       this.game!.openField(conn.id, data.param, this)
     } else if (data.cmd === "changeName" && typeof data.param === "string") {
       this.users.get(conn.id)!.name = data.param
+      console.log(this.users.get(conn.id)!.name)
+      this.breadcast(this.makePayload("names"))
     }
   }
 
@@ -42,7 +45,7 @@ export default class Server implements Party.Server {
     return new Response("nothing");
   }
 
-  makePayload(type: "init" | "turn" | "names", ownUserId?: string, boardAfterTurn?: BoardUI): Payload {
+  makePayload(type: "init" | "turn" | "names", ownUserId?: string): Payload {
     switch (type) {
       case "init":
         return {
@@ -52,8 +55,7 @@ export default class Server implements Party.Server {
         };
       case "turn":
         return {
-          board: this.game!.boardUI,
-          boardAfterTurn: boardAfterTurn,
+          board: this.game!.boardUI
         };
       case "names":
         return {
