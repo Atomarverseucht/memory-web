@@ -4,7 +4,6 @@ import type {BoardUI as Board} from "./BoardUI";
 
 export type Payload = {
     readonly board?: Board;
-    readonly boardAfterTurn?: Board;
     readonly users?: Player[];
     readonly ownId?: string;
 }
@@ -14,6 +13,6 @@ export type startPayload = {
 }
 
 export type clientPayload = {
-    readonly cmd: string;
-    readonly x: number;
+    readonly cmd: "open" | "changeName";
+    readonly param: number | string;
 }

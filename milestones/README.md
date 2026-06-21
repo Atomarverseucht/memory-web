@@ -1,6 +1,6 @@
-# Projektname
-**Team:** Vorname Nachname (Matrikelnummer), Vorname Nachname (Matrikelnummer) <br>
-**Repository:** https://github.com/Atomarverseucht/memory-web/tree/2.0.1
+# Memory-Web
+**Team:** *************** (data private in Moodle) <br>
+**Repository:** https://github.com/Atomarverseucht/memory-web/tree/2.1.0
 ## Setup
 Entweder im Web: https://memory-web.atomarverseucht.partykit.dev <br>
 Oder lokal mit:
