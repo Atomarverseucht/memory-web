@@ -1,6 +1,6 @@
 {
   "name": "memory-web",
-  "version": "2.2.0-dev.1",
+  "version": "2.2.0",
   "private": true,
   "scripts": {
     "dev:client": "vite",
