@@ -6,7 +6,6 @@ import {Player} from "../../shared/Player";
 import {NameSection} from "./components/nameSection";
 import {UIProvider, useUIState} from "./state";
 import {connectService, connService} from "./connService";
-import {connect} from "node:net";
 import {useEffect} from "react";
 
 export function App(){
@@ -34,6 +33,5 @@ function AppContent() {
         </main>
     );
 }
-const players = [new Player("Player1"), new Player("LongExamplePlayerName", 10000000000)]
 
 createRoot(document.getElementById("app")!).render(<App/>);

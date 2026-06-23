@@ -29,23 +29,24 @@ app.get("/api/health", (_req, res) => res.json({ status: "ok" }));
 let rooms = new Map<string, Room>
 
 wss.on("connection", (socket) => {
-  const { room: roomID, memID } = socket.handshake.query;
-  const roomId = typeof roomID === "string" ? roomID : "default";
-  const mem = +(typeof memID === "string" ? memID : "0");
+  const { room: room, memID: memID } = socket.handshake.query;
+  const roomId = typeof room === "string" ? room : "default";
+  const mem = +(typeof memID === "string" ? memID : "1");
+  console.log(roomId, mem)
 
   if (!rooms.has(roomId)) {
     rooms.set(roomId, new Room(mem));
   }
-  const room = rooms.get(roomId)!;
-  room.initUser(socket);
+  const room_ = rooms.get(roomId)!;
+  room_.initUser(socket);
 
   socket.on("message", (data) => {
-    const msg: clientPayload = JSON.parse(data.toString());
-      room.onMessage(msg, socket.id);
+    const msg: clientPayload = data as clientPayload;
+      room_.onMessage(msg, socket.id);
   });
 
   socket.on("close", () => {
-    room.exitUser(socket.id);
+    room_.exitUser(socket.id);
   });
 });
 
