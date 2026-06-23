@@ -1,3 +1,15 @@
+# [3.0.0-dev.1](https://github.com/Atomarverseucht/memory-web/compare/2.2.0...3.0.0-dev.1) (2026-06-23)
+
+
+### Features
+
+* socket-io connections ([4ee7d82](https://github.com/Atomarverseucht/memory-web/commit/4ee7d8227443b5400685b078d54bc6cf9046db4e))
+
+
+### BREAKING CHANGES
+
+* no partykit anymore
+
 # [2.2.0](https://github.com/Atomarverseucht/memory-web/compare/2.1.0...2.2.0) (2026-06-21)
 
 
