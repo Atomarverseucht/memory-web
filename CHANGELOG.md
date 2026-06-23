@@ -1,6 +1,27 @@
 # [3.0.0-dev.1](https://github.com/Atomarverseucht/memory-web/compare/2.2.0...3.0.0-dev.1) (2026-06-23)
 
 
+### Bug Fixes
+
+* release bot ([309fd9f](https://github.com/Atomarverseucht/memory-web/commit/309fd9fd8f16076bd47ca61b265b9af3e3ebae3c))
+
+
+### Features
+
+* socket-io connections ([a12d626](https://github.com/Atomarverseucht/memory-web/commit/a12d626f41374707ecdcac06422bccaf39da82be))
+* socket-io connections ([9783352](https://github.com/Atomarverseucht/memory-web/commit/978335207fa3bc2a769c105a558c396dcb51701b))
+* socket-io connections ([4ee7d82](https://github.com/Atomarverseucht/memory-web/commit/4ee7d8227443b5400685b078d54bc6cf9046db4e))
+
+
+### BREAKING CHANGES
+
+* no partykit anymore
+* no partykit anymore
+* no partykit anymore
+
+# [3.0.0-dev.1](https://github.com/Atomarverseucht/memory-web/compare/2.2.0...3.0.0-dev.1) (2026-06-23)
+
+
 ### Features
 
 * socket-io connections ([4ee7d82](https://github.com/Atomarverseucht/memory-web/commit/4ee7d8227443b5400685b078d54bc6cf9046db4e))
