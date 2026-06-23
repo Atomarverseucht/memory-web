@@ -18,14 +18,14 @@ export class connectService {
     }
 
     private onMessage(data: any){
-        const pl = JSON.parse(data);
-        console.log("message: client", pl);
-        this.changeState(pl);
+        console.log("message: client", data);
+        this.changeState(data as Partial<UIState>);
+        console.log("hi")
     }
 
     public sendMessage(data: clientPayload){
         console.log("sendMessage");
-        this.socket.send(JSON.stringify(data));
+        this.socket.send(data);
     }
 }
 export let connService: connectService = new connectService(0, "start");

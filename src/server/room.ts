@@ -21,7 +21,7 @@ export class Room {
         this.users.set(socket.id, user);
         const pl = this.makePayload("init", user.id)
         this.sockets.set(socket.id, socket);
-        socket.send(JSON.stringify(pl));
+        socket.send(pl);
     }
 
     onMessage(data: clientPayload, user: string) {

@@ -7,8 +7,8 @@
     "dev:server": "tsx watch src/server/server.ts",
     "dev": "npm run dev:server & npm run dev:client",
     "build": "vite build",
-    "deploy": "partykit deploy",
-    "dev-deploy": "partykit deploy --preview dev"
+    "deploy": "",
+    "dev-deploy": ""
   },
   "dependencies": {
     "@prisma/client": "^7.8.0",
