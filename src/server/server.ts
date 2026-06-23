@@ -1,68 +1,52 @@
 
-import type * as Party from "partykit/server";
 import type {clientPayload, Payload} from "../shared/Payload";
 import {Game} from "./game";
 import {memSets} from "../shared/exampleSets";
 import {Player} from "../shared/Player";
-import type {BoardUI} from "../shared/BoardUI";
 
-export default class Server implements Party.Server {
-  private game?: Game;
-  public users = new Map<string, Player>([["addjhgkj", new Player("example", 132)], ["asjhkhk", new Player("ex", 1332)]]);
-  private userCount = 1;
-  constructor(readonly room: Party.Room) {}
+import express from "express";
+import cors from "cors";
+import helmet from "helmet";
+import { createServer } from "http";
+import { Server} from "socket.io";
+import {Room} from "./room";
 
-  // Init
-  onConnect(conn: Party.Connection, ctx: Party.ConnectionContext) {
-    console.log("server.init")
-    if(!this.game){
-      this.game = new Game(memSets[+(new URL(ctx.request.url).searchParams.get("memID") ?? "0")])
-    }
-    const user = new Player(`Player ${this.userCount++}`);
-    this.users.set(conn.id, user);
-    const pl = this.makePayload("init", user.id)
-    conn.send(JSON.stringify(pl));
+const app = express();
+const PORT = process.env.PORT || 3000;
+app.use(helmet());
+app.use(express.json());
+const httpServer = createServer(app);
+const wss = new Server(httpServer, {
+  cors: { origin: "http://localhost:5173" }
+});
+app.use(cors({ origin: "http://localhost:5173" }));
+
+httpServer.listen(PORT, () => console.log(`Express läuft auf Port ${PORT}`));
+// --- REST API ---
+app.get("/api/health", (_req, res) => res.json({ status: "ok" }));
+
+// --- WebSocket: Memory Game ---
+let rooms = new Map<string, Room>
+
+wss.on("connection", (socket) => {
+  const { room: roomID, memID } = socket.handshake.query;
+  const roomId = typeof roomID === "string" ? roomID : "default";
+  const mem = +(typeof memID === "string" ? memID : "0");
+
+  if (!rooms.has(roomId)) {
+    rooms.set(roomId, new Room(mem));
   }
+  const room = rooms.get(roomId)!;
+  room.initUser(socket);
 
-  onMessage(message: string, conn: Party.Connection) {
-    console.log("server.onMessage")
-    const data: clientPayload = JSON.parse(message)
-    if (data.cmd === "open" && typeof data.param === "number") {
-      this.game!.openField(conn.id, data.param, this)
-    } else if (data.cmd === "changeName" && typeof data.param === "string") {
-      this.users.get(conn.id)!.name = data.param
-      console.log(this.users.get(conn.id)!.name)
-      this.breadcast(this.makePayload("names"))
-    }
-  }
+  socket.on("message", (data) => {
+    const msg: clientPayload = JSON.parse(data.toString());
+      room.onMessage(msg, socket.id);
+  });
 
-  breadcast(payload: Payload) {
-    this.room.broadcast(JSON.stringify(payload));
-  }
+  socket.on("close", () => {
+    room.exitUser(socket.id);
+  });
+});
 
-  onRequest(req: Party.Request) {
-    console.log("server.onRequest")
-    return new Response("nothing");
-  }
 
-  makePayload(type: "init" | "turn" | "names", ownUserId?: string): Payload {
-    switch (type) {
-      case "init":
-        return {
-          board: this.game!.boardUI,
-          users: Array.from(this.users.values()),
-          ownId: ownUserId
-        };
-      case "turn":
-        return {
-          board: this.game!.boardUI
-        };
-      case "names":
-        return {
-          users: Array.from(this.users.values()),
-        }
-    }
-  }
-}
-
-Server satisfies Party.Worker;

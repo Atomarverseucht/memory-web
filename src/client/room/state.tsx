@@ -4,7 +4,6 @@ import {createContext, type ReactNode, use, useCallback, useState} from "react";
 
 export type UIState = {
     board: BoardUI,
-    boardAfterTurn?: BoardUI,
     users: Player[],
     ownId: string
 }
