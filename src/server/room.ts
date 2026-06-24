@@ -3,6 +3,7 @@ import {Player} from "../shared/Player";
 import {memSets} from "../shared/exampleSets";
 import type {clientPayload, Payload} from "../shared/Payload";
 import { Socket } from "socket.io"
+import {addUser, getUsers} from "./database";
 
 export class Room {
     private game: Game;
@@ -22,6 +23,7 @@ export class Room {
         const pl = this.makePayload("init", user.id)
         this.sockets.set(socket.id, socket);
         socket.send(pl);
+        addUser(socket.id, user.name, "1234");
     }
 
     onMessage(data: clientPayload, user: string) {
@@ -31,6 +33,7 @@ export class Room {
         } else if (data.cmd === "changeName" && typeof data.param === "string") {
             this.users.get(user)!.name = data.param
             console.log(this.users.get(user)!.name)
+            console.log(getUsers())
             this.breadcast(this.makePayload("names"))
         }
     }

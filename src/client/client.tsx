@@ -2,9 +2,34 @@ import { createRoot } from "react-dom/client";
 import {type MemorySet} from "../shared/MemorySet";
 import UIMemSet from "./components/UIMemSet"
 import {CodeSection} from "./components/codeSection";
-import {memSets} from "../shared/exampleSets";
+import {useEffect, useState} from "react";
+import type {startPayload} from "../shared/Payload";
 
 function App() {
+    const [data, setData] = useState<startPayload>({sets: []});
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState<string | null>(null);
+
+    useEffect(() => {
+        fetch("/api/memSets")
+            .then(res => {
+                if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                return res.json();
+            })
+            .then((json: startPayload) => {
+                setData(json);
+                setLoading(false);
+                console.log(json)
+            })
+            .catch(err => {
+                setError(err.message);
+                setLoading(false);
+            });
+    }, []);
+
+    if (loading) return <p>Lade Themen...</p>;
+    if (error) return <p style={{color: "red"}}>Fehler: {error}</p>;
+
     return (
       <main>
           <section className="setup">
@@ -14,7 +39,7 @@ function App() {
               </article>
               <CodeSection />
           </section>
-          <UIMemSet memSet={memSets} />
+          <UIMemSet memSet={data} />
       </main>
       );
     }

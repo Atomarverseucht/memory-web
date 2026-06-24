@@ -7,10 +7,12 @@ import type {MemorySet} from "./MemorySet";
  */
 export const memSets: MemorySet[] = [
     {
-        name: "Programming Languages 2",
-        titlePicture: {
-            picture: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Scala-full-color.svg/3840px-Scala-full-color.svg.png",
-            altText: "Scala"
+        title: {
+            name: "Programming Languages 2",
+            titlePicture: {
+                picture: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Scala-full-color.svg/3840px-Scala-full-color.svg.png",
+                altText: "Scala"
+            },
         },
         cards: [
             {picture: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Scala-full-color.svg/3840px-Scala-full-color.svg.png", altText: "Scala"},
@@ -47,8 +49,10 @@ export const memSets: MemorySet[] = [
             {picture: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Microsoft_Office_Excel_%282025%E2%80%93present%29.svg/960px-Microsoft_Office_Excel_%282025%E2%80%93present%29.svg.png", altText: "Excel"},
         ]
     }, {
-        name: 'Fruits',
-        titlePicture: { picture: 'https://cdn.pixabay.com/photo/2022/03/17/10/03/lemon-7074240_1280.png', altText: 'lemon' },
+        title: {
+            name: 'Fruits',
+            titlePicture: { picture: 'https://cdn.pixabay.com/photo/2022/03/17/10/03/lemon-7074240_1280.png', altText: 'lemon' },
+        },
         cards: [
             { picture: 'https://cdn.pixabay.com/photo/2016/01/03/17/59/bananas-1119790_1280.jpg', altText: 'bananas' },
             { picture: 'https://cdn.pixabay.com/photo/2017/01/20/15/06/mango-1995056_1280.jpg', altText: 'mango' },
@@ -153,8 +157,10 @@ export const memSets: MemorySet[] = [
         ]
     },
     {
-        name: 'Planets',
-        titlePicture: { picture: 'https://cdn.pixabay.com/photo/2023/09/04/17/04/planet-8233218_1280.png', altText: 'jupiter' },
+        title: {
+            name: 'Planets',
+            titlePicture: { picture: 'https://cdn.pixabay.com/photo/2023/09/04/17/04/planet-8233218_1280.png', altText: 'jupiter' },
+        },
         cards: [
             { picture: 'https://cdn.pixabay.com/photo/2011/12/13/14/31/earth-11015_1280.jpg', altText: 'Earth from space' },
             { picture: 'https://cdn.pixabay.com/photo/2016/11/29/13/26/mars-1869266_1280.jpg', altText: 'Mars red planet' },
@@ -259,9 +265,11 @@ export const memSets: MemorySet[] = [
         ]
     },
     {
-        name: 'Cats',
-        titlePicture: { picture: 'https://cdn.pixabay.com/photo/2018/03/18/18/55/cat-3237903_1280.png', altText: 'cat' },
-        cards: [
+        title: {
+            name: 'Cats',
+            titlePicture: { picture: 'https://cdn.pixabay.com/photo/2018/03/18/18/55/cat-3237903_1280.png', altText: 'cat' },
+        },
+         cards: [
             { picture: 'https://cdn.pixabay.com/photo/2017/11/09/21/41/cat-2934720_1280.jpg', altText: 'orange tabby cat' },
             { picture: 'https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_1280.jpg', altText: 'white persian cat' },
             { picture: 'https://cdn.pixabay.com/photo/2016/12/29/06/23/cat-1937621_1280.jpg', altText: 'black cat' },
@@ -361,12 +369,13 @@ export const memSets: MemorySet[] = [
             { picture: 'https://cdn.pixabay.com/photo/2023/01/11/21/24/cat-7711822_1280.jpg', altText: 'cat smoky fur close' },
             { picture: 'https://cdn.pixabay.com/photo/2021/08/22/10/47/cat-6564528_1280.jpg', altText: 'tabby cat garden' },
             { picture: 'https://cdn.pixabay.com/photo/2022/06/16/21/41/cat-7265955_1280.jpg', altText: 'cat licking paw' },
-
         ]
     },
     {
-        name: 'Animals',
-        titlePicture: { picture: 'https://cdn.pixabay.com/photo/2026/03/17/12/10/hoggyart-black-and-white-10178638_1280.jpg', altText: 'young dog' },
+        title: {
+            name: 'Animals',
+            titlePicture: { picture: 'https://cdn.pixabay.com/photo/2026/03/17/12/10/hoggyart-black-and-white-10178638_1280.jpg', altText: 'young dog' },
+        },
         cards: [
             { picture: 'https://cdn.pixabay.com/photo/2019/07/14/17/55/golden-retriever-4337719_1280.jpg', altText: 'golden retriever' },
             { picture: 'https://cdn.pixabay.com/photo/2020/11/21/19/17/elephant-5765690_1280.jpg', altText: 'elephant herd' },
@@ -471,8 +480,10 @@ export const memSets: MemorySet[] = [
         ]
     },
     {
-        name: 'Linux Distributions',
-        titlePicture: { picture: 'https://assets.techrepublic.com/uploads/2021/08/tux-new.jpg', altText: 'Tux, the mascot of Linux' },
+        title: {
+            name: 'Linux Distributions',
+            titlePicture: { picture: 'https://assets.techrepublic.com/uploads/2021/08/tux-new.jpg', altText: 'Tux, the mascot of Linux' },
+        },
         cards: [
             { picture: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/UbuntuCoF.svg/1200px-UbuntuCoF.svg.png', altText: 'Ubuntu logo' },
             { picture: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Archlinux-icon-crystal-64.svg/1200px-Archlinux-icon-crystal-64.svg.png', altText: 'Arch Linux logo' },
@@ -577,8 +588,10 @@ export const memSets: MemorySet[] = [
         ]
     },
     {
-        name: 'Programming Languages',
-        titlePicture: { picture: 'https://cdn-icons-png.flaticon.com/512/6132/6132220.png', altText: 'logo of scala' },
+        title: {
+            name: 'Programming Languages',
+            titlePicture: { picture: 'https://cdn-icons-png.flaticon.com/512/6132/6132220.png', altText: 'logo of scala' },
+        },
         cards: [
             { picture: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png', altText: 'Python logo' },
             { picture: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/1200px-JavaScript-logo.png', altText: 'JavaScript logo' },

@@ -6,6 +6,11 @@ export default defineConfig({
     plugins: [react()],
     // Vite schaut jetzt primär in den Ordner src/client/
     root: 'src/client',
+    server: {
+        proxy: {
+            '/api': 'http://localhost:3000',  // ← API-Requests an Express
+        },
+    },
     build: {
         // Da das Rootverzeichnis verschoben wurde, bauen wir den Output
         // drei Ebenen höher in das Hauptverzeichnis (dist-client)

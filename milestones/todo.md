@@ -1,5 +1,5 @@
 - Login/Register
-  - DB (vllt. sqlite)
+  - DB (sqlite) / sqlite ohne login
   - GET / POST
 
 - FE: HTTP Error Handling

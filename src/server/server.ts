@@ -1,8 +1,5 @@
 
-import type {clientPayload, Payload} from "../shared/Payload";
-import {Game} from "./game";
-import {memSets} from "../shared/exampleSets";
-import {Player} from "../shared/Player";
+import type {clientPayload, startPayload} from "../shared/Payload";
 
 import express from "express";
 import cors from "cors";
@@ -10,6 +7,8 @@ import helmet from "helmet";
 import { createServer } from "http";
 import { Server} from "socket.io";
 import {Room} from "./room";
+import type {MemorySet} from "../shared/MemorySet";
+import {memSets} from "../shared/exampleSets";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -20,20 +19,24 @@ const wss = new Server(httpServer, {
   cors: { origin: "http://localhost:5173" }
 });
 app.use(cors({ origin: "http://localhost:5173" }));
-
 httpServer.listen(PORT, () => console.log(`Express läuft auf Port ${PORT}`));
-// --- REST API ---
-app.get("/api/health", (_req, res) => res.json({ status: "ok" }));
 
-// --- WebSocket: Memory Game ---
+// Rest-endpoints
+app.get("/api/health", (_req, res) =>
+    res.json({ status: "ok" }));
+app.get("/api/memSets", (_req, res) =>
+{ const out: startPayload = {sets: memSets.map(ms => ms.title)};
+  res.json(out);
+  console.log(out)})
+// Rooms
 let rooms = new Map<string, Room>
 
+// Websocket-connection
 wss.on("connection", (socket) => {
   const { room: room, memID: memID } = socket.handshake.query;
   const roomId = typeof room === "string" ? room : "default";
   const mem = +(typeof memID === "string" ? memID : "1");
   console.log(roomId, mem)
-
   if (!rooms.has(roomId)) {
     rooms.set(roomId, new Room(mem));
   }

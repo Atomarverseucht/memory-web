@@ -1,4 +1,4 @@
-import type {MemorySet} from "./MemorySet";
+import type {Title} from "./MemorySet";
 import type {Player} from "./Player";
 import type {BoardUI as Board} from "./BoardUI";
 
@@ -9,7 +9,7 @@ export type Payload = {
 }
 
 export type startPayload = {
-    readonly sets: MemorySet[];
+    readonly sets: Title[];
 }
 
 export type clientPayload = {
