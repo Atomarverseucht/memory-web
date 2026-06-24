@@ -1,3 +1,10 @@
+# [3.0.0-dev.3](https://github.com/Atomarverseucht/memory-web/compare/3.0.0-dev.2...3.0.0-dev.3) (2026-06-24)
+
+
+### Features
+
+* added react-routers ([fe0937b](https://github.com/Atomarverseucht/memory-web/commit/fe0937b2b197dae64ed678aaed2258df9ae1527d))
+
 # [3.0.0-dev.2](https://github.com/Atomarverseucht/memory-web/compare/3.0.0-dev.1...3.0.0-dev.2) (2026-06-24)
 
 
