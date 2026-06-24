@@ -1,3 +1,10 @@
+# [3.0.0-dev.2](https://github.com/Atomarverseucht/memory-web/compare/3.0.0-dev.1...3.0.0-dev.2) (2026-06-24)
+
+
+### Features
+
+* added sqlite and first GET-request ([d3c08fb](https://github.com/Atomarverseucht/memory-web/commit/d3c08fb05235c431683e78e2942772bd4fe1caa6))
+
 # [3.0.0-dev.1](https://github.com/Atomarverseucht/memory-web/compare/2.2.0...3.0.0-dev.1) (2026-06-23)
 
 
