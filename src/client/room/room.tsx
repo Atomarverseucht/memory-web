@@ -8,7 +8,7 @@ import {UIProvider, useUIState} from "./state";
 import {connectService, connService} from "./connService";
 import {useEffect} from "react";
 
-export function App(){
+export function Room(){
     return(
         <UIProvider>
             <AppContent />
@@ -33,5 +33,3 @@ function AppContent() {
         </main>
     );
 }
-
-createRoot(document.getElementById("app")!).render(<App/>);

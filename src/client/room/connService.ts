@@ -36,6 +36,6 @@ export class connectService {
 }
 connService = new connectService(0, "start");
 
-function randomString(length = 4): string {
+export function randomString(length = 4): string {
     return Math.random().toString(36).substring(2, 2 + length);
 }

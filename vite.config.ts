@@ -19,8 +19,7 @@ export default defineConfig({
         rollupOptions: {
             input: {
                 // Die Pfade sind nun relativ zu src/client/
-                main: resolve(__dirname, 'src/client/index.html'),
-                room: resolve(__dirname, 'src/client/room/index.html'),
+                main: resolve(__dirname, 'src/client/index.html')
             },
         },
     },

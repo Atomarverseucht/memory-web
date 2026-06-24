@@ -5,7 +5,7 @@ import {CodeSection} from "./components/codeSection";
 import {useEffect, useState} from "react";
 import type {startPayload} from "../shared/Payload";
 
-function App() {
+export function HomePage() {
     const [data, setData] = useState<startPayload>({sets: []});
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
@@ -43,4 +43,3 @@ function App() {
       </main>
       );
     }
-createRoot(document.getElementById("app")!).render(<App/>);

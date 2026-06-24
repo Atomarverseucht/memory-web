@@ -5,5 +5,3 @@ export function Login() {
         <a>Hello World</a>
     )
 }
-
-createRoot(document.getElementById("app")!).render(<Login/>);

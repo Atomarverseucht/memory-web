@@ -1,3 +1,6 @@
+@import url('./room.css');
+@import url('./login.css');
+
 * {
   font-family: sans-serif;
 }
