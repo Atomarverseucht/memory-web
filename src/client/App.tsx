@@ -1,5 +1,5 @@
 import { Routes, Route, Link } from "react-router-dom";
-import { HomePage } from "./client";
+import { HomePage } from "./main/client";
 import { Room } from "./room/room";
 import { Login } from "./login/login";
 

@@ -1,9 +1,9 @@
 import { createRoot } from "react-dom/client";
-import {type MemorySet} from "../shared/MemorySet";
+import {type MemorySet} from "../../shared/MemorySet";
 import UIMemSet from "./components/UIMemSet"
 import {CodeSection} from "./components/codeSection";
 import {useEffect, useState} from "react";
-import type {startPayload} from "../shared/Payload";
+import type {startPayload} from "../../shared/Payload";
 
 export function HomePage() {
     const [data, setData] = useState<startPayload>({sets: []});

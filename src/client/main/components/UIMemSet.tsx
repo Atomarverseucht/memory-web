@@ -1,7 +1,7 @@
-import type {MemorySet} from "../../shared/MemorySet";
-import type {startPayload} from "../../shared/Payload";
+import type {MemorySet} from "../../../shared/MemorySet";
+import type {startPayload} from "../../../shared/Payload";
 import {Link} from "react-router-dom";
-import {randomString} from "../room/connService";
+import {randomString} from "../../room/connService";
 export type Props = {memSet: startPayload};
 export default function UIMemSet({ memSet }: Props) {
     return (
