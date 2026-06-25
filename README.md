@@ -13,6 +13,8 @@ Dev: https://dev.memory-web.atomarverseucht.partykit.dev
 
 ## Architektur
 
+Kein SSR/SSG nötig: Echtzeit-Mehrspieler-Spiel mit socketgesteuertem Board-Zustand pro Session – der initiale HTML-Shell + Client-Bundle ist sofort geladen, SEO irrelevant, und jeder gerenderte Server-Zustand wäre sofort veraltet. Daher reicht ein einfaches Vite-SPA völlig aus.
+
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │                           CLIENT (Vite SPA)                                 │
