@@ -1,3 +1,10 @@
+# [3.0.0-dev.8](https://github.com/Atomarverseucht/memory-web/compare/3.0.0-dev.7...3.0.0-dev.8) (2026-06-25)
+
+
+### Bug Fixes
+
+* M3.md ([05a7317](https://github.com/Atomarverseucht/memory-web/commit/05a7317ed34c182151047d84eac333caa28f166f))
+
 # [3.0.0-dev.7](https://github.com/Atomarverseucht/memory-web/compare/3.0.0-dev.6...3.0.0-dev.7) (2026-06-25)
 
 
