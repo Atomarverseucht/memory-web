@@ -1,3 +1,10 @@
+# [3.0.0-dev.6](https://github.com/Atomarverseucht/memory-web/compare/3.0.0-dev.5...3.0.0-dev.6) (2026-06-25)
+
+
+### Features
+
+* added M3.md ([b48e96c](https://github.com/Atomarverseucht/memory-web/commit/b48e96c41ec601aa4d3f09ca478db838a143f7b6))
+
 # [3.0.0-dev.5](https://github.com/Atomarverseucht/memory-web/compare/3.0.0-dev.4...3.0.0-dev.5) (2026-06-25)
 
 
