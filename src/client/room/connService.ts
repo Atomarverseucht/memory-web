@@ -1,22 +1,21 @@
-import PartySocket from "partysocket";
+import { io as socketIO } from "socket.io-client";
 import type {UIState} from "./state";
-import type {clientPayload} from "../../shared/Payload";
+import type {clientPayload, Payload} from "../../shared/Payload";
+
+export let connService: connectService
 
 export class connectService {
-    private socket: PartySocket
+    private socket;
     public changeState: (newState: Partial<UIState>) => void = () => {}
 
     constructor(memID?: number, readonly roomID?: string){
         const id = roomID ?? randomString();
-        this.socket = new PartySocket({
-            host: window.location.host,
-            room: id,
-            maxRetries: 0,
-            query: {
-                memID: (memID ?? 0).toString(),
-            }
-        });
-        this.socket.onmessage = ev => this.onMessage(ev)
+        const token = localStorage.getItem("token");
+        this.socket = socketIO("http://localhost:3000", {
+            auth: { token },
+            query: { room: id, memID: String(memID ?? 0) }
+        })
+        this.socket.on("message", (data) => this.onMessage(data));
         connService = this;
     }
 
@@ -24,18 +23,19 @@ export class connectService {
         this.changeState = f;
     }
 
-    private onMessage(message: MessageEvent){
-        console.log(this.socket.id)
-        const pl = JSON.parse(message.data);
-        this.changeState(pl);
+    private onMessage(data: any){
+        console.log("message: client", data);
+        this.changeState(data as Partial<UIState>);
+        console.log("hi")
     }
 
     public sendMessage(data: clientPayload){
         console.log("sendMessage");
-        this.socket.send(JSON.stringify(data));
+        this.socket.send(data);
     }
 }
-export let connService: connectService = new connectService(0, "start");
-function randomString(length = 4): string {
+connService = new connectService(0, "start");
+
+export function randomString(length = 4): string {
     return Math.random().toString(36).substring(2, 2 + length);
 }

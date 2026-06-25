@@ -1,6 +1,6 @@
 import type {BoardUI} from "../shared/BoardUI";
 import type {Card, MemorySet} from "../shared/MemorySet";
-import Server from "./server";
+import {Room} from "./room";
 
 export class Game {
     private readonly board: BoardUI;
@@ -20,7 +20,7 @@ export class Game {
         this.board = b;
     }
 
-    public openField(clientID: string, x: number, server: Server) {
+    public openField(clientID: string, x: number, server: Room) {
         if(this.inUse) return;
 
         this.boardUI[x] = this.board[x];

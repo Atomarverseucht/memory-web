@@ -1,0 +1,11 @@
+.loginSection {
+    margin: 0.5rem;
+    * {
+        display: grid;
+        grid-template-columns: 150px 1fr;
+    }
+    button {
+        width: 100%;
+        height: 10vh;
+    }
+}
