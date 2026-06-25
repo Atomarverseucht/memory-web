@@ -1,3 +1,10 @@
+# [3.0.0-dev.4](https://github.com/Atomarverseucht/memory-web/compare/3.0.0-dev.3...3.0.0-dev.4) (2026-06-24)
+
+
+### Bug Fixes
+
+* better structure ([5d3c30f](https://github.com/Atomarverseucht/memory-web/commit/5d3c30f4e47bff73cb8ae922a67e739f47208cfb))
+
 # [3.0.0-dev.3](https://github.com/Atomarverseucht/memory-web/compare/3.0.0-dev.2...3.0.0-dev.3) (2026-06-24)
 
 
