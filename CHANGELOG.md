@@ -1,3 +1,15 @@
+# [3.0.0-dev.5](https://github.com/Atomarverseucht/memory-web/compare/3.0.0-dev.4...3.0.0-dev.5) (2026-06-25)
+
+
+### Bug Fixes
+
+* auth ([df9add5](https://github.com/Atomarverseucht/memory-web/commit/df9add58528389d32be9ff2f2499b5a55dcbcf32))
+
+
+### Features
+
+* Tests ([a93f34c](https://github.com/Atomarverseucht/memory-web/commit/a93f34cf9e4963998e9e21777a7aa84efc6a5609))
+
 # [3.0.0-dev.4](https://github.com/Atomarverseucht/memory-web/compare/3.0.0-dev.3...3.0.0-dev.4) (2026-06-24)
 
 
