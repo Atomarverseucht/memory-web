@@ -93,14 +93,25 @@ footer {
     align-items: center;
     justify-content: center;
     gap: 10px;
-    :hover, :focus{
+    :hover, :focus {
       background-color: var(--hover-color);
+      color: black;
     }
-    *{
+    * {
       font-size: inherit;
     }
     input{
       max-width: 150px;
     }
+  }
+}
+
+button {
+  border-radius: 5vmin;
+  background-color: darkslateblue;
+  color: lightblue;
+  :hover, :focus {
+    background-color: var(--hover-color);
+    color: black;
   }
 }

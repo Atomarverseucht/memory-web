@@ -27,8 +27,8 @@ export function HomePage() {
             });
     }, []);
 
-    if (loading) return <p>Lade Themen...</p>;
-    if (error) return <p style={{color: "red"}}>Fehler: {error}</p>;
+    if (loading) return <p>Load...</p>;
+    if (error) return <p style={{color: "red"}}>Error: {error}</p>;
 
     return (
       <main>

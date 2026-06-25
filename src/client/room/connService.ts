@@ -9,14 +9,14 @@ export class connectService {
     public changeState: (newState: Partial<UIState>) => void = () => {}
 
     constructor(memID?: number, readonly roomID?: string){
-        console.log("connService");
         const id = roomID ?? randomString();
-        this.socket = socketIO(`http://localhost:3000?room=${id}&memID=${memID ?? 0}`);
-        console.log("connService2");
+        const token = localStorage.getItem("token");
+        this.socket = socketIO("http://localhost:3000", {
+            auth: { token },
+            query: { room: id, memID: String(memID ?? 0) }
+        })
         this.socket.on("message", (data) => this.onMessage(data));
-        console.log("connService");
         connService = this;
-        console.log("connService3");
     }
 
     public setChangeState(f: (newState: Partial<UIState>) => void ): void {

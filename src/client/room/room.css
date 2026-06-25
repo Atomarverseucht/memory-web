@@ -26,11 +26,6 @@ td:nth-child(2) {
     }
 }
 
-button {
-    border-radius: 10%;
-    background-color: darkslateblue;
-}
-
 .content {
     container-type: size;
     display: grid;

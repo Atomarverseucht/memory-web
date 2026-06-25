@@ -16,3 +16,13 @@ export type clientPayload = {
     readonly cmd: "open" | "changeName";
     readonly param: number | string;
 }
+
+export type loginPayload = {
+    readonly name: string;
+    readonly password: string;
+}
+
+export type loginResponse = {
+    token: string;
+    user: { id: string; name: string };
+}

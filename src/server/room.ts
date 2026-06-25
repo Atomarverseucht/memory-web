@@ -4,6 +4,7 @@ import {memSets} from "../shared/exampleSets";
 import type {clientPayload, Payload} from "../shared/Payload";
 import { Socket } from "socket.io"
 import {addUser, getUsers} from "./database";
+import type {AuthPayload} from "./auth";
 
 export class Room {
     private game: Game;
@@ -15,15 +16,17 @@ export class Room {
        this.game = new Game(memSets[memSet]);
     }
 
-    // Init
-    initUser(socket: Socket) {
+    initUser(socket: Socket, auth?: AuthPayload) {
         console.log("conn.init")
-        const user = new Player(`Player ${this.userCount++}`);
+        const userName = auth?.name ?? `Player ${this.userCount++}`;
+        const user = new Player(userName);
         this.users.set(socket.id, user);
         const pl = this.makePayload("init", user.id)
         this.sockets.set(socket.id, socket);
         socket.send(pl);
-        addUser(socket.id, user.name, "1234");
+        if (!auth) {
+            addUser(socket.id, user.name, "1234");
+        }
     }
 
     onMessage(data: clientPayload, user: string) {
@@ -33,7 +36,6 @@ export class Room {
         } else if (data.cmd === "changeName" && typeof data.param === "string") {
             this.users.get(user)!.name = data.param
             console.log(this.users.get(user)!.name)
-            console.log(getUsers())
             this.breadcast(this.makePayload("names"))
         }
     }
