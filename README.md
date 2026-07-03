@@ -1,12 +1,12 @@
 # memory-web
 
-The old partykit-version
+The old partykit-version (v2.2.0):
 
 Stable: https://memory-web.atomarverseucht.partykit.dev
 
 Dev: https://dev.memory-web.atomarverseucht.partykit.dev
 
-### For the new version is no public version:
+### Since version 3.0.0 is no public server hosted:
 - install git repo
 - npm install
 - npm run dev
@@ -22,12 +22,12 @@ Kein SSR/SSG nötig: Echtzeit-Mehrspieler-Spiel mit socketgesteuertem Board-Zust
 │  │  src/client/Main.tsx (BrowserRouter)                                 │   │
 │  │  src/client/App.tsx (Routes)                                         │   │
 │  │                                                                      │   │
-│  │  ┌──────────┐  ┌───────────────┐  ┌──────────┐  ┌───────────────┐   │   │
+│  │  ┌───────────┐  ┌───────────────┐  ┌──────────┐  ┌───────────────┐   │   │
 │  │  │  HomePage │  │  Room         │  │  Login   │  │  Register     │   │   │
-│  │  │  /        │  │  /room/:id    │  │  /login  │  │  /register    │   │   │
-│  │  └────┬─────┘  └──────┬────────┘  └────┬─────┘  └──────┬────────┘   │   │
-│  │       │               │                 │               │            │   │
-│  │       │        ┌──────┴──────┐          │               │            │   │
+│  │  │  /        │  │  /room/       │  │  /login  │  │  /register    │   │   │
+│  │  └────┬──────┘  └──────┬────────┘  └────┬─────┘  └──────┬────────┘   │   │
+│  │       │                │                │               │            │   │
+│  │       │        ┌───────┴─────┐          │               │            │   │
 │  │       │        │  UIProvider │          │               │            │   │
 │  │       │        │ (Context)   │          │               │            │   │
 │  │       │        └──────┬──────┘          │               │            │   │
@@ -44,55 +44,55 @@ Kein SSR/SSG nötig: Echtzeit-Mehrspieler-Spiel mit socketgesteuertem Board-Zust
 │  │      │  (Socket.IO)    │                │               │            │   │
 │  │      └────────┬────────┘                │               │            │   │
 │  │               │                         │               │            │   │
-│  │               ├── fetch /api/memSets ────┼───────────────┼────────────┼───┤
-│  │               ├── fetch /api/login   ────┼───────────────┼────────────┼───┤
-│  │               └── fetch /api/register────┼───────────────┼────────────┼───┤
-│  └──────────────────────────────────────────┼───────────────┼────────────┼───┘
-│                                             │               │            │
-├─────────────────────────────────────────────┼───────────────┼────────────┼───┤
-│               SERVER (Express + Socket.IO)  │               │            │   │
-│  ┌──────────────────────────────────────────┼───────────────┼────────────┼───┘
-│  │  src/server/app.ts                       │               │            │
-│  │                                          │               │            │
-│  │  ┌─────────────────────┐                 │               │            │
-│  │  │  REST-Endpoints     │◄────────────────┼───────────────┼────────────┘
-│  │  │  GET  /api/health   │                 │               │
-│  │  │  GET  /api/memSets  │                 │               │
-│  │  │  POST /api/register │                 │               │
-│  │  │  POST /api/login    │                 │               │
-│  │  └─────────────────────┘                 │               │
-│  │                                          │               │
-│  │  ┌─────────────────────┐                 │               │
-│  │  │  WebSocket (wss)    │◄────────────────┼───────────────┘
-│  │  │  Socket.IO Server   │                 │
-│  │  └────────┬────────────┘                 │
-│  │           │ initUser / onMessage         │
-│  │  ┌────────┴────────────┐                 │
-│  │  │  Room               │                 │
-│  │  │  - users: Player[]  │                 │
-│  │  │  - sockets: Socket[]│                 │
-│  │  │  - broadcast()      │                 │
-│  │  └────────┬────────────┘                 │
-│  │           │ openField(clientID, index)   │
-│  │  ┌────────┴────────────┐                 │
-│  │  │  Game               │                 │
-│  │  │  - BoardUI (64)     │                 │
-│  │  │  - Karten-matching  │                 │
-│  │  │  - Timeout 3s       │                 │
-│  │  └─────────────────────┘                 │
-│  │                                          │
-│  │  ┌─────────────────────┐                 │
-│  │  │  Auth               │                 │
-│  │  │  - JWT sign/verify  │                 │
+│  │               ├── fetch /api/memSets ───┼───────────────┼────────────┼───┤
+│  │               ├── fetch /api/login   ───┼───────────────┼────────────┼───┤
+│  │               └── fetch /api/register───┼───────────────┼────────────┼───┤
+│  └─────────────────────────────────────────┼───────────────┼────────────┼───┘
+│                                            │               │            │   
+├────────────────────────────────────────────┼───────────────┼────────────┼───┤
+│               SERVER (Express + Socket.IO) │               │            │   │
+│  ┌─────────────────────────────────────────┼───────────────┼────────────┼───┘
+│  │  src/server/app.ts                      │               │            │
+│  │                                         │               │            │
+│  │  ┌─────────────────────┐                │               │            │
+│  │  │  REST-Endpoints     │◄───────────────┼───────────────┼────────────┘
+│  │  │  GET  /api/health   │                │               │
+│  │  │  GET  /api/memSets  │                │               │
+│  │  │  POST /api/register │                │               │
+│  │  │  POST /api/login    │                │               │
+│  │  └─────────────────────┘                │               │
+│  │                                         │               │
+│  │  ┌─────────────────────┐                │               │
+│  │  │  WebSocket (wss)    │◄───────────────┼───────────────┘
+│  │  │  Socket.IO Server   │                │
+│  │  └────────┬────────────┘                │
+│  │           │ initUser / onMessage        │
+│  │  ┌────────┴────────────┐                │
+│  │  │  Room               │                │
+│  │  │  - users: Player[]  │                │
+│  │  │  - sockets: Socket[]│                │
+│  │  │  - broadcast()      │                │
+│  │  └────────┬────────────┘                │
+│  │           │ openField(clientID, index)  │
+│  │  ┌────────┴────────────┐                │
+│  │  │  Game               │                │
+│  │  │  - BoardUI (64)     │                │
+│  │  │  - Karten-matching  │                │
+│  │  │  - Timeout 3s       │                │
+│  │  └─────────────────────┘                │
+│  │                                         │
+│  │  ┌─────────────────────┐                │
+│  │  │  Auth               │                │
+│  │  │  - JWT sign/verify  │                │
 │  │  │  - authenticateSocket                │
-│  │  └────────┬────────────┘                 │
-│  │           │                              │
-│  │  ┌────────┴────────────┐                 │
-│  │  │  Database (SQLite)  │                 │
-│  │  │  - users-Tabelle    │                 │
-│  │  │  - bcrypt-Hashing   │                 │
-│  │  └─────────────────────┘                 │
-│  └──────────────────────────────────────────┘
+│  │  └────────┬────────────┘                │
+│  │           │                             │
+│  │  ┌────────┴────────────┐                │
+│  │  │  Database (SQLite)  │                │
+│  │  │  - users-Tabelle    │                │
+│  │  │  - bcrypt-Hashing   │                │
+│  │  └─────────────────────┘                │
+│  └─────────────────────────────────────────┘
 │
 └─────────────────────────────────────────────────────────────────────────────┘
 

@@ -7,7 +7,7 @@ export default function UIMemSet({ memSet }: Props) {
     return (
         <section className="select-memory" id="theme">
             { memSet.sets.map((set , indx) => (
-                <Link className="memory-set" to={`/room/${randomString()}?memID=${indx}`}>
+                <Link className="memory-set" to={`/room/?roomID=${randomString()}&memID=${indx}`}>
                     <img src={set.titlePicture.picture} alt={set.titlePicture.altText} />
                     <p>{set.name}</p>
                 </Link>

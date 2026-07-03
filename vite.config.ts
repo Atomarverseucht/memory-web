@@ -8,7 +8,7 @@ export default defineConfig({
     root: 'src/client',
     server: {
         proxy: {
-            '/api': 'http://localhost:3000',  // ← API-Requests an Express
+            '/api': 'http://localhost:3000',  // API-Requests an Express
         },
     },
     build: {

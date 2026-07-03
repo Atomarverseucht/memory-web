@@ -65,7 +65,6 @@ app.get("/api/memSets", (_req, res) => {
 });
 
 wss.on("connection", (socket) => {
-    const auth = authenticateSocket(socket, JWT_SECRET);
     const { room: room, memID: memID } = socket.handshake.query;
     const roomId = typeof room === "string" ? room : "default";
     const mem = +(typeof memID === "string" ? memID : "1");
@@ -74,7 +73,7 @@ wss.on("connection", (socket) => {
         rooms.set(roomId, new Room(mem));
     }
     const room_ = rooms.get(roomId)!;
-    room_.initUser(socket, auth ?? undefined);
+    room_.initUser(socket);
 
     socket.on("message", (data) => {
         const msg: clientPayload = data as clientPayload;

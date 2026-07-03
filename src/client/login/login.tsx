@@ -1,18 +1,23 @@
 import {type loginResponse} from "../../shared/Payload";
 import {Link, useNavigate} from "react-router-dom";
+import {useState} from "react";
+import {Loader} from "./components/Loader";
 
 export function Login() {
     const navigate = useNavigate();
+    const [loading, setLoading] = useState<boolean>(false);
 
     async function submitLogin() {
         const nameInput = (document.getElementById("name")! as HTMLInputElement).value;
         const passwordInput = (document.getElementById("password")! as HTMLInputElement).value;
+        setLoading(true);
         const res = await fetch("/api/login", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({name: nameInput, password: passwordInput}),
         });
         if (!res.ok) {
+            setLoading(false);
             alert("Login fehlgeschlagen");
             return;
         }
@@ -24,7 +29,8 @@ export function Login() {
 
     return (
         <>
-        <p><Link to="/register">Noch kein Konto? Hier registrieren</Link></p>
+            <p><Link to="/register">Noch kein Konto? Hier registrieren</Link></p>
+            {loading ? (<Loader />) : (
         <article className="loginSection">
             <p>Login: </p>
             <section>
@@ -36,7 +42,9 @@ export function Login() {
                 <input id="password" type="password" placeholder="password"/>
             </section>
             <button id="submitLogin" onClick={submitLogin}>Submit</button>
+
         </article>
+        )}
         </>
     )
 }
