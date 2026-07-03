@@ -1,3 +1,10 @@
+## [3.0.1-dev.1](https://github.com/Atomarverseucht/memory-web/compare/3.0.0...3.0.1-dev.1) (2026-07-03)
+
+
+### Bug Fixes
+
+* roomID is now readed from URL ([09c369f](https://github.com/Atomarverseucht/memory-web/commit/09c369f87d4a882649840baf8e955f299c0c45f9))
+
 # [3.0.0](https://github.com/Atomarverseucht/memory-web/compare/2.2.0...3.0.0) (2026-06-25)
 
 
