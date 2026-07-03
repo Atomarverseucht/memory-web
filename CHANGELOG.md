@@ -1,3 +1,39 @@
+# [3.0.0](https://github.com/Atomarverseucht/memory-web/compare/2.2.0...3.0.0) (2026-06-25)
+
+
+### Bug Fixes
+
+* auth ([df9add5](https://github.com/Atomarverseucht/memory-web/commit/df9add58528389d32be9ff2f2499b5a55dcbcf32))
+* better structure ([5d3c30f](https://github.com/Atomarverseucht/memory-web/commit/5d3c30f4e47bff73cb8ae922a67e739f47208cfb))
+* M3.md ([05a7317](https://github.com/Atomarverseucht/memory-web/commit/05a7317ed34c182151047d84eac333caa28f166f))
+* M3.md ([d3ef65b](https://github.com/Atomarverseucht/memory-web/commit/d3ef65b64cbfa7429eb9dd3cc220e2bec23aa87f))
+* release bot ([309fd9f](https://github.com/Atomarverseucht/memory-web/commit/309fd9fd8f16076bd47ca61b265b9af3e3ebae3c))
+
+
+### Features
+
+* added M3.md ([b48e96c](https://github.com/Atomarverseucht/memory-web/commit/b48e96c41ec601aa4d3f09ca478db838a143f7b6))
+* added react-routers ([fe0937b](https://github.com/Atomarverseucht/memory-web/commit/fe0937b2b197dae64ed678aaed2258df9ae1527d))
+* added sqlite and first GET-request ([d3c08fb](https://github.com/Atomarverseucht/memory-web/commit/d3c08fb05235c431683e78e2942772bd4fe1caa6))
+* socket-io connections ([a12d626](https://github.com/Atomarverseucht/memory-web/commit/a12d626f41374707ecdcac06422bccaf39da82be))
+* socket-io connections ([9783352](https://github.com/Atomarverseucht/memory-web/commit/978335207fa3bc2a769c105a558c396dcb51701b))
+* socket-io connections ([4ee7d82](https://github.com/Atomarverseucht/memory-web/commit/4ee7d8227443b5400685b078d54bc6cf9046db4e))
+* Tests ([a93f34c](https://github.com/Atomarverseucht/memory-web/commit/a93f34cf9e4963998e9e21777a7aa84efc6a5609))
+
+
+### BREAKING CHANGES
+
+* no partykit anymore
+* no partykit anymore
+* no partykit anymore
+
+# [3.0.0-dev.8](https://github.com/Atomarverseucht/memory-web/compare/3.0.0-dev.7...3.0.0-dev.8) (2026-06-25)
+
+
+### Bug Fixes
+
+* M3.md ([05a7317](https://github.com/Atomarverseucht/memory-web/commit/05a7317ed34c182151047d84eac333caa28f166f))
+
 # [3.0.0-dev.7](https://github.com/Atomarverseucht/memory-web/compare/3.0.0-dev.6...3.0.0-dev.7) (2026-06-25)
 
 
