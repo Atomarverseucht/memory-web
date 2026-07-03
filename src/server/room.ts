@@ -1,4 +1,4 @@
-import {Game} from "./game";
+import {Game} from "./game/game";
 import {Player} from "../shared/Player";
 import {memSets} from "../shared/exampleSets";
 import type {clientPayload, Payload} from "../shared/Payload";
@@ -6,7 +6,7 @@ import { Socket } from "socket.io"
 
 export class Room {
     private game: Game;
-    public users = new Map<string, Player>([["addjhgkj", new Player("example", 132)], ["asjhkhk", new Player("ex", 1332)]]);
+    public users = new Map<string, Player>();
     private userCount = 1;
     private sockets = new Map<string, Socket>();
 
@@ -44,8 +44,12 @@ export class Room {
         return new Response("nothing");
     }
 
-    exitUser(user: string){
-
+    exitUser(userID: string){
+        const player = this.users.get(userID);
+        if (player) {
+            player.isOnline = false;
+            this.users.set(userID, player)
+        }
     }
 
     makePayload(type: "init" | "turn" | "names", ownUserId?: string): Payload {
@@ -58,7 +62,8 @@ export class Room {
                 };
             case "turn":
                 return {
-                    board: this.game!.boardUI
+                    board: this.game!.boardUI,
+                    users: Array.from(this.users.values()),
                 };
             case "names":
                 return {

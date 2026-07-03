@@ -76,7 +76,7 @@ wss.on("connection", (socket) => {
     room_.initUser(socket);
 
     socket.on("message", (data) => {
-        const msg: clientPayload = data as clientPayload;
+        const msg: clientPayload = data;
         room_.onMessage(msg, socket.id);
     });
 

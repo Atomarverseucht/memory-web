@@ -1,6 +1,6 @@
-import type {BoardUI} from "../shared/BoardUI";
-import type {Card, MemorySet} from "../shared/MemorySet";
-import {Room} from "./room";
+import type {BoardUI} from "../../shared/BoardUI";
+import type {Card, MemorySet} from "../../shared/MemorySet";
+import {Room} from "../room";
 
 export class Game {
     private readonly board: BoardUI;
@@ -11,7 +11,6 @@ export class Game {
     private inUse: boolean = false
 
     constructor(memSet: MemorySet) {
-        let numbers = new Array<number>();
         let b;
         b = shuffle(memSet.cards);
         b = b.slice(0,32);
@@ -20,33 +19,31 @@ export class Game {
         this.board = b;
     }
 
-    public openField(clientID: string, x: number, server: Room) {
-        if(this.inUse) return;
+    public openField(clientID: string, x: number, room: Room) {
+        if(this.inUse || (this.state === 1 && this.lastClient !== clientID)) return;
 
         this.boardUI[x] = this.board[x];
-        server.breadcast(server.makePayload("turn", clientID))
         switch(this.state){
             case 0:
                 this.lastOpened = x;
                 this.lastClient = clientID;
                 this.state = 1; break;
             case 1:
-                if(this.boardUI[x] !== this.boardUI[this.lastOpened]){
+                if((this.boardUI[x] as Card).picture !== (this.boardUI[this.lastOpened] as Card).picture) {
                     this.inUse = true;
                     setTimeout(() => {
                         this.boardUI[this.lastOpened] = "closed";
                         this.boardUI[x] = "closed";
-                        server.breadcast(server.makePayload("turn", clientID))
+                        room.breadcast(room.makePayload("turn", clientID))
                         this.inUse = false;
-                    }, 3000)
+                    }, 2000)
+                } else {
+                    room.users.get(clientID)?.addScore();
                 }
                 this.state = 0; break;
         }
+        room.breadcast(room.makePayload("turn", clientID))
     }
-}
-
-function random(max: number) {
-    return Math.floor(Math.random() * max);
 }
 
 function shuffle<T>(array: T[]): T[] {
