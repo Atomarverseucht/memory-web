@@ -19,7 +19,8 @@ export function Room(){
 function AppContent() {
     const ctx = useUIState()
     useEffect(() => {
-        new connectService(+(new URLSearchParams(document.location.search).get("memID") ?? "0"))
+        const url = new URLSearchParams(document.location.search)
+        new connectService(+(url.get("memID") ?? "0"), url.get("roomID") ?? undefined)
         return () => {}
     }, [])
     connService.setChangeState(ctx.changeState)

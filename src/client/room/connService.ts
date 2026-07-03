@@ -26,7 +26,7 @@ export class connectService {
     private onMessage(data: any){
         console.log("message: client", data);
         this.changeState(data as Partial<UIState>);
-        console.log("hi")
+        console.log("new Message: \n", data);
     }
 
     public sendMessage(data: clientPayload){

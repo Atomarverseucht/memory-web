@@ -3,8 +3,6 @@ import {Player} from "../shared/Player";
 import {memSets} from "../shared/exampleSets";
 import type {clientPayload, Payload} from "../shared/Payload";
 import { Socket } from "socket.io"
-import {addUser, getUsers} from "./database";
-import type {AuthPayload} from "./auth";
 
 export class Room {
     private game: Game;
@@ -16,17 +14,14 @@ export class Room {
        this.game = new Game(memSets[memSet]);
     }
 
-    initUser(socket: Socket, auth?: AuthPayload) {
+    initUser(socket: Socket) {
+        const name = `Player ${this.userCount}`;
         console.log("conn.init")
-        const userName = auth?.name ?? `Player ${this.userCount++}`;
-        const user = new Player(userName);
+        const user = new Player(name);
         this.users.set(socket.id, user);
         const pl = this.makePayload("init", user.id)
         this.sockets.set(socket.id, socket);
         socket.send(pl);
-        if (!auth) {
-            addUser(socket.id, user.name, "1234");
-        }
     }
 
     onMessage(data: clientPayload, user: string) {
