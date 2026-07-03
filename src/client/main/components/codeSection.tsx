@@ -10,6 +10,5 @@ export function CodeSection() {
 }
 
 function linkToRoom(nav: NavigateFunction) {
-    console.log("hi");
     nav("/room/?roomID=" + (document.getElementById("code") as HTMLInputElement).value );
 }

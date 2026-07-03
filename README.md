@@ -1,12 +1,12 @@
 # memory-web
 
-The old partykit-version
+The old partykit-version (v2.2.0):
 
 Stable: https://memory-web.atomarverseucht.partykit.dev
 
 Dev: https://dev.memory-web.atomarverseucht.partykit.dev
 
-### For the new version is no public version:
+### Since version 3.0.0 is no public server hosted:
 - install git repo
 - npm install
 - npm run dev
