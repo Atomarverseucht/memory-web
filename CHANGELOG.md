@@ -1,3 +1,10 @@
+# [3.2.0-dev.1](https://github.com/Atomarverseucht/memory-web/compare/3.1.0...3.2.0-dev.1) (2026-07-25)
+
+
+### Features
+
+* **Game:** point system is now working ([5ce918c](https://github.com/Atomarverseucht/memory-web/commit/5ce918c0b93d24b7765d946fa2dbb5f56336beb0))
+
 # [3.1.0](https://github.com/Atomarverseucht/memory-web/compare/3.0.0...3.1.0) (2026-07-03)
 
 
