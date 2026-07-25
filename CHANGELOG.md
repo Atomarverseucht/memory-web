@@ -1,3 +1,10 @@
+# [3.2.0-dev.4](https://github.com/Atomarverseucht/memory-web/compare/3.2.0-dev.3...3.2.0-dev.4) (2026-07-25)
+
+
+### Features
+
+* new Account site, better Auth, fixed reference problem main -> room ([32a3997](https://github.com/Atomarverseucht/memory-web/commit/32a39978508b6711118fc6d6917426591db8ff58))
+
 # [3.2.0-dev.3](https://github.com/Atomarverseucht/memory-web/compare/3.2.0-dev.2...3.2.0-dev.3) (2026-07-25)
 
 
