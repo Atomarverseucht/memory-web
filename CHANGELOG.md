@@ -1,3 +1,10 @@
+# [3.2.0-dev.2](https://github.com/Atomarverseucht/memory-web/compare/3.2.0-dev.1...3.2.0-dev.2) (2026-07-25)
+
+
+### Bug Fixes
+
+* better name for timeOut Variable ([899e205](https://github.com/Atomarverseucht/memory-web/commit/899e2058879b05871fe1d296f4038018ff5feee1))
+
 # [3.2.0-dev.1](https://github.com/Atomarverseucht/memory-web/compare/3.1.0...3.2.0-dev.1) (2026-07-25)
 
 
