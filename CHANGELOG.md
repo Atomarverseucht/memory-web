@@ -1,3 +1,10 @@
+# [3.2.0-dev.3](https://github.com/Atomarverseucht/memory-web/compare/3.2.0-dev.2...3.2.0-dev.3) (2026-07-25)
+
+
+### Bug Fixes
+
+* bugfix ([6189bfd](https://github.com/Atomarverseucht/memory-web/commit/6189bfd16ae806bb9a0b5207b8355b75813be06a))
+
 # [3.2.0-dev.2](https://github.com/Atomarverseucht/memory-web/compare/3.2.0-dev.1...3.2.0-dev.2) (2026-07-25)
 
 
