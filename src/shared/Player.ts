@@ -5,7 +5,8 @@ export class Player {
     isOnline: boolean = true;
     constructor(public name: string,
                 public score: number = 0,
-                public type: "Player" | "Account" | "Bot" = "Player") {}
+                public type: "Player" | "Account" | "Bot" = "Player",
+                public accountId?: string) {}
 
     public addScore(){
       this.score++
