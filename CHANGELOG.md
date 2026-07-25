@@ -1,3 +1,17 @@
+# [3.2.0](https://github.com/Atomarverseucht/memory-web/compare/3.1.0...3.2.0) (2026-07-25)
+
+
+### Bug Fixes
+
+* better name for timeOut Variable ([899e205](https://github.com/Atomarverseucht/memory-web/commit/899e2058879b05871fe1d296f4038018ff5feee1))
+* bugfix ([6189bfd](https://github.com/Atomarverseucht/memory-web/commit/6189bfd16ae806bb9a0b5207b8355b75813be06a))
+
+
+### Features
+
+* **Game:** point system is now working ([5ce918c](https://github.com/Atomarverseucht/memory-web/commit/5ce918c0b93d24b7765d946fa2dbb5f56336beb0))
+* new Account site, better Auth, fixed reference problem main -> room ([32a3997](https://github.com/Atomarverseucht/memory-web/commit/32a39978508b6711118fc6d6917426591db8ff58))
+
 # [3.2.0-dev.4](https://github.com/Atomarverseucht/memory-web/compare/3.2.0-dev.3...3.2.0-dev.4) (2026-07-25)
 
 
