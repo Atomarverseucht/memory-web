@@ -8,10 +8,9 @@ export class Game {
     public state: 0 | 1 = 0
     private lastClient?: string = undefined
     private lastOpened: number = 0
-    private inUse: boolean = false
+    private timeOuted: boolean = false
 
     constructor(memSet: MemorySet) {
-        let numbers = new Array<number>();
         let b;
         b = shuffle(memSet.cards);
         b = b.slice(0,32);
@@ -20,33 +19,34 @@ export class Game {
         this.board = b;
     }
 
-    public openField(clientID: string, x: number, server: Room) {
-        if(this.inUse) return;
+    public openField(clientID: string, x: number, room: Room) {
+        if(this.timeOuted || (this.state === 1 && this.lastClient !== clientID)) return;
 
         this.boardUI[x] = this.board[x];
-        server.breadcast(server.makePayload("turn", clientID))
         switch(this.state){
             case 0:
                 this.lastOpened = x;
                 this.lastClient = clientID;
                 this.state = 1; break;
             case 1:
-                if(this.boardUI[x] !== this.boardUI[this.lastOpened]){
-                    this.inUse = true;
+                // case: Not the same Pictures -> negative-case
+                if((this.boardUI[x] as Card).picture !== (this.boardUI[this.lastOpened] as Card).picture) {
+                    this.timeOuted = true;
                     setTimeout(() => {
                         this.boardUI[this.lastOpened] = "closed";
                         this.boardUI[x] = "closed";
-                        server.breadcast(server.makePayload("turn", clientID))
-                        this.inUse = false;
-                    }, 3000)
+                        room.breadcast(room.makePayload("turn", clientID))
+                        this.timeOuted = false;
+                    }, 2000)
+
+                // case: The same pictures -> positive-case (points++)
+                } else {
+                    room.users.get(clientID)?.addScore();
                 }
                 this.state = 0; break;
         }
+        room.breadcast(room.makePayload("turn", clientID))
     }
-}
-
-function random(max: number) {
-    return Math.floor(Math.random() * max);
 }
 
 function shuffle<T>(array: T[]): T[] {

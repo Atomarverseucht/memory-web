@@ -34,7 +34,6 @@ export class connectService {
         this.socket.send(data);
     }
 }
-connService = new connectService(0, "start");
 
 export function randomString(length = 4): string {
     return Math.random().toString(36).substring(2, 2 + length);

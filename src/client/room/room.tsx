@@ -21,9 +21,9 @@ function AppContent() {
     useEffect(() => {
         const url = new URLSearchParams(document.location.search)
         new connectService(+(url.get("memID") ?? "0"), url.get("roomID") ?? undefined)
+        connService.setChangeState(ctx.changeState)
         return () => {}
     }, [])
-    connService.setChangeState(ctx.changeState)
     return (
         <main>
             <NameSection />

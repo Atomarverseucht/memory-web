@@ -6,15 +6,14 @@ import helmet from "helmet";
 import { createServer } from "http";
 import { Server} from "socket.io";
 import {Room} from "./room";
-import type {MemorySet} from "../shared/MemorySet";
 import {memSets} from "../shared/exampleSets";
-import {addUser, getUser} from "./database";
+import {addUser, getGameSessions, getUser, getUserById} from "./database";
 import jwt from "jsonwebtoken";
 import crypto from "crypto";
-import type {AuthPayload} from "./auth";
+import {type AuthPayload, verifyTokenFromHeader} from "./auth";
 import {authenticateSocket} from "./auth";
 
-const JWT_SECRET = process.env.JWT_SECRET || "memory-dev-secret-change-in-production";
+const JWT_SECRET = process.env.JWT_SECRET ?? "testSecret&%%CW&%WZVezvr5vew$Ez"
 
 export let rooms = new Map<string, Room>();
 
@@ -33,7 +32,7 @@ app.post("/api/register", (req, res) => {
         res.status(400).json({ error: "Name and password required" });
         return;
     }
-    const id = crypto.randomUUID();
+    const id: string = crypto.randomUUID();
     addUser(id, name, password);
     const token = jwt.sign({ userId: id, name } satisfies AuthPayload, JWT_SECRET, { expiresIn: "7d" });
     res.json({ token, user: { id, name } });
@@ -56,15 +55,41 @@ app.post("/api/login", (req, res) => {
 
 app.get("/api/health", (_req, res) =>
     res.json({ status: "ok" }));
+
 app.get("/api", (_req, res) =>
     res.json({ info: "This endpoint is not in use" }));
+
 app.get("/api/memSets", (_req, res) => {
     const out: startPayload = {sets: memSets.map(ms => ms.title)};
     res.json(out);
     console.log(out);
 });
 
+app.get("/api/account", (req, res) => {
+    const targetId = req.query.accountId as string | undefined;
+
+    // Kein accountId -> eigener Account (aus JWT)
+    if (!targetId) {
+        const auth = verifyTokenFromHeader(req, JWT_SECRET);
+        if (!auth) { res.status(401).json({ error: "Unauthorized" }); return; }
+        const user = getUserById(auth.userId);
+        if (!user) { res.status(404).json({ error: "User not found" }); return; }
+        const sessions = getGameSessions(user.id);
+        const totalScore = sessions.reduce((sum: number, s: any) => sum + s.score, 0);
+        res.json({ user, sessions, totalScore });
+        return;
+    }
+
+    // Fremder Account -> direkt aus DB
+    const user = getUserById(targetId);
+    if (!user) { res.status(404).json({ error: "User not found" }); return; }
+    const sessions = getGameSessions(user.id);
+    const totalScore = sessions.reduce((sum: number, s: any) => sum + s.score, 0);
+    res.json({ user, sessions, totalScore });
+});
+
 wss.on("connection", (socket) => {
+    const authPayload = authenticateSocket(socket, JWT_SECRET);
     const { room: room, memID: memID } = socket.handshake.query;
     const roomId = typeof room === "string" ? room : "default";
     const mem = +(typeof memID === "string" ? memID : "1");
@@ -73,10 +98,10 @@ wss.on("connection", (socket) => {
         rooms.set(roomId, new Room(mem));
     }
     const room_ = rooms.get(roomId)!;
-    room_.initUser(socket);
+    room_.initUser(socket, authPayload);
 
     socket.on("message", (data) => {
-        const msg: clientPayload = data as clientPayload;
+        const msg: clientPayload = data;
         room_.onMessage(msg, socket.id);
     });
 
