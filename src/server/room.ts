@@ -1,4 +1,4 @@
-import {Game} from "./game/game";
+import {Game} from "./game";
 import {Player} from "../shared/Player";
 import {memSets} from "../shared/exampleSets";
 import type {clientPayload, Payload} from "../shared/Payload";

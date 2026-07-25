@@ -1,6 +1,6 @@
-import type {BoardUI} from "../../shared/BoardUI";
-import type {Card, MemorySet} from "../../shared/MemorySet";
-import {Room} from "../room";
+import type {BoardUI} from "../shared/BoardUI";
+import type {Card, MemorySet} from "../shared/MemorySet";
+import {Room} from "./room";
 
 export class Game {
     private readonly board: BoardUI;
