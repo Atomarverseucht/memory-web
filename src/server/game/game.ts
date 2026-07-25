@@ -8,7 +8,7 @@ export class Game {
     public state: 0 | 1 = 0
     private lastClient?: string = undefined
     private lastOpened: number = 0
-    private inUse: boolean = false
+    private timeOuted: boolean = false
 
     constructor(memSet: MemorySet) {
         let b;
@@ -20,7 +20,7 @@ export class Game {
     }
 
     public openField(clientID: string, x: number, room: Room) {
-        if(this.inUse || (this.state === 1 && this.lastClient !== clientID)) return;
+        if(this.timeOuted || (this.state === 1 && this.lastClient !== clientID)) return;
 
         this.boardUI[x] = this.board[x];
         switch(this.state){
@@ -29,14 +29,17 @@ export class Game {
                 this.lastClient = clientID;
                 this.state = 1; break;
             case 1:
+                // case: Not the same Pictures -> negative-case
                 if((this.boardUI[x] as Card).picture !== (this.boardUI[this.lastOpened] as Card).picture) {
-                    this.inUse = true;
+                    this.timeOuted = true;
                     setTimeout(() => {
                         this.boardUI[this.lastOpened] = "closed";
                         this.boardUI[x] = "closed";
                         room.breadcast(room.makePayload("turn", clientID))
-                        this.inUse = false;
+                        this.timeOuted = false;
                     }, 2000)
+
+                // case: The same pictures -> positive-case (points++)
                 } else {
                     room.users.get(clientID)?.addScore();
                 }
