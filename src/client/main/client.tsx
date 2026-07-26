@@ -1,5 +1,5 @@
-import { createRoot } from "react-dom/client";
-import {type MemorySet} from "../../shared/MemorySet";
+import * as _createRoot from "react-dom/client";
+import * as _type_MemorySet from "../../shared/MemorySet";
 import UIMemSet from "./components/UIMemSet"
 import {CodeSection} from "./components/codeSection";
 import {useEffect, useState} from "react";

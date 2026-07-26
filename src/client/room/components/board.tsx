@@ -12,14 +12,14 @@ export function Board(){
     console.log(board)
     return (
         <section className="board">
-            { board.map((card, i) =>
+            { board.map((card, idx) =>
                  (typeof card === "object") ?
                     ( <button>
                         <img
                             src={card.picture}
                             alt={card.altText}/>
                     </button> ) :
-                    ( <button className="closed" onClick={() => sendTurn(i)}>
+                    ( <button className="closed" onClick={() => sendTurn(idx)}>
                     </button> )
             )}
         </section>

@@ -1,4 +1,4 @@
-import type {MemorySet} from "../../../shared/MemorySet";
+import * as _type_MemorySet from "../../../shared/MemorySet";
 import type {startPayload} from "../../../shared/Payload";
 import {Link} from "react-router-dom";
 import {randomString} from "../../room/connService";

@@ -1,5 +1,5 @@
 import {Player} from "../../../shared/Player";
-import {useContext} from "react";
+import * as _useContext from "react";
 import {useUIState} from "../state";
 export type PlayerBarProps = {p: Player[]}
 export function PlayerBar() {
