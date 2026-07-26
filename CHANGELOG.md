@@ -1,3 +1,10 @@
+# [3.3.0-dev.1](https://github.com/Atomarverseucht/memory-web/compare/3.2.0...3.3.0-dev.1) (2026-07-26)
+
+
+### Features
+
+* reconnect in room is now possible! ([a322c64](https://github.com/Atomarverseucht/memory-web/commit/a322c64c0619822144f0b32824ddf854bf553e55))
+
 # [3.2.0](https://github.com/Atomarverseucht/memory-web/compare/3.1.0...3.2.0) (2026-07-25)
 
 
