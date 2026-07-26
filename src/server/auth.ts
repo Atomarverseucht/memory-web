@@ -1,11 +1,7 @@
 import type {Socket} from "socket.io";
 import jwt from "jsonwebtoken";
 import type {Request} from "express";
-
-export type AuthPayload = {
-    userId: string;
-    name: string;
-}
+import type {AuthPayload} from "../shared/Payload";
 
 export function authenticateSocket(socket: Socket, secret: string): AuthPayload | null {
     const token = socket.handshake.auth?.token;

@@ -26,3 +26,8 @@ export type loginResponse = {
     token: string;
     user: { id: string; name: string };
 }
+
+export type AuthPayload = {
+    userId: string;
+    name: string;
+}

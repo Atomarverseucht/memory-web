@@ -1,4 +1,4 @@
-import type {clientPayload, loginPayload, startPayload} from "../shared/Payload";
+import type {AuthPayload, clientPayload, loginPayload, startPayload} from "../shared/Payload";
 
 import express from "express";
 import cors from "cors";
@@ -10,7 +10,7 @@ import {memSets} from "../shared/exampleSets";
 import {addUser, getGameSessions, getUser, getUserById} from "./database";
 import jwt from "jsonwebtoken";
 import crypto from "crypto";
-import {type AuthPayload, verifyTokenFromHeader} from "./auth";
+import {verifyTokenFromHeader} from "./auth";
 import {authenticateSocket} from "./auth";
 
 const JWT_SECRET = process.env.JWT_SECRET ?? "testSecret&%%CW&%WZVezvr5vew$Ez"
@@ -90,7 +90,7 @@ app.get("/api/account", (req, res) => {
 
 wss.on("connection", (socket) => {
     const authPayload = authenticateSocket(socket, JWT_SECRET);
-    const { room: room, memID: memID } = socket.handshake.query;
+    const { room, memID, playerID } = socket.handshake.query;
     const roomId = typeof room === "string" ? room : "default";
     const mem = +(typeof memID === "string" ? memID : "1");
     console.log(roomId, mem);
@@ -98,7 +98,7 @@ wss.on("connection", (socket) => {
         rooms.set(roomId, new Room(mem));
     }
     const room_ = rooms.get(roomId)!;
-    room_.initUser(socket, authPayload);
+    room_.initUser(socket, authPayload, playerID as string);
 
     socket.on("message", (data) => {
         const msg: clientPayload = data;

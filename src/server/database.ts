@@ -1,5 +1,4 @@
 import Database from "better-sqlite3";
-import {createHash} from "crypto";
 import bcrypt from "bcryptjs"
 
 const db = new Database('./database.db')
