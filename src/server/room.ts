@@ -1,9 +1,8 @@
 import {Game} from "./game";
 import {Player} from "../shared/Player";
 import {memSets} from "../shared/exampleSets";
-import type {clientPayload, Payload} from "../shared/Payload";
+import type {AuthPayload, clientPayload, Payload} from "../shared/Payload";
 import { Socket } from "socket.io"
-import type {AuthPayload} from "./auth";
 import {addGameSession} from "./database";
 
 export class Room {
@@ -16,13 +15,22 @@ export class Room {
        this.game = new Game(memSets[memSet]);
     }
 
-    initUser(socket: Socket, authPayload: AuthPayload | null) {
+    initUser(socket: Socket, authPayload: AuthPayload | null, playerID: string) {
         console.log("conn.init")
-        const name = authPayload?.name ?? `Player ${this.userCount}`
-        this.userCount++;
-        const type = authPayload ? "Account" : "Player";
-        const accountId = authPayload?.userId;
-        const user = new Player(name, 0, type, accountId);
+        const p = Array.from(this.users.entries()).find(([ , pl]) => pl.id === playerID);
+        let user: Player;
+        if(p){
+            const [oldK, pl] = p
+            this.users.delete(oldK);
+            pl.isOnline = true;
+            user = pl
+        } else {
+            const name = authPayload?.name ?? `Player ${this.userCount}`
+            this.userCount++;
+            const type = authPayload ? "Account" : "Player";
+            const accountId = authPayload?.userId;
+            user = new Player(name, 0, type, accountId, playerID);
+        }
         this.users.set(socket.id, user);
         const pl = this.makePayload("init", user.id)
         this.sockets.set(socket.id, socket);
@@ -34,8 +42,11 @@ export class Room {
         if (data.cmd === "open" && typeof data.param === "number") {
             this.game!.openField(user, data.param, this)
         } else if (data.cmd === "changeName" && typeof data.param === "string") {
-            this.users.get(user)!.name = data.param
-            console.log(this.users.get(user)!.name)
+            const u = this.users.get(user)
+            if (u) {
+                u.name = data.param
+                console.log(this.users.get(user)!.name)
+            }
             this.breadcast(this.makePayload("names"))
         }
     }
@@ -53,6 +64,7 @@ export class Room {
         const player = this.users.get(userID);
         if (player) {
             player.isOnline = false;
+            this.users.delete(userID);
             this.users.set(userID, player)
             if (player.type === "Account" && player.accountId && player.score > 0) {
                 addGameSession(player.accountId, this.memSet, player.score);
@@ -60,22 +72,26 @@ export class Room {
         }
     }
 
+    public getPlayers() {
+        return Array.from(this.users.values()).filter(p => p.isOnline)
+    }
+
     makePayload(type: "init" | "turn" | "names", ownUserId?: string): Payload {
         switch (type) {
             case "init":
                 return {
                     board: this.game!.boardUI,
-                    users: Array.from(this.users.values()),
+                    users: this.getPlayers(),
                     ownId: ownUserId
                 };
             case "turn":
                 return {
                     board: this.game!.boardUI,
-                    users: Array.from(this.users.values()),
+                    users: this.getPlayers(),
                 };
             case "names":
                 return {
-                    users: Array.from(this.users.values()),
+                    users: this.getPlayers(),
                 }
         }
     }

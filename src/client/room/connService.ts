@@ -13,7 +13,7 @@ export class connectService {
         const token = localStorage.getItem("token");
         this.socket = socketIO("http://localhost:3000", {
             auth: { token },
-            query: { room: id, memID: String(memID ?? 0) }
+            query: { room: id, memID: String(memID ?? 0), playerID: this.getPlayerId() }
         })
         this.socket.on("message", (data) => this.onMessage(data));
         connService = this;
@@ -32,6 +32,15 @@ export class connectService {
     public sendMessage(data: clientPayload){
         console.log("sendMessage");
         this.socket.send(data);
+    }
+
+    public getPlayerId(): string {
+        let id = localStorage.getItem("playerId");
+        if (!id) {
+            id = crypto.randomUUID();
+            localStorage.setItem("playerId", id);
+        }
+        return id;
     }
 }
 

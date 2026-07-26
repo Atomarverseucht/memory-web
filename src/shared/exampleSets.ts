@@ -1,9 +1,7 @@
-// später durch Datenbank und Backend ersetzt
 import type {MemorySet} from "./MemorySet";
 
 /**
- * This is only example data for the first versions of the game,
- * this should be changed to a database solution in future
+ * This is example data for the game, Only used by the backend
  */
 export const memSets: MemorySet[] = [
     {
