@@ -32,7 +32,7 @@ export function HomePage() {
 
     return (
       <main>
-          <section className="setup">
+          <section className="setupSection">
               <article>
                   <h2>Please select your THEME</h2>
                   <p>The themes are the indicator with which set you will be playing.</p>

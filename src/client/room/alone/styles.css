@@ -21,11 +21,11 @@ main {
     }
 }
 
-#playCPU:hover,
-#playCPU:focus {
+#playCPU_id:hover,
+#playCPU_id:focus {
     background-color: greenyellow;
 }
-#playAlone:hover,
-#playAlone:focus {
+#playAlone_id:hover,
+#playAlone_id:focus {
     background-color: orangered;
 }

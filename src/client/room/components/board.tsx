@@ -11,7 +11,7 @@ export function Board(){
     const board = ctx.state.board;
     console.log(board)
     return (
-        <section className="board">
+        <section className="boardSection">
             { board.map((card, idx) =>
                  (typeof card === "object") ?
                     ( <button>

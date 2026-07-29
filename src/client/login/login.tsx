@@ -8,8 +8,8 @@ export function Login() {
     const [loading, setLoading] = useState<boolean>(false);
 
     async function submitLogin() {
-        const nameInput = (document.getElementById("name")! as HTMLInputElement).value;
-        const passwordInput = (document.getElementById("password")! as HTMLInputElement).value;
+        const nameInput = (document.getElementById("nameId")! as HTMLInputElement).value;
+        const passwordInput = (document.getElementById("passwordId")! as HTMLInputElement).value;
         setLoading(true);
         const res = await fetch("/api/login", {
             method: "POST",
@@ -35,11 +35,11 @@ export function Login() {
             <p>Login: </p>
             <section>
                 <label htmlFor="name">name: </label>
-                <input id="name" type="text" placeholder="username" maxLength={16}/>
+                <input id="nameId" type="text" placeholder="username" maxLength={16}/>
             </section>
             <section>
                 <label htmlFor="password">password: </label>
-                <input id="password" type="password" placeholder="password"/>
+                <input id="passwordId" type="password" placeholder="password"/>
             </section>
             <button id="submitLogin" onClick={submitLogin}>Submit</button>
 

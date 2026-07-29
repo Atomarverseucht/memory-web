@@ -8,8 +8,8 @@ export function Register() {
     const [isLoading, setLoading] = useState<boolean>(false);
 
     async function submitRegister() {
-        const name = (document.getElementById("name")! as HTMLInputElement).value;
-        const password = (document.getElementById("password")! as HTMLInputElement).value;
+        const name = (document.getElementById("nameId")! as HTMLInputElement).value;
+        const password = (document.getElementById("passwordId")! as HTMLInputElement).value;
         setLoading(true);
         const res = await fetch("/api/register", {
             method: "POST",
@@ -35,11 +35,11 @@ export function Register() {
             <p>Registrieren:</p>
             <section>
                 <label htmlFor="name">name:</label>
-                <input id="name" type="text" placeholder="username" maxLength={16} />
+                <input id="nameId" type="text" placeholder="username" maxLength={16} />
             </section>
             <section>
                 <label htmlFor="password">password:</label>
-                <input id="password" type="password" placeholder="password" />
+                <input id="passwordId" type="password" placeholder="password" />
             </section>
             <button onClick={submitRegister}>Registrieren</button>
             <p><Link to="/login">Bereits ein Konto? Hier anmelden</Link></p>

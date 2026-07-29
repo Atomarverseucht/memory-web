@@ -81,7 +81,7 @@ footer {
   padding: 1rem;
 }
 
-.setup {
+.setupSection {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   width: 100%;

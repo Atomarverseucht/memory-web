@@ -45,7 +45,7 @@ export function Account() {
 
             <h3>Game history:</h3>
             {data.sessions.length === 0 ? (
-                <p>No games played until now ;(</p>
+                <p>No games played until now;(</p>
             ) : (
                 <table>
                     <thead>
