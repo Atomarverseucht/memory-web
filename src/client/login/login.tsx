@@ -18,7 +18,7 @@ export function Login() {
         });
         if (!res.ok) {
             setLoading(false);
-            alert("Login fehlgeschlagen");
+            alert("Login failed");
             return;
         }
         const data: loginResponse = await res.json();

@@ -1,4 +1,4 @@
-// später durch Datenbank und Backend ersetzt
+// later replaced by Database and Backend
 import type {MemorySet} from "./MemorySet";
 
 /**

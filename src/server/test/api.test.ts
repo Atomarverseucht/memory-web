@@ -13,20 +13,20 @@ afterAll(() => {
 });
 
 describe("API", () => {
-    it("GET /api/health gibt Status ok zurück", async () => {
+    it("GET /api/health returns status ok", async () => {
         const res = await request(app).get("/api/health");
         expect(res.status).toBe(200);
         expect(res.body).toEqual({ status: "ok" });
     });
 
-    it("GET /api/memSets gibt Array von Set-Titeln zurück", async () => {
+    it("GET /api/memSets returns an array of set-titles", async () => {
         const res = await request(app).get("/api/memSets");
         expect(res.status).toBe(200);
         expect(res.body).toHaveProperty("sets");
         expect(Array.isArray(res.body.sets)).toBe(true);
     });
 
-    it("POST /api/register mit gültigen Daten gibt Token und User", async () => {
+    it("POST /api/register with valid data returns token and user", async () => {
         const uniqueName = `test_${Date.now()}`;
         const res = await request(app)
             .post("/api/register")
@@ -36,7 +36,7 @@ describe("API", () => {
         expect(res.body.user.name).toBe(uniqueName);
     });
 
-    it("POST /api/login mit falschen Daten gibt 401", async () => {
+    it("POST /api/login returns 401 used with wrong datas", async () => {
         const res = await request(app)
             .post("/api/login")
             .send({ name: "nonexistent", password: "wrong" });

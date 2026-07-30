@@ -23,7 +23,7 @@ export const UIContext = createContext<UIContextType>({state: initialState, chan
 
 export function useUIState() {
     const ctx = use(UIContext);
-    if (!ctx) throw new Error("useUIState muss innerhalb von UIProvider verwendet werden");
+    if (!ctx) throw new Error("useUIState needs to be used inside UIProvider!");
     return ctx;
 }
 
