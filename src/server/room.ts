@@ -36,11 +36,11 @@ export class Room {
         } else if (data.cmd === "changeName" && typeof data.param === "string") {
             this.users.get(user)!.name = data.param
             console.log(this.users.get(user)!.name)
-            this.breadcast(this.makePayload("names"))
+            this.broadcast(this.makePayload("names"))
         }
     }
 
-    breadcast(payload: Payload) {
+    broadcast(payload: Payload) {
         this.sockets.forEach((socket: Socket) => {socket.send(payload)});
     }
 
