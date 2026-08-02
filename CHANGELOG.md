@@ -1,3 +1,10 @@
+# [3.3.0-dev.2](https://github.com/Atomarverseucht/memory-web/compare/3.3.0-dev.1...3.3.0-dev.2) (2026-08-02)
+
+
+### Features
+
+* prisma finally work! ([f891141](https://github.com/Atomarverseucht/memory-web/commit/f891141e5d2b1126dad3be35a4fe8dcaca5cea5b))
+
 # [3.3.0-dev.1](https://github.com/Atomarverseucht/memory-web/compare/3.2.0...3.3.0-dev.1) (2026-07-26)
 
 
