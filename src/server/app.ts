@@ -38,13 +38,13 @@ app.post("/api/register", (req, res) => {
     res.json({ token, user: { id, name } });
 });
 
-app.post("/api/login", (req, res) => {
+app.post("/api/login", async (req, res) => {
     const { name, password } = req.body as loginPayload;
     if (!name || !password) {
         res.status(400).json({ error: "Name and password required" });
         return;
     }
-    const user = getUser(name, password);
+    const user = await getUser(name, password);
     if (!user) {
         res.status(401).json({ error: "Invalid credentials" });
         return;
@@ -72,20 +72,25 @@ app.get("/api/account", (req, res) => {
     if (!targetId) {
         const auth = verifyTokenFromHeader(req, JWT_SECRET);
         if (!auth) { res.status(401).json({ error: "Unauthorized" }); return; }
-        const user = getUserById(auth.userId);
-        if (!user) { res.status(404).json({ error: "User not found" }); return; }
-        const sessions = getGameSessions(user.id);
-        const totalScore = sessions.reduce((sum: number, s: any) => sum + s.score, 0);
-        res.json({ user, sessions, totalScore });
-        return;
+        getUserById(auth.userId).then((user) => {
+            if (!user) { res.status(404).json({ error: "User not found" }); return; }
+            getGameSessions(user.id).then(sessions => {
+                const totalScore = sessions.reduce((sum: number, s: any) => sum + s.score, 0);
+                res.json({ user, sessions, totalScore });
+                return;
+            })
+        });
+    } else {
+        // Fremder Account -> direkt aus DB
+        getUserById(targetId).then(user => {
+            if (!user) {
+                res.status(404).json({ error: "User not found" }); return; }
+            getGameSessions(user.id).then(sessions => {
+                const totalScore = sessions.reduce((sum: number, s: any) => sum + s.score, 0);
+                res.json({ user, sessions, totalScore });
+            })
+        })
     }
-
-    // Fremder Account -> direkt aus DB
-    const user = getUserById(targetId);
-    if (!user) { res.status(404).json({ error: "User not found" }); return; }
-    const sessions = getGameSessions(user.id);
-    const totalScore = sessions.reduce((sum: number, s: any) => sum + s.score, 0);
-    res.json({ user, sessions, totalScore });
 });
 
 wss.on("connection", (socket) => {
