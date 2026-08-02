@@ -1,3 +1,10 @@
+# [3.3.0-dev.3](https://github.com/Atomarverseucht/memory-web/compare/3.3.0-dev.2...3.3.0-dev.3) (2026-08-02)
+
+
+### Bug Fixes
+
+* prisma - gitignore ([6826b7e](https://github.com/Atomarverseucht/memory-web/commit/6826b7e298b134e494185143e5391e89521b885d))
+
 # [3.3.0-dev.2](https://github.com/Atomarverseucht/memory-web/compare/3.3.0-dev.1...3.3.0-dev.2) (2026-08-02)
 
 
