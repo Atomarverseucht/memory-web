@@ -169,4 +169,10 @@ dist
 .partykit
 .DS_Store
 dist-client/assets/
+
+#prisma
 /src/generated/prisma
+/generated/*
+.agents/
+.claude/
+.windsurf/
