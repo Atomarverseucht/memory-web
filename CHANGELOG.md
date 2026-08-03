@@ -1,3 +1,10 @@
+# [3.3.0-dev.4](https://github.com/Atomarverseucht/memory-web/compare/3.3.0-dev.3...3.3.0-dev.4) (2026-08-03)
+
+
+### Bug Fixes
+
+* better room-css ([41fb1ee](https://github.com/Atomarverseucht/memory-web/commit/41fb1ee8dfdace900e96be820747e5f8127f55b6))
+
 # [3.3.0-dev.3](https://github.com/Atomarverseucht/memory-web/compare/3.3.0-dev.2...3.3.0-dev.3) (2026-08-02)
 
 
