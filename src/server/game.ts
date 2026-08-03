@@ -11,7 +11,7 @@ export class Game {
     private timeOuted: boolean = false
 
     constructor(memSet: MemorySet) {
-        let b;
+        let b: Card[];
         b = shuffle(memSet.cards);
         b = b.slice(0,32);
         b = [...b, ...b]
@@ -49,8 +49,7 @@ export class Game {
     }
 }
 
-function shuffle<T>(array: T[]): T[] {
-    const arr = [...array];
+function shuffle<T>(arr: T[]): T[] {
     for (let i = arr.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [arr[i], arr[j]] = [arr[j], arr[i]]; // swap

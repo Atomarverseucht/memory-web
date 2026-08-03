@@ -64,10 +64,11 @@ export class Room {
     exitUser(userID: string){
         const player = this.users.get(userID);
         if (player) {
+            console.log("leave", player.accountId);
             player.isOnline = false;
             this.users.delete(userID);
             this.users.set(userID, player)
-            if (player.type === "Account" && player.accountId && player.score > 0) {
+            if (player.type === "Account" && player.accountId) {
                 addGameSession(player.accountId, this.memSet, player.score);
             }
         }

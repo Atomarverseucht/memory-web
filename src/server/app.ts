@@ -110,7 +110,7 @@ wss.on("connection", (socket) => {
         room_.onMessage(msg, socket.id);
     });
 
-    socket.on("close", () => {
+    socket.on("disconnect", () => {
         room_.exitUser(socket.id);
     });
 });
