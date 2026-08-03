@@ -7,12 +7,16 @@ export function PlayerBar() {
     return (
         <section className="lbSection">
             <p id="leaderboard_p"></p>
-            <table id='leaderboardID'>
-                <tr><td>Player</td><td>Score</td></tr>
+            <section id='leaderboardID'>
+                <section id='titleScores'> <section>Player</section>
+                    <section>Score</section> </section>
                 {state.users.map(u => {
-                    return (<tr><td>{u.name}</td><td>{u.score}</td></tr>)
+                    const isSelf =  u.id === state.ownId
+                    return (<section className= {`${u.type}-score`}>
+                        <section>{u.name} {(isSelf)?"(you)":""}</section>
+                        <section>{u.score}</section> </section>)
                 })}
-            </table>
+            </section>
         </section>
     );
 }

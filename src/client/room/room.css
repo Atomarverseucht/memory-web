@@ -5,18 +5,6 @@ input {
         background-color: var(--hover-color);
     }
 }
-table {
-    width: 100%;
-    table-layout: fixed;
-    overflow-wrap: break-word;
-}
-td:nth-child(1) {
-    width: 13%;
-}
-
-td:nth-child(2) {
-    width: 5%;
-}
 .nameSection {
     display: flex;
     gap: 1rem;
@@ -59,11 +47,24 @@ td:nth-child(2) {
 }
 
 #leaderboardID {
-  tr,
-  td {
-    background-color: darkcyan;
-    border: 1px solid darkblue;
-  }
+    section {
+        border: 1px solid black;
+        display: grid;
+        grid-template-columns: 10fr 200px;
+        section {
+            padding-left: 10px;
+        }
+    }
+    .Account-score {
+        background-color: goldenrod;
+    }
+    .Player-score {
+        background-color: darkcyan;
+    }
+    #titleScores {
+        background-color: darkcyan;
+        font-weight: bold;
+    }
 }
 
 #leaderboardID,
