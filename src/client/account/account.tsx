@@ -47,24 +47,21 @@ export function Account() {
             {data.sessions.length === 0 ? (
                 <p>No games played until now ;(</p>
             ) : (
-                <table>
-                    <thead>
-                    <tr>
-                        <th>Date</th>
-                        <th>Theme</th>
-                        <th>Points</th>
-                    </tr>
-                    </thead>
-                    <tbody>
+                <section id="playedGames">
+
+                    <section className={"title"}>
+                        <section>Date</section>
+                        <section>Theme</section>
+                        <section>Points</section>
+                    </section>
                     {data.sessions.map(s => (
-                        <tr key={s.id}>
-                            <td>{new Date(s.createdAt).toLocaleDateString()}</td>
-                            <td>{themeName(s.memSet)}</td>
-                            <td>{s.score}</td>
-                        </tr>
+                        <section key={s.id}>
+                            <section>{new Date(s.createdAt).toLocaleDateString()}</section>
+                            <section>{themeName(s.memSet)}</section>
+                            <section>{s.score}</section>
+                        </section>
                     ))}
-                    </tbody>
-                </table>
+                </section>
             )}
         </main>
     );
