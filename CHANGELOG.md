@@ -1,3 +1,10 @@
+# [3.3.0-dev.6](https://github.com/Atomarverseucht/memory-web/compare/3.3.0-dev.5...3.3.0-dev.6) (2026-08-04)
+
+
+### Bug Fixes
+
+* bug, which caused multiple game sessions per game is now fixed! ([880de66](https://github.com/Atomarverseucht/memory-web/commit/880de66fd6b28007cfcd3102955f1639f4ad7824))
+
 # [3.3.0-dev.5](https://github.com/Atomarverseucht/memory-web/compare/3.3.0-dev.4...3.3.0-dev.5) (2026-08-03)
 
 
