@@ -11,7 +11,7 @@ export class Game {
     private timeOuted: boolean = false
 
     constructor(memSet: MemorySet) {
-        let b: Card[];
+        let b;
         b = shuffle(memSet.cards);
         b = b.slice(0,32);
         b = [...b, ...b]
@@ -41,7 +41,7 @@ export class Game {
                     setTimeout(() => {
                         this.boardUI[this.lastOpened] = "closed";
                         this.boardUI[x] = "closed";
-                        room.broadcast(room.makePayload("turn", clientID))
+                        room.breadcast(room.makePayload("turn", clientID))
                         this.timeOuted = false;
                     }, 2000)
 
@@ -51,11 +51,12 @@ export class Game {
                 }
                 this.state = 0; break;
         }
-        room.broadcast(room.makePayload("turn", clientID))
+        room.breadcast(room.makePayload("turn", clientID))
     }
 }
 
-function shuffle<T>(arr: T[]): T[] {
+function shuffle<T>(array: T[]): T[] {
+    const arr = [...array];
     for (let i = arr.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [arr[i], arr[j]] = [arr[j], arr[i]]; // swap

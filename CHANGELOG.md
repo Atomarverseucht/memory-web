@@ -1,3 +1,10 @@
+# [3.3.0-dev.8](https://github.com/Atomarverseucht/memory-web/compare/3.3.0-dev.7...3.3.0-dev.8) (2026-08-04)
+
+
+### Features
+
+* Error system for rooms ([fc0c2ad](https://github.com/Atomarverseucht/memory-web/commit/fc0c2ad3f9d57cd1b8aa93fe8c08827a1cef7e87))
+
 # [3.3.0-dev.7](https://github.com/Atomarverseucht/memory-web/compare/3.3.0-dev.6...3.3.0-dev.7) (2026-08-04)
 
 
