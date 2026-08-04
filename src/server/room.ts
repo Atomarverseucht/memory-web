@@ -26,6 +26,11 @@ export class Room {
             this.users.delete(oldK);
             pl.isOnline = true;
             user = pl
+            if (authPayload) {
+                pl.type = "Account";
+                pl.accountId = authPayload.userId;
+                pl.name = authPayload.name;
+            }
         } else {
             const name = authPayload?.name ?? `Player ${this.userCount}`
             this.userCount++;

@@ -1,6 +1,6 @@
-@import url('../room/room.css');
-@import url('../login/login.css');
-@import url('../account/account.css');
+@import url('room/room.css');
+@import url('login/login.css');
+@import url('account/account.css');
 
 * {
   font-family: sans-serif;
@@ -31,15 +31,45 @@ h6 {
 a {
   text-decoration: none;
 }
-header {
-  background-color: #00008f;
-  color: #00afff;
-  border-radius: 10vmin;
-  border-style: groove;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.header {
+  font-weight: bold;
+  display: grid;
+  grid-template-columns: 1fr 200px;
+  * {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    border-style: groove;
+  }
+  h1 {
+    background-color: #00008f;
+    color: #00afff;
+  }
+  .account-bar {
+    background-color: darkgreen;
+    color: white;
+  }
+  .no-account-bar {
+    background-color: darkred;
+    color: white;
+  }
+  margin-bottom: 1rem;
+}
+.logout-button {
+  font-weight: bold;
+  position: fixed;
+  background-color: gray;
+  color: white;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  font-size: 0.5rem;
+  p {
+    border: none;
+    color: gold;
+    margin: 0.5rem;
+  }
 }
 
 article > h2 {
