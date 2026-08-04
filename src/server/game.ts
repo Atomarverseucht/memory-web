@@ -20,8 +20,14 @@ export class Game {
     }
 
     public openField(clientID: string, x: number, room: Room) {
-        if(this.timeOuted || (this.state === 1 && this.lastClient !== clientID)) return;
-
+        if (this.timeOuted){
+            room.sendError(clientID, {code: 425, type: "Too Early", message: "Please wait until the cards are closed"})
+            return;
+        }
+        if (this.state === 1 && this.lastClient !== clientID) {
+            room.sendError(clientID, {code: 425, type: "Too Early", message: "Please wait until the active player ends his turn"})
+            return;
+        }
         this.boardUI[x] = this.board[x];
         switch(this.state){
             case 0:

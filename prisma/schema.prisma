@@ -1,0 +1,26 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model User {
+  id           String        @id
+  name         String
+  passwordHash String
+  sessions     GameSession[]
+}
+
+model GameSession {
+  id        String   @id
+  userId    String
+  roomId    String
+  memSet    Int
+  score     Int      @default(0)
+  createdAt DateTime
+  user      User     @relation(fields: [userId], references: [id])
+  @@unique([roomId, userId])
+}

@@ -1,60 +1,42 @@
-import Database from "better-sqlite3";
-import {createHash} from "crypto";
-import bcrypt from "bcryptjs"
+import bcrypt from "bcryptjs";
+import crypto from "crypto";
+import "dotenv/config";
+import { PrismaBetterSqlite3 } from "@prisma/adapter-better-sqlite3";
+import { PrismaClient } from "../../generated/prisma/client";
 
-const db = new Database('./database.db')
-interface User {
-    id: string;
-    name: string;
-    passwordHash: string;
-}
-db.exec(`
-  CREATE TABLE IF NOT EXISTS users (
-    id TEXT PRIMARY KEY,
-    name TEXT NOT NULL,
-    passwordHash TEXT NOT NULL
-  )`);
+const adapter = new PrismaBetterSqlite3({ url: process.env.DATABASE_URL! });
+export const prisma = new PrismaClient({ adapter });
 
-db.exec(`
-    CREATE TABLE IF NOT EXISTS game_sessions (
-    id TEXT PRIMARY KEY,
-    userId TEXT NOT NULL,
-    memSet INTEGER NOT NULL,
-    score INTEGER NOT NULL DEFAULT 0,
-    createdAt TEXT NOT NULL,
-    FOREIGN KEY (userId) REFERENCES users(id)
-);`)
-
-export function addUser(id: string, name: string, password: string) {
+export async function addUser(id: string, name: string, password: string) {
     const passwordHash = bcrypt.hashSync(password, 16);
-    const prepInsert = db.prepare(
-        `INSERT INTO users (id, name, passwordHash) VALUES (?,?,?)`)
-    prepInsert.run(id, name, passwordHash);
+    await prisma.user.create({ data: { id, name, passwordHash } });
 }
 
-export function getUsers() {
-    return db.prepare(`SELECT * FROM users`).all();
+export async function getUsers() {
+    return prisma.user.findMany();
 }
 
-export function getUser(name: string, password: string): User | undefined {
-    const users = db.prepare(`SELECT * FROM users WHERE name=?`).all(name) as User[]
-    return users.find(user => bcrypt.compareSync(password, user.passwordHash))
+export async function getUser(name: string, password: string) {
+    const user = await prisma.user.findFirst({ where: { name } });
+    if (!user || !bcrypt.compareSync(password, user.passwordHash)) return undefined;
+    return user;
 }
 
-export function getUserById(id: string): { id: string; name: string } | undefined {
-    return db.prepare(`SELECT id, name FROM users WHERE id=?`).get(id) as { id: string; name: string } | undefined;
+export async function getUserById(id: string) {
+    return prisma.user.findUnique({ where: { id }, select: { id: true, name: true } });
 }
 
-export function addGameSession(userId: string, memSet: number, score: number) {
-    const id = crypto.randomUUID();
-    const createdAt = new Date().toISOString();
-    db.prepare(
-        `INSERT INTO game_sessions (id, userId, memSet, score, createdAt) VALUES (?,?,?,?,?)`
-    ).run(id, userId, memSet, score, createdAt);
+export async function upsertGameSession(userId: string, roomId: string, memSet: number, score: number) {
+    await prisma.gameSession.upsert({
+        where: { roomId_userId: { userId, roomId } },
+        create: { id: crypto.randomUUID(), userId, roomId, memSet, score, createdAt: new Date() },
+        update: { score, createdAt: new Date() },
+    });
 }
 
-export function getGameSessions(userId: string) {
-    return db.prepare(
-        `SELECT * FROM game_sessions WHERE userId=? ORDER BY createdAt DESC`
-    ).all(userId);
+export async function getGameSessions(userId: string) {
+    return prisma.gameSession.findMany({
+        where: { userId },
+        orderBy: { createdAt: "desc" }
+    });
 }

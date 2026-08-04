@@ -1,3 +1,59 @@
+# [3.3.0-dev.8](https://github.com/Atomarverseucht/memory-web/compare/3.3.0-dev.7...3.3.0-dev.8) (2026-08-04)
+
+
+### Features
+
+* Error system for rooms ([fc0c2ad](https://github.com/Atomarverseucht/memory-web/commit/fc0c2ad3f9d57cd1b8aa93fe8c08827a1cef7e87))
+
+# [3.3.0-dev.7](https://github.com/Atomarverseucht/memory-web/compare/3.3.0-dev.6...3.3.0-dev.7) (2026-08-04)
+
+
+### Features
+
+* **Front-End:** Accounts are now better visual ([db62a6b](https://github.com/Atomarverseucht/memory-web/commit/db62a6bb8c3c2ca70b0ec1f73f51a049224e4acb))
+
+# [3.3.0-dev.6](https://github.com/Atomarverseucht/memory-web/compare/3.3.0-dev.5...3.3.0-dev.6) (2026-08-04)
+
+
+### Bug Fixes
+
+* bug, which caused multiple game sessions per game is now fixed! ([880de66](https://github.com/Atomarverseucht/memory-web/commit/880de66fd6b28007cfcd3102955f1639f4ad7824))
+
+# [3.3.0-dev.5](https://github.com/Atomarverseucht/memory-web/compare/3.3.0-dev.4...3.3.0-dev.5) (2026-08-03)
+
+
+### Bug Fixes
+
+* better account-frontend ([9097908](https://github.com/Atomarverseucht/memory-web/commit/909790868ef330c21aa2f6efa996b6fa98a3f503))
+
+# [3.3.0-dev.4](https://github.com/Atomarverseucht/memory-web/compare/3.3.0-dev.3...3.3.0-dev.4) (2026-08-03)
+
+
+### Bug Fixes
+
+* better room-css ([41fb1ee](https://github.com/Atomarverseucht/memory-web/commit/41fb1ee8dfdace900e96be820747e5f8127f55b6))
+
+# [3.3.0-dev.3](https://github.com/Atomarverseucht/memory-web/compare/3.3.0-dev.2...3.3.0-dev.3) (2026-08-02)
+
+
+### Bug Fixes
+
+* prisma - gitignore ([6826b7e](https://github.com/Atomarverseucht/memory-web/commit/6826b7e298b134e494185143e5391e89521b885d))
+
+# [3.3.0-dev.2](https://github.com/Atomarverseucht/memory-web/compare/3.3.0-dev.1...3.3.0-dev.2) (2026-08-02)
+
+
+### Features
+
+* prisma finally work! ([f891141](https://github.com/Atomarverseucht/memory-web/commit/f891141e5d2b1126dad3be35a4fe8dcaca5cea5b))
+
+# [3.3.0-dev.1](https://github.com/Atomarverseucht/memory-web/compare/3.2.0...3.3.0-dev.1) (2026-07-26)
+
+
+### Features
+
+* reconnect in room is now possible! ([a322c64](https://github.com/Atomarverseucht/memory-web/commit/a322c64c0619822144f0b32824ddf854bf553e55))
+
 # [3.2.0](https://github.com/Atomarverseucht/memory-web/compare/3.1.0...3.2.0) (2026-07-25)
 
 

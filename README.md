@@ -1,15 +1,14 @@
 # memory-web
-
-The old partykit-version (v2.2.0):
-
-Stable: https://memory-web.atomarverseucht.partykit.dev
-
-Dev: https://dev.memory-web.atomarverseucht.partykit.dev
-
 ### Since version 3.0.0 is no public server hosted:
+#### To init the game locally, do:
 - install git repo
-- npm install
+- (bonus for more security: write an .env file)
+- npm run init
+
+#### To start the game, do: 
+- if it is the first time: see the last part "init the game"
 - npm run dev
+
 
 ## Architektur
 

@@ -1,11 +1,13 @@
 import type {BoardUI} from "../../shared/BoardUI";
 import type {Player} from "../../shared/Player";
 import {createContext, type ReactNode, use, useCallback, useState} from "react";
+import type {Error_} from "../../shared/Error";
 
 export type UIState = {
     board: BoardUI,
     users: Player[],
-    ownId: string
+    ownId: string,
+    error?: Error_
 }
 
 export type UIContextType = {
