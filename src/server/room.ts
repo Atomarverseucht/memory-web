@@ -3,10 +3,12 @@ import {Player} from "../shared/Player";
 import {memSets} from "../shared/exampleSets";
 import type {AuthPayload, clientPayload, Payload} from "../shared/Payload";
 import { Socket } from "socket.io"
-import {addGameSession} from "./database";
+import {upsertGameSession} from "./database";
+import {v4 as uuidv4} from "uuid";
 
 export class Room {
     private game: Game;
+    private roomId = uuidv4();
     public users = new Map<string, Player>();
     private userCount = 1;
     private sockets = new Map<string, Socket>();
@@ -68,7 +70,7 @@ export class Room {
             this.users.delete(userID);
             this.users.set(userID, player)
             if (player.type === "Account" && player.accountId) {
-                addGameSession(player.accountId, this.memSet, player.score);
+                upsertGameSession(player.accountId, this.roomId, this.memSet, player.score);
             }
         }
     }

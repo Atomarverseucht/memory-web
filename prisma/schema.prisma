@@ -17,8 +17,10 @@ model User {
 model GameSession {
   id        String   @id
   userId    String
+  roomId    String
   memSet    Int
   score     Int      @default(0)
   createdAt DateTime
   user      User     @relation(fields: [userId], references: [id])
+  @@unique([roomId, userId])
 }

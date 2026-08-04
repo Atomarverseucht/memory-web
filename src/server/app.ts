@@ -93,8 +93,8 @@ app.get("/api/account", (req, res) => {
     }
 });
 
-wss.on("connection", (socket) => {
-    const authPayload = authenticateSocket(socket, JWT_SECRET);
+wss.on("connection", async (socket) => {
+    const authPayload = await authenticateSocket(socket, JWT_SECRET);
     const { room, memID, playerID } = socket.handshake.query;
     const roomId = typeof room === "string" ? room : "default";
     const mem = +(typeof memID === "string" ? memID : "1");
