@@ -3,12 +3,9 @@
 
 ### Bug Fixes
 
-* better account-frontend ([9097908](https://github.com/Atomarverseucht/memory-web/commit/909790868ef330c21aa2f6efa996b6fa98a3f503))
 * better room-css ([fec378b](https://github.com/Atomarverseucht/memory-web/commit/fec378bfc76cd629ec3b5bdc6523d9017abd8fec))
-* better room-css ([41fb1ee](https://github.com/Atomarverseucht/memory-web/commit/41fb1ee8dfdace900e96be820747e5f8127f55b6))
-* bug, which caused multiple game sessions per game is now fixed! ([880de66](https://github.com/Atomarverseucht/memory-web/commit/880de66fd6b28007cfcd3102955f1639f4ad7824))
 * prisma - gitignore ([58d6cec](https://github.com/Atomarverseucht/memory-web/commit/58d6cec1052115dfb523e22ec1e9a62cc85d6d2a))
-* prisma - gitignore ([6826b7e](https://github.com/Atomarverseucht/memory-web/commit/6826b7e298b134e494185143e5391e89521b885d))
+* sementic release fix ([8aa8baf](https://github.com/Atomarverseucht/memory-web/commit/8aa8baf1963c0747f6c8c4ed1485e5350aa34dab))
 
 
 ### Features
