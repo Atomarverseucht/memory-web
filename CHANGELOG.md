@@ -1,3 +1,10 @@
+## [3.3.1-dev.1](https://github.com/Atomarverseucht/memory-web/compare/3.3.0...3.3.1-dev.1) (2026-08-04)
+
+
+### Bug Fixes
+
+* sementic release fix ([8aa8baf](https://github.com/Atomarverseucht/memory-web/commit/8aa8baf1963c0747f6c8c4ed1485e5350aa34dab))
+
 # [3.3.0](https://github.com/Atomarverseucht/memory-web/compare/3.2.0...3.3.0) (2026-08-04)
 
 
