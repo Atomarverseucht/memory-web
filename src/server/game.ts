@@ -41,7 +41,7 @@ export class Game {
                     setTimeout(() => {
                         this.boardUI[this.lastOpened] = "closed";
                         this.boardUI[x] = "closed";
-                        room.breadcast(room.makePayload("turn", clientID))
+                        room.broadcast(room.makePayload("turn", clientID))
                         this.timeOuted = false;
                     }, 2000)
 
@@ -51,7 +51,7 @@ export class Game {
                 }
                 this.state = 0; break;
         }
-        room.breadcast(room.makePayload("turn", clientID))
+        room.broadcast(room.makePayload("turn", clientID))
     }
 }
 

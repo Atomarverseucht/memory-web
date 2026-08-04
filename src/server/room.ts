@@ -9,6 +9,7 @@ import type {Error_} from "../shared/Error";
 
 export class Room {
     private game: Game;
+    private roomId = uuidv4()
     public users = new Map<string, Player>();
     private userCount = 1;
     private sockets = new Map<string, Socket>();
