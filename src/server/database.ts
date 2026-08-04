@@ -26,9 +26,11 @@ export async function getUserById(id: string) {
     return prisma.user.findUnique({ where: { id }, select: { id: true, name: true } });
 }
 
-export async function addGameSession(userId: string, memSet: number, score: number) {
-    await prisma.gameSession.create({
-        data: { id: crypto.randomUUID(), userId, memSet, score, createdAt: new Date() }
+export async function upsertGameSession(userId: string, roomId: string, memSet: number, score: number) {
+    await prisma.gameSession.upsert({
+        where: { roomId_userId: { userId, roomId } },
+        create: { id: crypto.randomUUID(), userId, roomId, memSet, score, createdAt: new Date() },
+        update: { score, createdAt: new Date() },
     });
 }
 
