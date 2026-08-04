@@ -67,6 +67,12 @@ input {
     }
 }
 
+.error-popup {
+    position: fixed; top: 1rem; right: 1rem;
+    background-color: darkred; color: white; border-radius: 20px;
+    padding: 0.5rem; z-index: 100;
+}
+
 #leaderboardID,
 #player-name,
 #player-score {

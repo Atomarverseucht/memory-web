@@ -3,7 +3,7 @@
   "version": "3.3.0-dev.6",
   "private": true,
   "scripts": {
-    "init": "npm install && npx prisma generate",
+    "init": "npm install && npx prisma generate && npx prisma db push",
     "dev:client": "vite",
     "dev:server": "tsx watch src/server/server.ts",
     "dev": "npm run dev:server & npm run dev:client",

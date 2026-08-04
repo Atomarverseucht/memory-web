@@ -7,6 +7,7 @@ import {NameSection} from "./components/nameSection";
 import {UIProvider, useUIState} from "./state";
 import {connectService, connService} from "./connService";
 import {useEffect} from "react";
+import {ErrorPopup} from "./components/ErrorPopup";
 
 export function Room(){
     return(
@@ -28,6 +29,7 @@ function AppContent() {
         <main>
             <NameSection />
             <section className="content">
+                <ErrorPopup />
                 <Board />
                 <PlayerBar />
             </section>
