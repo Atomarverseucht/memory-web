@@ -28,7 +28,6 @@ export class Game {
             room.sendError(clientID, {code: 425, type: "Too Early", message: "Please wait until the active player ends his turn"})
             return;
         }
-
         this.boardUI[x] = this.board[x];
         switch(this.state){
             case 0:

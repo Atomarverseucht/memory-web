@@ -56,7 +56,7 @@ export class Room {
                     this.sendError(user, {code: 406, type: "Not acceptable", message: "requested name is already used!"})
                 }
                 u.name = data.param
-                this.breadcast(this.makePayload("names"))
+                this.broadcast(this.makePayload("names"))
             } else {
                 const error: Error_ = {code: 403, type: "Forbidden", message: "You are not a known-player"}
                 this.sockets.get(user)?.send(error)
@@ -64,7 +64,7 @@ export class Room {
         }
     }
 
-    breadcast(payload: Payload) {
+    broadcast(payload: Payload) {
         this.sockets.forEach((socket: Socket) => {socket.send(payload)});
     }
 
