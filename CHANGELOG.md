@@ -1,3 +1,10 @@
+# [3.3.0-dev.7](https://github.com/Atomarverseucht/memory-web/compare/3.3.0-dev.6...3.3.0-dev.7) (2026-08-04)
+
+
+### Features
+
+* **Front-End:** Accounts are now better visual ([db62a6b](https://github.com/Atomarverseucht/memory-web/commit/db62a6bb8c3c2ca70b0ec1f73f51a049224e4acb))
+
 # [3.3.0-dev.6](https://github.com/Atomarverseucht/memory-web/compare/3.3.0-dev.5...3.3.0-dev.6) (2026-08-04)
 
 
