@@ -1,3 +1,10 @@
+# [3.3.0-dev.5](https://github.com/Atomarverseucht/memory-web/compare/3.3.0-dev.4...3.3.0-dev.5) (2026-08-03)
+
+
+### Bug Fixes
+
+* better account-frontend ([9097908](https://github.com/Atomarverseucht/memory-web/commit/909790868ef330c21aa2f6efa996b6fa98a3f503))
+
 # [3.3.0-dev.4](https://github.com/Atomarverseucht/memory-web/compare/3.3.0-dev.3...3.3.0-dev.4) (2026-08-03)
 
 
