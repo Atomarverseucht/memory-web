@@ -27,6 +27,9 @@ export class connectService {
         console.log("message: client", data);
         this.changeState(data as Partial<UIState>);
         console.log("new Message: \n", data);
+        if (data.error){
+            setTimeout(()=>{this.changeState({error: undefined})}, 3000)
+        }
     }
 
     public sendMessage(data: clientPayload){

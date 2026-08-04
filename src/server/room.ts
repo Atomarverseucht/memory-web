@@ -5,8 +5,7 @@ import type {AuthPayload, clientPayload, Payload} from "../shared/Payload";
 import { Socket } from "socket.io"
 import {upsertGameSession} from "./database";
 import {v4 as uuidv4} from "uuid";
-import type {AuthPayload} from "./auth";
-import {addGameSession} from "./database";
+import type {Error_} from "../shared/Error";
 
 export class Room {
     private game: Game;
@@ -53,20 +52,27 @@ export class Room {
         } else if (data.cmd === "changeName" && typeof data.param === "string") {
             const u = this.users.get(user)
             if (u) {
+                if(Array.of(this.users.values()).find(u_ => u.name === u.name)) {
+                    this.sendError(user, {code: 406, type: "Not acceptable", message: "requested name is already used!"})
+                }
                 u.name = data.param
-                console.log(this.users.get(user)!.name)
+                this.breadcast(this.makePayload("names"))
+            } else {
+                const error: Error_ = {code: 403, type: "Forbidden", message: "You are not a known-player"}
+                this.sockets.get(user)?.send(error)
             }
-            this.broadcast(this.makePayload("names"))
         }
     }
 
-    broadcast(payload: Payload) {
+    breadcast(payload: Payload) {
         this.sockets.forEach((socket: Socket) => {socket.send(payload)});
     }
 
-    onRequest() {
-        console.log("server.onRequest")
-        return new Response("nothing");
+    send(user: string, data: Payload) {
+        this.sockets.get(user)?.send(data);
+    }
+    sendError(user: string, error: Error_) {
+        this.send(user, {error: error});
     }
 
     exitUser(userID: string){

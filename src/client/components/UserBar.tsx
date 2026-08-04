@@ -14,7 +14,7 @@ export function UserBar(){
     return (<>
         {user ? (
             <Link className="account-bar" to="/account">
-                Account: {user.name}
+                Account: <p className="gold">{user.name}</p>
             </Link>
         ) : (
             <Link className="no-account-bar" to="/login">
@@ -22,7 +22,7 @@ export function UserBar(){
             </Link>
         )}
         {user && (
-            <button className="logout-button" onClick={logout}>Logout from User: <p>{user.name}</p></button>
+            <button className="logout-button" onClick={logout}>Logout from: <p className="gold">{user.name}</p></button>
         )}
     </>);
 }
