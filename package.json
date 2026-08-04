@@ -1,6 +1,6 @@
 {
   "name": "memory-web",
-  "version": "3.3.0",
+  "version": "3.3.1",
   "private": true,
   "scripts": {
     "init": "npm install && npx prisma generate && npx prisma db push",
