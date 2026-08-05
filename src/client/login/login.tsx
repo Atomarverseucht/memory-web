@@ -41,7 +41,7 @@ export function Login() {
                 <label htmlFor="password">password: </label>
                 <input id="passwordId" type="password" placeholder="password"/>
             </section>
-            <button id="submitLogin" onClick={submitLogin}>Submit</button>
+            <button id="submitLogin-Button" onClick={submitLogin}>Submit</button>
 
         </article>
         )}
