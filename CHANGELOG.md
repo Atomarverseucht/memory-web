@@ -1,3 +1,30 @@
+## [3.3.1-dev.1](https://github.com/Atomarverseucht/memory-web/compare/3.3.0...3.3.1-dev.1) (2026-08-04)
+
+
+### Bug Fixes
+
+* sementic release fix ([8aa8baf](https://github.com/Atomarverseucht/memory-web/commit/8aa8baf1963c0747f6c8c4ed1485e5350aa34dab))
+
+# [3.3.0](https://github.com/Atomarverseucht/memory-web/compare/3.2.0...3.3.0) (2026-08-04)
+
+
+### Bug Fixes
+
+* better room-css ([fec378b](https://github.com/Atomarverseucht/memory-web/commit/fec378bfc76cd629ec3b5bdc6523d9017abd8fec))
+* prisma - gitignore ([58d6cec](https://github.com/Atomarverseucht/memory-web/commit/58d6cec1052115dfb523e22ec1e9a62cc85d6d2a))
+* sementic release fix ([8aa8baf](https://github.com/Atomarverseucht/memory-web/commit/8aa8baf1963c0747f6c8c4ed1485e5350aa34dab))
+
+
+### Features
+
+* Error system for rooms ([fc758f7](https://github.com/Atomarverseucht/memory-web/commit/fc758f7454b249c51d3774def7e024835794300f))
+* Error system for rooms ([fc0c2ad](https://github.com/Atomarverseucht/memory-web/commit/fc0c2ad3f9d57cd1b8aa93fe8c08827a1cef7e87))
+* **Front-End:** Accounts are now better visual ([c2de1e0](https://github.com/Atomarverseucht/memory-web/commit/c2de1e04133618e7caee0a8c2032e30843fd8e68))
+* **Front-End:** Accounts are now better visual ([db62a6b](https://github.com/Atomarverseucht/memory-web/commit/db62a6bb8c3c2ca70b0ec1f73f51a049224e4acb))
+* prisma finally work! ([ca13e16](https://github.com/Atomarverseucht/memory-web/commit/ca13e16727aafdc05cb6a169b9751740438670fa))
+* prisma finally work! ([f891141](https://github.com/Atomarverseucht/memory-web/commit/f891141e5d2b1126dad3be35a4fe8dcaca5cea5b))
+* reconnect in room is now possible! ([a322c64](https://github.com/Atomarverseucht/memory-web/commit/a322c64c0619822144f0b32824ddf854bf553e55))
+
 # [3.3.0-dev.8](https://github.com/Atomarverseucht/memory-web/compare/3.3.0-dev.7...3.3.0-dev.8) (2026-08-04)
 
 
