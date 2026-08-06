@@ -12,7 +12,7 @@ export function NameSection() {
                 <label htmlFor="name-input">Username:</label>
                 <input id="name-input" type="text" placeholder="Max Mustermann"
                   onKeyDown={(key) => (key.key === "Enter") ? submitName() : null}/>
-                <button id="name-submit" onClick={submitName}
+                <button id="name-submit-button" onClick={submitName}
                     >Submit</button>
             </section>
         </article>

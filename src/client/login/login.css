@@ -12,4 +12,8 @@
         background-color: var(--hover-color);
         color: black;
     }
+    p {
+      margin-left: auto;
+      margin-right: auto;
+    }
 }
