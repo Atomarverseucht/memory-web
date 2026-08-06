@@ -12,6 +12,10 @@ input {
     :hover, :focus{
         background-color: var(--hover-color);
     }
+    button {
+      justify-content: center;
+      align-items: center;
+    }
 }
 
 .content {
