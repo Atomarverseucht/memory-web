@@ -17,3 +17,10 @@
         color: black;
     }
 }
+
+#submitLogin-Button {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+}

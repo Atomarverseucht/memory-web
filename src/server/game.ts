@@ -51,6 +51,12 @@ export class Game {
                 }
                 this.state = 0; break;
         }
+
+        if (this.boardUI.every(field => field !== "closed")) {
+          shuffle(this.board);
+          this.boardUI = Array(64).fill("closed");
+        }
+
         room.broadcast(room.makePayload("turn", clientID))
     }
 }

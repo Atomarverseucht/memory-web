@@ -1,4 +1,4 @@
-## [3.3.1-dev.1](https://github.com/Atomarverseucht/memory-web/compare/3.3.0...3.3.1-dev.1) (2026-08-04)
+## [3.3.1](https://github.com/Atomarverseucht/memory-web/compare/3.3.0...3.3.1) (2026-08-04)
 
 
 ### Bug Fixes

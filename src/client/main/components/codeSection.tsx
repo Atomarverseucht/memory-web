@@ -5,7 +5,7 @@ export function CodeSection() {
     return (<article className="codeSection">
         <label htmlFor="code">Code:</label>
         <input id="codeId" type="text" placeholder="roomkey" maxLength={4}/>
-        <button id="submitCode" onClick={() => linkToRoom(nav)}>Submit</button>
+        <button id="submitCode-button" onClick={() => linkToRoom(nav)}>Submit</button>
     </article>);
 }
 
