@@ -29,7 +29,7 @@ export function Login() {
 
     return (
         <>
-            <p><Link to="/register">Noch kein Konto? Hier registrieren</Link></p>
+            <p><Link to="/register">No account yet? Register here</Link></p>
             {loading ? (<Loader />) : (
         <article className="loginSection">
             <p>Login: </p>

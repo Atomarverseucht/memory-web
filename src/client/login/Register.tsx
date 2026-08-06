@@ -31,19 +31,22 @@ export function Register() {
     return (
         <>
         { isLoading ? (<Loader />) : (
-        <article className="loginSection">
-            <p>Registrieren:</p>
-            <section>
-                <label htmlFor="name">name:</label>
-                <input id="nameId" type="text" placeholder="username" maxLength={16} />
-            </section>
-            <section>
-                <label htmlFor="password">password:</label>
-                <input id="passwordId" type="password" placeholder="password" />
-            </section>
-            <button onClick={submitRegister}>Registrieren</button>
-            <p><Link to="/login">Bereits ein Konto? Hier anmelden</Link></p>
-        </article>
+            <>
+                <p><Link to="/login">Account yet? Click here for login</Link></p>
+                <article className="loginSection">
+                    <p>Register:</p>
+                    <section>
+                        <label htmlFor="name">name:</label>
+                        <input id="nameId" type="text" placeholder="username" maxLength={16} />
+                    </section>
+                    <section>
+                        <label htmlFor="password">password:</label>
+                        <input id="passwordId" type="password" placeholder="password" />
+                    </section>
+                    <button onClick={submitRegister}>Registrieren</button>
+
+                </article>
+            </>
         )}
     </>);
 }
