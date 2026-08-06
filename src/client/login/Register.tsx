@@ -31,7 +31,7 @@ export function Register() {
     return (
         <>
         { isLoading ? (<Loader />) : (
-        <article className="loginSection">
+        <article className="registerSection">
             <p>Registrieren:</p>
             <section>
                 <label htmlFor="name">name:</label>
