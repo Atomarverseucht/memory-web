@@ -47,10 +47,11 @@ input {
 }
 
 #leaderboardID {
-    section {
+    *{
         border: 1px solid black;
         display: grid;
         grid-template-columns: 10fr 200px;
+        color: black;
         section {
             padding-left: 10px;
         }
