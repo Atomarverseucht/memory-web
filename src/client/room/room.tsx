@@ -1,7 +1,7 @@
 import * as _createRoot from "react-dom/client";
 import * as _memSets from "../../shared/exampleSets";
 import {Board} from "./components/board";
-import {PlayerBar} from "./components/playerBar";
+import {ScoreBoard} from "./components/scoreBoard";
 import * as _Player from "../../shared/Player";
 import {NameSection} from "./components/nameSection";
 import {UIProvider, useUIState} from "./state";
@@ -31,7 +31,7 @@ function AppContent() {
             <section className="content">
                 <ErrorPopup />
                 <Board />
-                <PlayerBar />
+                <ScoreBoard />
             </section>
         </main>
     );
