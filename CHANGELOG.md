@@ -1,3 +1,18 @@
+# [3.4.0](https://github.com/Atomarverseucht/memory-web/compare/3.3.1...3.4.0) (2026-08-06)
+
+
+### Bug Fixes
+
+* .env file is not mandatory anymore! ([3ac062f](https://github.com/Atomarverseucht/memory-web/commit/3ac062f99fb6772ba6fd1f3ccb3976614d7585b0))
+* better css and style on login and register form ([5379d82](https://github.com/Atomarverseucht/memory-web/commit/5379d820099f22640a17c2150ce175b66c516510))
+* better css and style on login and register form ([5f2c1df](https://github.com/Atomarverseucht/memory-web/commit/5f2c1dfa5a28387b58c55b2014e34416f1c8ee83))
+* Login and Register Buttons ([8b6128c](https://github.com/Atomarverseucht/memory-web/commit/8b6128c8595ffc2ffe7c6014e77db5a72e557f1d))
+
+
+### Features
+
+* see other account stats if you click on them on the scoreboard ([816377e](https://github.com/Atomarverseucht/memory-web/commit/816377e0903f3b3331223d2483fb3ed306e900c2))
+
 ## [3.3.1](https://github.com/Atomarverseucht/memory-web/compare/3.3.0...3.3.1) (2026-08-04)
 
 
