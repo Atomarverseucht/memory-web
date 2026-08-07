@@ -1,3 +1,10 @@
+## [3.4.2-dev.1](https://github.com/Atomarverseucht/memory-web/compare/3.4.1...3.4.2-dev.1) (2026-08-07)
+
+
+### Bug Fixes
+
+* removed old languages set ([c009301](https://github.com/Atomarverseucht/memory-web/commit/c00930179d72d5c1c9e00c2409821da4648538ee))
+
 ## [3.4.1-dev.1](https://github.com/Atomarverseucht/memory-web/compare/3.4.0...3.4.1-dev.1) (2026-08-06)
 
 
