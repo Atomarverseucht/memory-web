@@ -20,6 +20,9 @@ export class Game {
     }
 
     public openField(clientID: string, x: number, room: Room) {
+        if (!room.users.get(clientID)?.hasTurn) {
+            return;
+        }
         if (this.timeOuted){
             room.sendError(clientID, {code: 425, type: "Too Early", message: "Please wait until the cards are closed"})
             return;
@@ -31,25 +34,45 @@ export class Game {
         this.boardUI[x] = this.board[x];
         switch(this.state){
             case 0:
+                console.log("THIS.STATE: 0")
                 this.lastOpened = x;
                 this.lastClient = clientID;
                 this.state = 1; break;
             case 1:
+                console.log("THIS.STATE: 1")
                 // case: Not the same Pictures -> negative-case
                 if((this.boardUI[x] as Card).picture !== (this.boardUI[this.lastOpened] as Card).picture) {
                     this.timeOuted = true;
                     setTimeout(() => {
                         this.boardUI[this.lastOpened] = "closed";
                         this.boardUI[x] = "closed";
-                        room.broadcast(room.makePayload("turn", clientID))
                         this.timeOuted = false;
+                        const currentPlayer = room.users.get(clientID);
+                        if (currentPlayer) {
+                            currentPlayer.hasTurn = false; // FIX: turn-holder must be cleared, not just the "next" one
+                        }
+
+                        room.removeID(clientID)
+                        if (room.ids_next.length === 0) {
+                          room.insertIDs()
+                        }
+                        this.lastClient = room.ids_next[0]
+                        this.state = 0;
+
+                        const nextPlayer = room.users.get(this.lastClient!);
+                        if (nextPlayer) {
+                            nextPlayer.hasTurn = true; // FIX: actually grant the turn to the next player
+                        }
+
+                        room.broadcast(room.makePayload("turn", clientID))
                     }, 2000)
 
                 // case: The same pictures -> positive-case (points++)
                 } else {
                     room.users.get(clientID)?.addScore();
+                    this.state = 0;
                 }
-                this.state = 0; break;
+                break;
         }
 
         if (this.boardUI.every(field => field !== "closed")) {

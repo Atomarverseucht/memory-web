@@ -11,6 +11,7 @@ export class Room {
     private game: Game;
     private roomId = uuidv4()
     public users = new Map<string, Player>();
+    public ids_next: string[] = [];
     private userCount = 1;
     private sockets = new Map<string, Socket>();
 
@@ -25,6 +26,7 @@ export class Room {
         if(p){
             const [oldK, pl] = p
             this.users.delete(oldK);
+            this.sockets.delete(oldK);
             pl.isOnline = true;
             user = pl
             if (authPayload) {
@@ -42,6 +44,7 @@ export class Room {
         this.users.set(socket.id, user);
         const pl = this.makePayload("init", user.id)
         this.sockets.set(socket.id, socket);
+        this.insertIDs()
         socket.send(pl);
     }
 
@@ -52,8 +55,10 @@ export class Room {
         } else if (data.cmd === "changeName" && typeof data.param === "string") {
             const u = this.users.get(user)
             if (u) {
-                if(Array.of(this.users.values()).find(u_ => u.name === u.name)) {
-                    this.sendError(user, {code: 406, type: "Not acceptable", message: "requested name is already used!"})
+                const taken = Array.from(this.users.values()).some(u_ => u_.name === data.param);
+                if (taken) {
+                    this.sendError(user, {code: 406, type: "Not acceptable", message: "requested name is already used!"});
+                    return;
                 }
                 u.name = data.param
                 this.broadcast(this.makePayload("names"))
@@ -90,6 +95,16 @@ export class Room {
 
     public getPlayers() {
         return Array.from(this.users.values()).filter(p => p.isOnline)
+    }
+
+    public insertIDs() {
+     this.ids_next = Array.from(this.users.entries())
+      .filter(([, p]) => p.isOnline)
+      .map(([socketId]) => socketId);
+    }
+
+    public removeID(id: string) {
+      this.ids_next = this.ids_next.filter(ids => ids !== id)
     }
 
     makePayload(type: "init" | "turn" | "names", ownUserId?: string): Payload {

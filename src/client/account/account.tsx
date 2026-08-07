@@ -3,7 +3,7 @@ import {useSearchParams} from "react-router-dom";
 import {memSets} from "../../shared/exampleSets";
 
 type AccountData = {
-    user: { id: string; name: string };
+    user: { id: string; name: string};
     sessions: { id: string; memSet: number; score: number; createdAt: string }[];
     totalScore: number;
 };
