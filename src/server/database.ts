@@ -8,12 +8,12 @@ const adapter = new PrismaBetterSqlite3({ url: process.env.DATABASE_URL ?? "file
 export const prisma = new PrismaClient({ adapter });
 
 export async function addUser(id: string, name: string, password: string) {
-    const passwordHash = bcrypt.hashSync(password, 16);
+    const passwordHash = bcrypt.hashSync(password, 10);
     await prisma.user.create({ data: { id, name, passwordHash } });
 }
 
 export async function getUsers() {
-    return prisma.user.findMany();
+    return prisma.user.findMany({select: {id:true, name:true}});
 }
 
 export async function getUser(name: string, password: string) {

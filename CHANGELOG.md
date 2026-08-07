@@ -1,9 +1,16 @@
-## [3.4.1](https://github.com/Atomarverseucht/memory-web/compare/3.4.0...3.4.1) (2026-08-07)
+## [3.4.2-dev.1](https://github.com/Atomarverseucht/memory-web/compare/3.4.1...3.4.2-dev.1) (2026-08-07)
 
 
 ### Bug Fixes
 
-* .env now not mandatory ([d629717](https://github.com/Atomarverseucht/memory-web/commit/d6297177e7ba157ea9294e86e16d3f135346a8c4))
+* removed old languages set ([c009301](https://github.com/Atomarverseucht/memory-web/commit/c00930179d72d5c1c9e00c2409821da4648538ee))
+
+## [3.4.1-dev.1](https://github.com/Atomarverseucht/memory-web/compare/3.4.0...3.4.1-dev.1) (2026-08-06)
+
+
+### Bug Fixes
+
+* removed old languages set ([c009301](https://github.com/Atomarverseucht/memory-web/commit/c00930179d72d5c1c9e00c2409821da4648538ee))
 
 # [3.4.0](https://github.com/Atomarverseucht/memory-web/compare/3.3.1...3.4.0) (2026-08-06)
 
