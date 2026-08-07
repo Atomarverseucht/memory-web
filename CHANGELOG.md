@@ -1,3 +1,10 @@
+## [3.4.3-dev.2](https://github.com/Atomarverseucht/memory-web/compare/3.4.3-dev.1...3.4.3-dev.2) (2026-08-07)
+
+
+### Bug Fixes
+
+* npm init fix? ([9201d53](https://github.com/Atomarverseucht/memory-web/commit/9201d535805d2328ade894ca06b212a2dd1764f4))
+
 ## [3.4.3-dev.1](https://github.com/Atomarverseucht/memory-web/compare/3.4.2...3.4.3-dev.1) (2026-08-07)
 
 
