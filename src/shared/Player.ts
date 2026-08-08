@@ -6,7 +6,8 @@ export class Player {
                 public score: number = 0,
                 public type: "Player" | "Account" = "Player",
                 public accountId?: string,
-                public readonly id = uuidv4()
+                public readonly id = uuidv4(),
+                public hasTurn: boolean = true
     ) {}
 
     public addScore(){

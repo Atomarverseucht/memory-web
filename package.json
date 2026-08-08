@@ -1,9 +1,9 @@
 {
   "name": "memory-web",
-  "version": "3.4.2",
+  "version": "3.4.3-dev.2",
   "private": true,
   "scripts": {
-    "init": "npm install && npm install-scripts approve @prisma/engines better-sqlite3 esbuild prisma && npx prisma generate",
+    "init": "npm install && npm install-scripts @prisma/engines better-sqlite3 esbuild prisma && npx prisma generate && npx prisma db push",
     "dev:client": "vite",
     "dev:server": "tsx watch src/server/server.ts",
     "dev": "npm run dev:server & npm run dev:client",
