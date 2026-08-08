@@ -1,6 +1,6 @@
 {
   "name": "memory-web",
-  "version": "3.4.3-dev.2",
+  "version": "3.4.3",
   "private": true,
   "scripts": {
     "init": "npm install && npm install-scripts @prisma/engines better-sqlite3 esbuild prisma && npx prisma generate && npx prisma db push",

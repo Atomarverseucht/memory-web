@@ -1,3 +1,11 @@
+## [3.4.3](https://github.com/Atomarverseucht/memory-web/compare/3.4.2...3.4.3) (2026-08-08)
+
+
+### Bug Fixes
+
+* npm init fix? ([9201d53](https://github.com/Atomarverseucht/memory-web/commit/9201d535805d2328ade894ca06b212a2dd1764f4))
+* Tryied to make some false queue system ([2f292b0](https://github.com/Atomarverseucht/memory-web/commit/2f292b05adf9670f43110553bac3919cb313314d))
+
 ## [3.4.3-dev.2](https://github.com/Atomarverseucht/memory-web/compare/3.4.3-dev.1...3.4.3-dev.2) (2026-08-07)
 
 
